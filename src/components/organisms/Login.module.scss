@@ -1,0 +1,416 @@
+@use "../settings/colors";
+@use "../settings/border";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.login {
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - 70px);
+  padding: spacing.$md 0;
+  gap: spacing.$xxl;
+
+  @media (min-width: sizes.$tablet) {
+    margin: auto;
+    max-width: 1068px;
+  }
+
+  &__container {
+    flex: 1;
+    max-width: 384px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+
+    @media (min-width: sizes.$tablet) {
+      width: 50%;
+      margin-right: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$tiny;
+  }
+
+  &__link {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__source {
+    display: none;
+
+    @media (min-width: sizes.$tablet) {
+      display: block;
+      order: -1;
+      width: 50%;
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-width: 473px;
+  }
+
+  &__finish {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+  }
+}
+
+.recovery {
+  &__container {
+    flex: 1;
+    max-width: 384px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+
+    @media (min-width: sizes.$tablet) {
+      flex-direction: row;
+      align-items: center;
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    @media (min-width: sizes.$tablet) {
+      max-width: 384px;
+    }
+  }
+
+  &__source {
+    @media (min-width: sizes.$tablet) {
+      width: 50%;
+      > * {
+        max-width: 390px;
+        font: typography.$s700-bold;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 530px;
+    flex-grow: 1;
+  }
+}
+
+.account {
+  &__container {
+    flex: 1;
+    max-width: 384px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+
+    @media (min-width: sizes.$tablet) {
+      flex-direction: row;
+      align-items: center;
+      max-width: 100%;
+    }
+  }
+
+  &__source {
+    @media (min-width: sizes.$tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$xl;
+      max-width: 385px;
+      margin: 0 auto;
+      > * {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+    max-width: 384px;
+    flex-grow: 1;
+    margin: 0 auto;
+  }
+
+  &__steps {
+    display: none;
+
+    @media (min-width: sizes.$tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$tiny;
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+
+    &Container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: spacing.$tiny;
+
+      > span {
+        align-self: center;
+      }
+    }
+
+    &:after {
+      content: "";
+      background: colors.$white;
+      display: flex;
+      justify-self: center;
+      height: spacing.$sm;
+      margin-left: spacing.$xs;
+      margin-top: spacing.$xxs;
+      width: 3px;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 40px;
+    flex-shrink: 0;
+    margin-right: spacing.$xs;
+  }
+
+  &__choose {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  &__chooseMiddle {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+
+    @media (min-width: sizes.$tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__chooseTop,
+  &__chooseBottom{
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+  }
+
+  &__chooseBottom {
+    @media (min-width: sizes.$tablet) {
+      margin-left: auto;
+      margin-right: 0;
+      max-width: 384px;
+    }
+  }
+
+  &__finish {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+  }
+}
+
+.cta__group {
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$tiny;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.hr {
+  display: flex;
+  align-items: center;
+  gap: spacing.$xxs;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: colors.$white;
+  }
+}
+
+.icon {
+  &__recovery,
+  &__greeting{
+    width: 74px;
+    flex-shrink: 0;
+  }
+
+  &__party {
+    width: 112px;
+    flex-shrink: 0;
+    margin: 0 auto;
+  }
+
+  &__magic {
+    width: 40px;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+}
+
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$xs;
+
+  @media (min-width: sizes.$tablet) {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+.card {
+  background-color: colors.$white;
+  padding: spacing.$sm spacing.$xs;
+  border-radius: border.$radius-large;
+
+  &__primarySelect {
+    background-color: colors.$white;
+    border: 3px solid colors.$cta-primary;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: spacing.$xs;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: spacing.$tiny;
+    width: 100%;
+    flex-grow: 1;
+
+    @media (min-width: sizes.$tablet) {
+      span {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+      }
+
+      > span {
+        height: 40px;
+      }
+    }
+  }
+
+  &__plan {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: spacing.$tiny;
+
+    > span {
+      width: 60px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__price {
+    margin-right: auto;
+    > * {
+      &:first-child {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  @media (min-width: sizes.$tablet) {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__plan {
+      width: 100%;
+      align-items: center;
+    }
+
+    &__price {
+      margin-left: auto;
+
+      span {
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+      }
+    }
+
+    &:nth-child(2) {
+      .card__plan {
+        > span {
+          width: 80px;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .card__plan {
+        > span {
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+
+.student {
+  &__icon {
+    display: block;
+    width: 62px;
+    height: 65px;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../settings/colors";
+
+.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100svh;
+}
+
+.splash__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 230px;
+  min-height: calc(100svh - 70px);
+  width: 90%;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  svg {
+    animation: bounce 2s ease infinite;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    display: block;
+    border-radius: 100%;
+    background: colors.$bg-darkTheme-hover;
+    margin: 1rem auto;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+

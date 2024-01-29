@@ -1,0 +1,35 @@
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/border";
+@use "../settings/typography";
+@use "../settings/sizes";
+
+.modal {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: spacing.$sm;
+  }
+
+  &__title {
+    text-align: center;
+    font: typography.$s400-bold;
+  }
+
+  &__buttonContent {
+    a {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@media (min-width: sizes.$tablet) {
+  .modal {
+    &__title {
+      font: typography.$s700-bold;
+    }
+  }
+}

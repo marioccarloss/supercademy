@@ -1,0 +1,60 @@
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.navigation {
+  background: colors.$bg-darkTheme;
+  box-shadow: 2px 9px 47.6px rgba(0, 9, 13, 0.59);
+  min-height: 100%;
+  width: 248px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__logo {
+    appearance: none;
+    background: none;
+    border: 0;
+    margin: 0 auto;
+
+    &Icon {
+      width: 65px;
+      display: flex;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item,
+  &__item > a{
+    display: flex;
+    align-items: center;
+    gap: spacing.$xs;
+  }
+
+  &__item > a {
+    padding: spacing.$xs;
+    width: 100%;
+  }
+
+  &__icon {
+    width: spacing.$md;
+    height: spacing.$md;
+  }
+
+  &__name {
+    color: colors.$white;
+    align-self: center;
+    font: typography.$s300-bold;
+  }
+}

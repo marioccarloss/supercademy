@@ -1,0 +1,102 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/typography";
+
+.typo {
+  align-self: center;
+  display: inline-flex;
+  color: colors.$white;
+  text-decoration: none;
+  font: typography.$s200-bold;
+  gap: 5px;
+
+  &--title {
+    font: typography.$s500-bold;
+    padding: spacing.$tiny 0;
+  }
+
+  &--subtitle {
+    font: typography.$s400-semi-bold;
+  }
+
+  &--body {
+    font: typography.$s200-bold;
+  }
+
+  &--caption {
+    font: typography.$s200-bold;
+  }
+
+  &--label {
+    font: typography.$s200-bold;
+  }
+
+  &--medium {
+    font: typography.$s300-semi-bold;
+  }
+
+  &--small {
+    font: typography.$s100-semi-bold;
+  }
+
+  &--medium {
+    font: typography.$s300-semi-bold;
+  }
+
+  &--medium-regular {
+    font: typography.$s300-regular;
+  }
+
+  &--medium-bold {
+    font: typography.$s500-semi-bold;
+  }
+
+  &--large {
+    font: typography.$s500-bold;
+  }
+
+  &--extra-large {
+    font: typography.$s600-extra-bold;
+  }
+
+  &--extra-small {
+    font: typography.$s50-semi-bold;
+  }
+
+  &--icon {
+    display: flex;
+    gap: spacing.$tiny;
+  }
+
+  &--secondary {
+    color: colors.$text-primary;
+  }
+
+  &--disabled {
+    color: colors.$text-disabled;
+    font: typography.$s100-semi-bold;
+  }
+
+  &--left {
+    text-align: left;
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+
+  &--right {
+    text-align: right;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+
+  &--center {
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+  }
+
+  &--justify {
+    text-align: justify;
+  }
+}

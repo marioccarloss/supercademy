@@ -1,0 +1,248 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+@use "../settings/spacing";
+@use "../settings/sizes";
+
+.profile {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  min-height: calc(100svh - 70px);
+
+  &__container {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$md;
+    padding: spacing.$md 0;
+    animation: animateProfile .45s forwards;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$xs;
+
+    @media (min-width: sizes.$tablet){
+      gap: spacing.$sm;
+      h2 {
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: spacing.$xs;
+  }
+
+  &__user {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: spacing.$xs;
+    position: relative;
+
+    button {
+      display: none;
+    }
+
+    &:hover {
+      button {
+        display: flex;
+      }
+    }
+  }
+
+  &__icon {
+    background: colors.$cta-primary;
+    border-radius: border.$radius-large;
+    box-shadow: 2px 9px 47.6px 0 rgba(0, 9, 13, 0.59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96px;
+    width: 96px;
+  }
+
+  &__button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    gap: spacing.$xs;
+  }
+
+  @media (min-width: sizes.$tablet) {
+    &__container {
+      gap: spacing.$xl;
+    }
+
+    &__users {
+      gap: spacing.$sm;
+    }
+
+    &__user,
+    &__icon,
+    &__button {
+      width: 136px;
+    }
+
+    &__user {
+      p {
+        font: typography.$s300-semi-bold;
+      }
+    }
+
+    &__icon {
+      height: 136px;
+    }
+  }
+}
+
+.icon {
+  &__pencil {
+    width: 38px;
+    flex-shrink: 0;
+  }
+
+  &__choose {
+    display: flex;
+    width: 64px;
+    margin: auto;
+  }
+
+  &__edit {
+    width: 40px;
+    display: flex;
+    flex-shrink: 0;
+
+    @media (min-width: sizes.$tablet) {
+      width: 54px;
+    }
+  }
+}
+
+.btn {
+  &__edit {
+    appearance: none;
+    background: rgb(0 9 13 / 59%);
+    box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+    border: 5px solid colors.$white;
+    border-radius: border.$radius-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    width: 100%;
+
+    @media (min-width: sizes.$tablet) {
+      height: 137px;
+    }
+  }
+}
+
+@keyframes animateProfile {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile {
+  &Modal {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$sm;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$sm;
+    }
+
+    &__link {
+      color: colors.$cta-primary;
+      text-decoration: none;
+    }
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$sm;
+
+      .profile__user {
+        width: 100px;
+        margin-right: auto;
+
+        p {
+          display: none;
+        }
+      }
+
+      .profile__icon {
+        height: 96px;
+        width: 96px;
+      }
+
+      .icon__choose {
+        width: 64px;
+      }
+
+      .icon__edit {
+        width: 40px;
+      }
+
+      &:nth-child(2) {
+        > * {
+          &:nth-child(1) {
+            z-index: 20;
+          }
+          &:nth-child(2) {
+            z-index: 10;
+          }
+        }
+      }
+
+      @media (min-width: sizes.$tablet) {
+        &:nth-child(1),
+        &:nth-child(2) {
+          flex-direction: row;
+        }
+
+        &:nth-child(2) {
+          > * {
+            flex-grow: 1;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

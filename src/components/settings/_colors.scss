@@ -1,0 +1,62 @@
+$_primary-green: #64EE85;
+$_primary-blue: rgb(10 48 66 / 100%);
+$_primary-blueDark: rgb(9 40 54 / 100%);
+$_primary-blueLight: #0B4662;
+$_primary-gray: #728A9D;
+$_primary-grayLight: #CBD2D6;
+$_primary-grayLighter: #D9D9D9;
+$_primary-grayLightest: #d1d7dc;
+$_secondary-gray: rgb(10 48 66 / 100%);
+$_secondary-grayLight: rgb(10 48 66 / 50%);
+$_primary-white: #fff;
+$_secondary-violet: #7026f4;
+$_secondary-yellow: #fef878;
+$_secondary-pink: #e0a4bf;
+$_hover-green: rgb(100 238 133 / 70%);
+$_hover-blue: rgb(26 34 51 / 75%);
+$_hover-white: rgb(255 255 255 / 70%);
+$_error-bg: #ED254E;
+$_error-font: rgb(255 108 138 / 100%);
+
+$brand: $_primary-green;
+
+$cta-primary: $_primary-green;
+$cta-primary-hover: $_hover-green;
+$cta-secondary: $_primary-blue;
+$cta-secondary-hover: $_hover-blue;
+
+$bg-primary: $_primary-green;
+$bg-darkTheme: $_primary-blue;
+$bg-darkTheme-hover: $_primary-blueDark;
+$bg-selection: $_secondary-yellow;
+$bg: $_primary-grayLighter;
+
+$text-primary: $_primary-blue;
+$text-secondary: $_primary-gray;
+$text-secondary-darkTheme: $_primary-grayLight;
+$text-tertiary: $_secondary-violet;
+$text-placeholder: $_primary-grayLight;
+$text-disabled: $_primary-gray;
+
+$product-alt1: $_primary-green;
+$product-alt2: $_secondary-violet;
+$product-alt3: $_secondary-yellow;
+$product-alt4: $_secondary-pink;
+
+$white: $_primary-white;
+$white-hover: rgb(255 255 255 / 70%);
+$border: $_primary-grayLightest;
+
+$state-active: $_primary-green;
+$state-error: $_error-bg;
+$state-error-font: $_error-font;
+$state-disabled: $_primary-grayLight;
+$state-disabled-bg: $_primary-grayLighter;
+
+$input-active: $_secondary-violet;
+$input-default: $_primary-gray;
+$input-border: $_primary-grayLight;
+
+$checbox-active: $_primary-blue;
+$checkbox-disabled: $_primary-grayLight;
+$checkbox-disabled-bg: $_primary-grayLighter;

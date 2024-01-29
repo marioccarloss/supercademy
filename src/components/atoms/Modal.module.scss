@@ -1,0 +1,108 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+@use "../settings/sizes";
+@use "../settings/spacing";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  &__overlay {
+    background: rgba(3, 7, 20, 0.8);
+    background-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__main {
+    background: colors.$bg-darkTheme;
+    border-radius: border.$radius-large border.$radius-large 0 0;
+    margin: 0 auto;
+    padding: spacing.$md spacing.$lg;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &__close {
+    color: colors.$white;
+    position: absolute;
+    top: spacing.$md;
+    right: spacing.$lg;
+    width: 24px;
+  }
+
+  &__body {
+    margin: auto;
+    width: 100%;
+  }
+
+  &__open {
+    .modal__main {
+      animation: modalOpened 0.3s ease-in-out;
+    }
+  }
+
+  &--center {
+    align-items: center;
+
+    .modal__main {
+      width: 94%;
+      border-radius: border.$radius-large;
+    }
+  }
+}
+
+@media (min-width: sizes.$tablet) {
+  .modal {
+    align-items: center;
+    justify-content: center;
+
+    &__main {
+      border-radius: border.$radius-xl;
+      max-width: 656px;
+      min-height: 400px;
+      padding: spacing.$xl;
+    }
+
+    &__close {
+      top: 64px;
+      right: 64px;
+    }
+  }
+}
+
+@keyframes modalOpened {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

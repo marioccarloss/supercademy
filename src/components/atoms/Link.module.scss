@@ -1,0 +1,68 @@
+@use "../settings/spacing";
+@use "../settings/typography";
+@use "../settings/colors";
+@use "../settings/border";
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: spacing.$tiny;
+  color: colors.$text-primary;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: border.$radius-default;
+  transition: all 0.2s;
+
+  &--large {
+    font: typography.$s300-bold;
+  }
+
+  &--small {
+    font: typography.$s100-semi-bold;
+  }
+
+  &--primary {
+    color: colors.$cta-primary;
+
+    &:hover {
+      color: colors.$cta-primary-hover;
+    }
+  }
+
+  &--secondary {
+    color: colors.$white;
+
+    &:hover {
+      color: colors.$white-hover;
+    }
+  }
+
+  &--tertiary {
+    color: colors.$white;
+
+    &:hover {
+      color: colors.$white-hover;
+    }
+  }
+
+  &--left {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  &--right {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}

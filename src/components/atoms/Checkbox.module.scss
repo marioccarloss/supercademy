@@ -1,0 +1,10 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/typography";
+
+.checkbox {
+  &__label {
+    color: colors.$white;
+  }
+}
