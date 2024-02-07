@@ -316,6 +316,8 @@
   &__primarySelect {
     background-color: colors.$white;
     border: 3px solid colors.$cta-primary;
+    border-radius: border.$radius-large;
+    padding: spacing.$sm spacing.$xs;
   }
 
   &__container {

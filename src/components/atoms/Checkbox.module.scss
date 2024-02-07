@@ -4,7 +4,11 @@
 @use "../settings/typography";
 
 .checkbox {
-  &__label {
-    color: colors.$white;
+  display: flex;
+  align-items: center;
+  gap: spacing.$xs;
+
+  input {
+    display: none;
   }
 }

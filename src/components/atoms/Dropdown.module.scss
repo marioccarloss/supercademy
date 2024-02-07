@@ -10,15 +10,14 @@
 
   &__container {
     background: colors.$white;
-    border-radius: border.$radius-default;
+    border-radius: 0 0 border.$radius-default border.$radius-default;
     position: absolute;
-    top: 0;
+    top: 44px;
     left: 0;
     right: 0;
     overflow: auto;
-    height: 110px;
-
     border-bottom: 4px solid colors.$brand;
+    // height: 110px;
   }
 
   &__button {
@@ -106,5 +105,43 @@
   &__item {
     padding: spacing.$tiny spacing.$xxs;
     width: 100%;
+  }
+
+  &__searchInput {
+    appearance: none;
+    background: colors.$white;
+    border: 0;
+    border-radius: border.$radius-default;
+    color: colors.$text-primary;
+    padding: spacing.$xxs spacing.$xxs;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 48px;
+    text-align: left;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: colors.$text-placeholder;
+    }
+
+    &Selected {
+      color: colors.$text-primary;
+
+      &::placeholder {
+        color: colors.$text-primary;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -8,6 +8,12 @@ export type User = {
   color: string;
 };
 
+export type Icons = {
+  id: string;
+  icon: IconsType;
+  color: string;
+};
+
 export default function useProfile() {
   const users: User[] = [
     {
@@ -16,7 +22,6 @@ export default function useProfile() {
       icon: "emojiCat",
       color: "#4FCAFF",
     },
-    /*
     {
       id: useId(),
       name: "Alumno 2",
@@ -65,8 +70,106 @@ export default function useProfile() {
       icon: "emojiFaceHugging",
       color: "#A0F6F6",
     },
-  */
   ];
 
-  return { users };
+  const usersCustoms: User[] = [
+    {
+      id: useId(),
+      name: "Juan",
+      icon: "emojiCat",
+      color: "#4FCAFF",
+    },
+    {
+      id: useId(),
+      name: "Marcela",
+      icon: "emojiMonkeyOne",
+      color: "#FFB30F",
+    },
+    {
+      id: useId(),
+      name: "Mario",
+      icon: "emojiMonster",
+      color: "#64EE85",
+    },
+  ];
+
+  const icons: Icons[] = [
+    {
+      id: useId(),
+      icon: "emojiCat",
+      color: "#4FCAFF",
+    },
+    {
+      id: useId(),
+      icon: "emojiMonkeyOne",
+      color: "#FFB30F",
+    },
+    {
+      id: useId(),
+      icon: "emojiMonster",
+      color: "#64EE85",
+    },
+    {
+      id: useId(),
+      icon: "emojiMonkeyTwo",
+      color: "#ED254E",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceDelicious",
+      color: "#7140FF",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceGrinning",
+      color: "#DCFF09",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceWinking",
+      color: "#FFFFFF",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceSmiling",
+      color: "#7140FF",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceHugging",
+      color: "#A0F6F6",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceMoon",
+      color: "#64EE85",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceGrinning",
+      color: "#ED254E",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceWinking",
+      color: "#FFB30F",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceSmiling",
+      color: "#4FCAFF",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceHugging",
+      color: "#DCFF09",
+    },
+    {
+      id: useId(),
+      icon: "emojiFaceMoonYellow",
+      color: "#F8626E",
+    },
+  ];
+
+  return { users, usersCustoms, icons };
 }

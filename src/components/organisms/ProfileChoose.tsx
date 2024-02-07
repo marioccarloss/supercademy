@@ -64,6 +64,11 @@ export default function ProfileChoose() {
               </Typography>
             </Button>
           </div>
+          <div className={styles.profile__ctaContainer}>
+            <Button mode="primary" href="/welcome">
+              Ir a Supercademy
+            </Button>
+          </div>
         </div>
       </div>
       <ModalUserConfig user={users[0]} isModalOpen={isOpen} />

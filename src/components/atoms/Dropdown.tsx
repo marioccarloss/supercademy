@@ -1,9 +1,10 @@
 import {
-  MouseEvent,
-  FocusEvent,
-  ReactElement,
-  useEffect,
   useState,
+  useEffect,
+  MouseEvent,
+  ReactElement,
+  ChangeEvent,
+  KeyboardEvent,
 } from "react";
 
 import { Typography } from "@/components/atoms/Typography";
@@ -34,7 +35,12 @@ const Select: SelectOverload = ({ options, optionSelection }) => {
   }, [showDropDown]);
 
   return (
-    <div className={styles.dropdown__container}>
+    <div
+      className={styles.dropdown__container}
+      style={{
+        height: `${options.length < 3 ? options.length * 40 + "px" : "110px"}`,
+      }}
+    >
       <ul
         className={
           showDropDown
@@ -65,6 +71,7 @@ type DropdownOverload = {
     options: string[];
     label: string;
     placeholder: string;
+    onSelect: (option: string) => void;
   }): ReactElement;
 };
 
@@ -72,58 +79,97 @@ export const Dropdown: DropdownOverload = ({
   options,
   label = "",
   placeholder = "",
+  onSelect = () => {},
 }) => {
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selectOption, setSelectOption] = useState<string>("");
+  const [filteredOptions, setFilteredOptions] = useState<string[]>(options);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const toggleDropDown = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setShowDropDown(!showDropDown);
   };
 
-  const dismissHandler = (event: FocusEvent<HTMLButtonElement>) => {
-    if (event.currentTarget === event.target) {
+  const optionSelection = (option: string): void => {
+    setSelectOption(option);
+    onSelect(option);
+    setSearchTerm("");
+    setFilteredOptions(options);
+    setShowDropDown(false);
+  };
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setShowDropDown(true);
+    const term = event.target.value;
+    setSearchTerm(term);
+
+    const filtered = options.filter((option) =>
+      option.toLowerCase().includes(term.toLowerCase()),
+    );
+
+    setFilteredOptions(filtered);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter" && filteredOptions.length > 0) {
+      optionSelection(filteredOptions[0]);
       setShowDropDown(false);
     }
   };
 
-  const optionSelection = (option: string): void => {
-    setSelectOption(option);
+  const handleFocus = () => {
+    setShowDropDown(true);
   };
+
+  useEffect(() => {
+    setShowDropDown(showDropDown);
+  }, [showDropDown, filteredOptions]);
 
   return (
     <div className={styles.dropdown}>
       <Typography mode="label" align="left">
         {label}
       </Typography>
-      <button
-        className={
-          showDropDown
-            ? `${styles.dropdown__buttonActive}`
-            : `${styles.dropdown__button}`
-        }
-        onClick={toggleDropDown}
-        onBlur={(e: FocusEvent<HTMLButtonElement>): void => dismissHandler(e)}
-      >
-        <div
-          className={`${!selectOption ? styles.dropdown__selection : styles.dropdown__selectionActive}`}
+      <div className={styles.dropdown__content}>
+        <input
+          type="search"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          placeholder={!selectOption ? placeholder : selectOption}
+          className={`${styles.dropdown__searchInput} ${selectOption && styles.dropdown__searchInputSelected}`}
+          onFocus={handleFocus}
+          onKeyDown={handleKeyDown}
+        />
+        <button
+          className={
+            showDropDown
+              ? `${styles.dropdown__buttonActive}`
+              : `${styles.dropdown__button}`
+          }
+          onClick={toggleDropDown}
         >
-          {!selectOption ? placeholder : selectOption}
-        </div>
-        <div
-          className={`${!showDropDown ? styles.dropdown__arrow : styles.dropdown__arrowActive}`}
-        >
-          <Icon icon="arrow" size={styles.dropdown__icon} />
-        </div>
-        {showDropDown && (
-          <Select
-            options={options}
-            showDropDown={false}
-            toggleDropDown={toggleDropDown}
-            optionSelection={optionSelection}
-          />
-        )}
-      </button>
+          <div
+            className={`${!selectOption ? styles.dropdown__selection : styles.dropdown__selectionActive}`}
+          >
+            {!selectOption ? placeholder : selectOption}
+          </div>
+          <div
+            className={`${!showDropDown ? styles.dropdown__arrow : styles.dropdown__arrowActive}`}
+          >
+            <Icon icon="arrow" size={styles.dropdown__icon} />
+          </div>
+          {showDropDown && (
+            <Select
+              options={filteredOptions}
+              showDropDown={showDropDown}
+              toggleDropDown={toggleDropDown}
+              optionSelection={optionSelection}
+            />
+          )}
+        </button>
+      </div>
     </div>
   );
 };

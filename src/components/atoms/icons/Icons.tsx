@@ -37,6 +37,10 @@ import emojiTeacher from "./EmojiTeacher";
 import emojiShopping from "./EmojiShopping";
 import emojiMonsterItem from "./EmojiMonsterItem";
 import emojiLanguage from "./EmojiLanguage";
+import arrowBack from "./ArrowBack";
+import emojiFaceMoon from "./EmojiFaceMoon";
+import emojiFaceMoonYellow from "./EmojiFaceMoonYellow";
+import settings from "./Settings";
 
 export {
   isotype,
@@ -74,8 +78,12 @@ export {
   emojiGraduation,
   emojiShopping,
   emojiMonsterItem,
+  emojiFaceMoon,
+  emojiFaceMoonYellow,
   addUser,
   edit,
   arrow,
+  arrowBack,
   check,
+  settings,
 };
