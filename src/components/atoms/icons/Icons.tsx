@@ -41,6 +41,19 @@ import arrowBack from "./ArrowBack";
 import emojiFaceMoon from "./EmojiFaceMoon";
 import emojiFaceMoonYellow from "./EmojiFaceMoonYellow";
 import settings from "./Settings";
+import flags from "./Flags";
+import logoNav from "./LogoNav";
+import iconSoundOn from "./IconSoundOn";
+import calendar from "./Calendar";
+import gemstone from "./Gemstone";
+import medal from "./Medal";
+import trending from "./Trending";
+import bullet from "./IconBullet";
+import bulletChecked from "./IconBulletChecked";
+import car from "./Car";
+import iconCalendar from "./IconCalendar";
+import iconArrowLeft from "./IconArrowLeft";
+import iconArrowRight from "./IconArrowRight";
 
 export {
   isotype,
@@ -86,4 +99,17 @@ export {
   arrowBack,
   check,
   settings,
+  flags,
+  logoNav,
+  iconSoundOn,
+  calendar,
+  gemstone,
+  medal,
+  trending,
+  bullet,
+  bulletChecked,
+  car,
+  iconCalendar,
+  iconArrowLeft,
+  iconArrowRight,
 };

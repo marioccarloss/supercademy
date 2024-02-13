@@ -25,6 +25,12 @@ export default function useNavigation() {
     },
     {
       id: useId(),
+      name: "Conversación",
+      path: "/conversation",
+      icon: "flags",
+    },
+    {
+      id: useId(),
       name: "Mi perfil",
       path: "/my-profile",
       icon: "emojiMonsterItem",
@@ -35,12 +41,14 @@ export default function useNavigation() {
       path: "/calendar",
       icon: "emojiCalendar",
     },
+    /*
     {
       id: useId(),
       name: "Supercoins",
       path: "/supercoins",
       icon: "emojiGem",
     },
+     */
     {
       id: useId(),
       name: "Mi profesor",
@@ -49,7 +57,7 @@ export default function useNavigation() {
     },
     {
       id: useId(),
-      name: "Tienda",
+      name: "Supertienda",
       path: "/store",
       icon: "emojiShopping",
     },

@@ -6,20 +6,32 @@
 .navigation {
   background: colors.$bg-darkTheme;
   box-shadow: 2px 9px 47.6px rgba(0, 9, 13, 0.59);
-  min-height: 100%;
+  min-height: 100svh;
   width: 248px;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+
+  transform: translateX(-110%);
+  animation: slideOut 0.3s ease-in-out;
+  z-index: 30;
+
+  &__home {
+    height: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__logo {
     appearance: none;
     background: none;
-    border: 0;
-    margin: 0 auto;
+    border: none;
 
     &Icon {
       width: 65px;
@@ -29,10 +41,16 @@
 
   &__list {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    margin: auto 0;
     display: flex;
     flex-direction: column;
+    padding: 0;
+    height: 68vh;
+    overflow: auto;
+
+    @media (min-width: sizes.$desktop) {
+      gap: spacing.$xs;
+    }
   }
 
   &__item,
@@ -56,5 +74,82 @@
     color: colors.$white;
     align-self: center;
     font: typography.$s300-bold;
+  }
+
+  &__dropdown {
+    background: colors.$cta-tertiary;
+    border: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 184px;
+    margin: 0 auto 1rem auto;
+    position: relative;
+    height: 56px;
+    padding: 0;
+    width: 100%;
+
+    span {
+      align-self: center;
+      justify-self: flex-end;
+      margin-right: auto;
+    }
+
+    &Icon {
+      width: 56px;
+      height: 56px;
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    @media (min-width: sizes.$tablet) {
+      margin: 2rem auto;
+    }
+  }
+
+  &Open {
+    transform: translateX(0);
+    animation: slideIn 0.3s ease-in-out;
+
+    .navigation {
+      &__logo {
+        transform: rotate(-90deg);
+        animation: rotate 0.3s 0.2s forwards;
+      }
+    }
+  }
+
+  @media (min-width: sizes.$tablet) {
+    &Open {
+      position: relative;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-90deg);
   }
 }

@@ -1,3 +1,5 @@
+import { ProfilePrivate } from "@/components/organisms/ProfilePrivate";
+
 export default function Profile() {
-  return <h1>Profile</h1>;
+  return <ProfilePrivate />;
 }
