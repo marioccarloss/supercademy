@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { Typography } from "@/components/atoms/Typography";
 import { Button } from "@/components/atoms/Button";
+import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
 
 import styles from "./Navigation.module.scss";
@@ -17,6 +18,9 @@ type NavigationProps = {
 };
 
 export const Navigation = ({ isOpen }: NavigationProps) => {
+  const pathname = usePathname();
+  const isActive = (path: string) => path === pathname;
+
   const { navigation } = useNavigation();
 
   const setOpenNavigation = useNavigationStore((state) => state.setOpened);
@@ -29,7 +33,9 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
     <nav
       className={`${!isOpen ? styles.navigation : styles.navigation + " " + styles.navigationOpen}`}
     >
-      <div className={styles.navigation__home}>
+      <div
+        className={`${isActive("/home") ? styles.navigation__home + " " + styles.navigation__homeActive : styles.navigation__home}`}
+      >
         <Button
           mode="icon"
           className={styles.navigation__logo}
@@ -40,7 +46,10 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
       </div>
       <ul className={styles.navigation__list}>
         {navigation.map((item: Nav) => (
-          <li key={item.id} className={styles.navigation__item}>
+          <li
+            key={item.id}
+            className={`${isActive(item.path) ? styles.navigation__item + " " + styles.navigation__itemActive : styles.navigation__item}`}
+          >
             <Link href={item.path}>
               <Icon icon={item.icon} size={styles.navigation__icon} />
               <Typography className={styles.navigation__name}>

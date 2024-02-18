@@ -26,6 +26,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    &Active {
+      &::after {
+        content: "";
+        background: colors.$brand;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 5px;
+        height: 4.5rem;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &__logo {
@@ -54,14 +68,14 @@
   }
 
   &__item,
-  &__item > a{
+  &__item > a {
     display: flex;
     align-items: center;
     gap: spacing.$xs;
   }
 
   &__item > a {
-    padding: spacing.$xs;
+    padding: spacing.$xs spacing.$sm;
     width: 100%;
   }
 
@@ -74,6 +88,20 @@
     color: colors.$white;
     align-self: center;
     font: typography.$s300-bold;
+  }
+
+  &__itemActive {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 100%;
+      background: colors.$brand;
+    }
   }
 
   &__dropdown {

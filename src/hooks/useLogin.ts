@@ -1,13 +1,15 @@
-import { FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import { useModalStore } from "@/store/useModalStore";
+import { useRouter } from "next/navigation";
+import { FormEvent } from "react";
 
 export default function useLogin() {
   const router = useRouter();
 
   // por defecto el modal no se renderiza = {false}
-  const isUserNotRegistered = useModalStore((state) => state.modal.isOpen);
-  const setOpened = useModalStore((state) => state.setOpened);
+  const isUserNotRegistered = useModalStore(
+    (state) => state.modals.modalNotRegistered?.isOpen,
+  );
+  const setOpened = useModalStore((state) => state.setModalOpen);
 
   const dataModalNotRegistered = {
     title: "¿Nos conocemos?",
@@ -27,7 +29,7 @@ export default function useLogin() {
 
     // lo he negado para simular el modal
     if (isUserNotRegistered) {
-      setOpened(true);
+      setOpened("modalNotRegistered", true);
     }
   };
 

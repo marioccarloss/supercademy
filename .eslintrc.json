@@ -8,6 +8,8 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
     "prettier"
   ],
   "overrides": [
@@ -31,7 +33,9 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react"
+    "react",
+    "react-hooks",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/comma-dangle": "off",

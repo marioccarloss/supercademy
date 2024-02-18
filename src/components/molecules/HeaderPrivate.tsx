@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Icon } from "@/shared/Icon";
+import { useState } from "react";
 
-import styles from "./HeaderPrivate.module.scss";
 import { useNavigationStore } from "@/store/useNavigationStore";
 import Link from "next/link";
+import styles from "./HeaderPrivate.module.scss";
 
 type HeaderProps = {
   isOpen: boolean;
@@ -28,19 +28,19 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
     setOpenCalendar(true);
     setOpenProfile(false);
     setOpenPoints(false);
-  }
+  };
 
   const handlePoints = () => {
     setOpenPoints(true);
     setOpenProfile(false);
     setOpenCalendar(false);
-  }
+  };
 
   const handleProfile = () => {
     setOpenProfile(true);
     setOpenPoints(false);
     setOpenCalendar(false);
-  }
+  };
 
   return (
     <div
@@ -49,7 +49,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
       {!isOpen && (
         <Button
           mode="icon"
-          href="/profile"
+          href="/home"
           className={styles.headerPrivate__logo}
           onClick={handleNavigationOpened}
         >
@@ -68,7 +68,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
             <div className={styles.popup}>
               <div className={styles.popup__container}>
                 <header>
-                  <Icon icon="calendar" size={styles.popup__headerCal}/>
+                  <Icon icon="calendar" size={styles.popup__headerCal} />
                   <div className={styles.popup__name}>
                     <div className={styles.popup__nameText}>Calendario</div>
                   </div>
@@ -89,7 +89,9 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                         <div>L</div>
                         <div className={styles.popup__cardBullet}>24</div>
                       </li>
-                      <li className={`${styles.popup__cardCalendarItem + " " + styles.popup__cardCalendarItemActive}`}>
+                      <li
+                        className={`${styles.popup__cardCalendarItem + " " + styles.popup__cardCalendarItemActive}`}
+                      >
                         <div>M</div>
                         <div className={styles.popup__cardBullet}>25</div>
                       </li>
@@ -101,7 +103,9 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                         <div>J</div>
                         <div className={styles.popup__cardBullet}>27</div>
                       </li>
-                      <li className={`${styles.popup__cardCalendarItem + " " + styles.popup__cardCalendarItemBooked}`}>
+                      <li
+                        className={`${styles.popup__cardCalendarItem + " " + styles.popup__cardCalendarItemBooked}`}
+                      >
                         <div>V</div>
                         <div className={styles.popup__cardBullet}>28</div>
                       </li>
@@ -116,23 +120,27 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                     </ul>
                   </div>
                   <div className={styles.popup__cardButtons}>
-                    <Button mode="icon">
-                      Examen inglés
-                    </Button>
+                    <Button mode="icon">Examen inglés</Button>
                     <Link href="#">
-                      <Icon icon="iconCalendar" size={styles.popup__cardButtonsIcon}/>
+                      <Icon
+                        icon="iconCalendar"
+                        size={styles.popup__cardButtonsIcon}
+                      />
                       <span>Añadir evento a mi calendario</span>
                     </Link>
                   </div>
                 </section>
                 <footer>
                   <Link href="#">
-                    <Icon icon="iconCalendar" size={styles.popup__footerIcon}/>
+                    <Icon icon="iconCalendar" size={styles.popup__footerIcon} />
                     <span>Añadir evento a mi calendario</span>
                   </Link>
                 </footer>
               </div>
-              <div className={styles.popup__overlay} onClick={() => setOpenCalendar(false)}></div>
+              <div
+                className={styles.popup__overlay}
+                onClick={() => setOpenCalendar(false)}
+              ></div>
             </div>
           )}
         </div>
@@ -155,23 +163,53 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                 </header>
                 <section className={styles.popup__section}>
                   <ul className={styles.popup__calendarList}>
-                    <li className={styles.popup__calendarItem}><div>L</div><Icon icon="bullet" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>M</div><Icon icon="bulletChecked" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>M</div><Icon icon="bulletChecked" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>J</div><Icon icon="bullet" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>V</div><Icon icon="bullet" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>S</div><Icon icon="bullet" size={styles.popupCalendarBullet}/></li>
-                    <li className={styles.popup__calendarItem}><div>D</div><Icon icon="bullet" size={styles.popupCalendarBullet}/></li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>L</div>
+                      <Icon icon="bullet" size={styles.popupCalendarBullet} />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>M</div>
+                      <Icon
+                        icon="bulletChecked"
+                        size={styles.popupCalendarBullet}
+                      />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>M</div>
+                      <Icon
+                        icon="bulletChecked"
+                        size={styles.popupCalendarBullet}
+                      />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>J</div>
+                      <Icon icon="bullet" size={styles.popupCalendarBullet} />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>V</div>
+                      <Icon icon="bullet" size={styles.popupCalendarBullet} />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>S</div>
+                      <Icon icon="bullet" size={styles.popupCalendarBullet} />
+                    </li>
+                    <li className={styles.popup__calendarItem}>
+                      <div>D</div>
+                      <Icon icon="bullet" size={styles.popupCalendarBullet} />
+                    </li>
                   </ul>
                 </section>
                 <footer>
                   <Link href="#">
-                    <Icon icon="car" size={styles.popup__footerIcon}/>
+                    <Icon icon="car" size={styles.popup__footerIcon} />
                     <span>Ir a la Supertienda</span>
                   </Link>
                 </footer>
               </div>
-              <div className={styles.popup__overlay} onClick={() => setOpenPoints(false)}></div>
+              <div
+                className={styles.popup__overlay}
+                onClick={() => setOpenPoints(false)}
+              ></div>
             </div>
           )}
         </div>
@@ -219,7 +257,10 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                   </Link>
                 </footer>
               </div>
-              <div className={styles.popup__overlay} onClick={() => setOpenProfile(false)}></div>
+              <div
+                className={styles.popup__overlay}
+                onClick={() => setOpenProfile(false)}
+              ></div>
             </div>
           )}
         </div>

@@ -1,22 +1,27 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
+type Modal = {
+  isOpen: boolean;
+};
+
 type State = {
-  modal: {
-    isOpen: boolean;
-  };
+  modals: Record<string, Modal>;
 };
 
 type Actions = {
-  setOpened: (isOpen: boolean) => void;
+  setModalOpen: (modalName: string, isOpen: boolean) => void;
 };
 
 export const useModalStore = create(
   devtools<State & Actions>((set) => ({
-    modal: {
-      isOpen: false,
-    },
-    setOpened: (isOpen) =>
-      set((state) => ({ modal: { ...state.modal, isOpen } })),
+    modals: {},
+    setModalOpen: (modalName, isOpen) =>
+      set((state) => ({
+        modals: {
+          ...state.modals,
+          [modalName]: { isOpen },
+        },
+      })),
   })),
 );

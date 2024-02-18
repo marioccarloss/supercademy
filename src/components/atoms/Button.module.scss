@@ -2,6 +2,7 @@
 @use "../settings/colors";
 @use "../settings/spacing";
 @use "../settings/typography";
+@use "../settings/sizes";
 
 .btn {
   display: inline-flex;
@@ -25,11 +26,13 @@
   &--large {
     padding: spacing.$xxs spacing.$xxs;
     font: typography.$s300-bold;
+    height: 60px;
   }
 
   &--medium {
     padding: spacing.$xxs spacing.$xxs;
     font: typography.$s200-bold;
+    height: 48px;
   }
 
   &--small {
@@ -41,8 +44,14 @@
   &--primary {
     background: colors.$cta-primary;
 
-    &:hover {
-      background: colors.$cta-primary-hover;
+    @media screen and (min-width: sizes.$desktop) {
+      &:hover,
+      &:active {
+        background: transparent;
+        color: colors.$cta-primary;
+        outline: 2px solid colors.$cta-primary;
+        box-shadow: 0px 1px 15px 0px rgba(249, 255, 247, 1);
+      }
     }
   }
 
@@ -50,8 +59,14 @@
     color: colors.$white;
     background: colors.$cta-secondary;
 
-    &:hover {
-      background: colors.$cta-secondary-hover;
+    @media screen and (min-width: sizes.$desktop) {
+      &:hover,
+      &:active {
+        background: transparent;
+        color: colors.$cta-secondary;
+        outline: 2px solid colors.$cta-secondary;
+        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+      }
     }
   }
 
@@ -80,8 +95,9 @@
     background: transparent;
   }
 
-  &:disabled {
-    color: colors.$state-disabled;
-    background: colors.$state-disabled-bg;
+  &:disabled,
+  &__disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
   }
 }

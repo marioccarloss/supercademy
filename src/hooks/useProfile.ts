@@ -1,5 +1,5 @@
-import { useId } from "react";
 import { IconsType } from "@/shared/Icon";
+import { useId } from "react";
 
 export type User = {
   id: string;
@@ -70,6 +70,14 @@ export default function useProfile() {
       icon: "emojiFaceHugging",
       color: "#A0F6F6",
     },
+    /*
+    {
+      id: useId(),
+      name: "Alumno 10",
+      icon: "emojiPenguin",
+      color: "rgba(120, 240, 144, 1)",
+    },
+    */
   ];
 
   const usersCustoms: User[] = [

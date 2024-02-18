@@ -1,7 +1,7 @@
-import { LayoutPublic } from "@/components/templates/LayoutPublic";
-import { Typography } from "@/components/atoms/Typography";
-import { Icon } from "@/shared/Icon";
 import { Button } from "@/components/atoms/Button";
+import { Typography } from "@/components/atoms/Typography";
+import { LayoutPublic } from "@/components/templates/LayoutPublic";
+import { Icon } from "@/shared/Icon";
 
 import styles from "./ProfileChoose.module.scss";
 
@@ -24,7 +24,7 @@ export const WelcomeChoose = () => {
               <Button
                 key={user.id}
                 className={styles.profile__user}
-                href="/profile"
+                href="/home"
               >
                 <div
                   className={styles.profile__icon}

@@ -1,6 +1,6 @@
+import { Button } from "@/components/atoms/Button";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
-import { Button } from "@/components/atoms/Button";
 import styles from "./ModalLogin.module.scss";
 
 type Props = {

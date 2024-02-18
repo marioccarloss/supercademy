@@ -31,6 +31,7 @@
   &__ctasResponsive {
     display: flex;
     gap: 10px;
+    margin-left: auto;
 
     > button {
       display: none;
@@ -43,10 +44,6 @@
 
   &__ctaIconResponsive {
     width: 56px;
-  }
-
-  &Open {
-
   }
 
   .btnCta {

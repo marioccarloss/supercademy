@@ -32,7 +32,7 @@ export default function useNavigation() {
     {
       id: useId(),
       name: "Mi perfil",
-      path: "/my-profile",
+      path: "/profile",
       icon: "emojiMonsterItem",
     },
     {

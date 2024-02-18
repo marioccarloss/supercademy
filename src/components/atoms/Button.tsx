@@ -1,11 +1,11 @@
+import classNames from "@/shared/classNames";
+import Link from "next/link";
 import {
-  ReactElement,
-  ButtonHTMLAttributes,
   AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactElement,
   ReactNode,
 } from "react";
-import Link from "next/link";
-import classNames from "@/shared/classNames";
 import styles from "./Button.module.scss";
 
 type HtmlButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -18,7 +18,13 @@ type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 };
 
 export interface ButtonProps {
-  mode?: "primary" | "secondary" | "tertiary" | "inverted" | "icon";
+  mode?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "inverted"
+    | "icon"
+    | "disabled";
   size?: "large" | "medium" | "small";
   children: ReactNode;
 }
@@ -33,7 +39,7 @@ const hasHref = (props: HtmlButtonProps | AnchorProps): props is AnchorProps =>
 
 export const Button: Overload = ({
   mode = "primary",
-  size = "large",
+  size = "medium",
   ...props
 }) => {
   const components = {

@@ -1,26 +1,28 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { memo } from "react";
 
+import { FormEvent, useState } from "react";
+
+import { Button } from "@/components/atoms/Button";
+import { Checkbox } from "@/components/atoms/Checkbox";
+import { Dropdown } from "@/components/atoms/Dropdown";
+import { Field } from "@/components/atoms/Field";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
-import { Button } from "@/components/atoms/Button";
-import { Field } from "@/components/atoms/Field";
-import { Dropdown } from "@/components/atoms/Dropdown";
-import { Checkbox } from "@/components/atoms/Checkbox";
 
 import styles from "@/components/organisms/ProfileChoose.module.scss";
 
-import { User } from "@/hooks/useProfile";
-import useProfile, { Icons } from "@/hooks/useProfile";
+import useProfile, { Icons, User } from "@/hooks/useProfile";
 
 type Props = {
   user: User;
   isModalOpen: boolean;
+  modalName: string;
 };
 
-export const ModalUserConfig = ({ user, isModalOpen }: Props) => {
+const ModalUserConfig = memo(({ user, isModalOpen, modalName }: Props) => {
   const [step, setStep] = useState(1);
   const [place, setPlace] = useState("");
   const [course, setCourse] = useState("");
@@ -71,7 +73,7 @@ export const ModalUserConfig = ({ user, isModalOpen }: Props) => {
   ];
 
   return (
-    <Modal active={isModalOpen}>
+    <Modal active={isModalOpen} modalName={modalName}>
       <div className={styles.profileModal}>
         <div className={styles.profileModal__header}>
           {step == 1 && (
@@ -216,4 +218,8 @@ export const ModalUserConfig = ({ user, isModalOpen }: Props) => {
       </div>
     </Modal>
   );
-};
+});
+
+ModalUserConfig.displayName = "ModalUserConfig";
+
+export { ModalUserConfig };
