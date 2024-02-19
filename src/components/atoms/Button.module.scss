@@ -95,6 +95,40 @@
     background: transparent;
   }
 
+  &--calendar-primary {
+    background: colors.$white;
+    color: colors.$cta-secondary;
+    border: 0;
+
+    span,
+    svg {
+      color: unset;
+    }
+
+    @media screen and (min-width: sizes.$desktop) {
+      &:hover {
+        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  &--calendar-secondary {
+    background: rgba(255, 179, 15, 1);
+    color: colors.$cta-secondary;
+    border: 0;
+
+    span,
+    svg {
+      color: unset;
+    }
+
+    @media screen and (min-width: sizes.$desktop) {
+      &:hover {
+        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
   &:disabled,
   &__disabled {
     cursor: not-allowed;

@@ -1,10 +1,10 @@
-$_primary-green: #64EE85;
+$_primary-green: #64ee85;
 $_primary-blue: rgb(10 48 66 / 100%);
 $_primary-blueDark: rgb(9 40 54 / 100%);
-$_primary-blueLight: #0B4662;
-$_primary-gray: #728A9D;
-$_primary-grayLight: #CBD2D6;
-$_primary-grayLighter: #D9D9D9;
+$_primary-blueLight: #0b4662;
+$_primary-gray: #728a9d;
+$_primary-grayLight: #cbd2d6;
+$_primary-grayLighter: #d9d9d9;
 $_primary-grayLightest: #d1d7dc;
 $_secondary-gray: rgb(10 48 66 / 100%);
 $_secondary-grayLight: rgb(10 48 66 / 50%);
@@ -15,8 +15,9 @@ $_secondary-pink: #e0a4bf;
 $_hover-green: rgb(100 238 133 / 70%);
 $_hover-blue: rgb(26 34 51 / 75%);
 $_hover-white: rgb(255 255 255 / 70%);
-$_error-bg: #ED254E;
+$_error-bg: #ed254e;
 $_error-font: rgb(255 108 138 / 100%);
+$_danger: rgba(243, 72, 94, 1);
 
 $brand: $_primary-green;
 
@@ -31,6 +32,7 @@ $bg-darkTheme: $_primary-blue;
 $bg-darkTheme-hover: $_primary-blueDark;
 $bg-selection: $_secondary-yellow;
 $bg: $_primary-grayLighter;
+$bg-danger: $_danger;
 
 $text-primary: $_primary-blue;
 $text-secondary: $_primary-gray;

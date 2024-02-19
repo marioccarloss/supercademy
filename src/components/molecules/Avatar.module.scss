@@ -1,0 +1,165 @@
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+@use "../settings/border";
+
+.avatar {
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 8px solid colors.$bg-danger;
+    flex-shrink: 0;
+
+    img {
+      border-radius: 100%;
+    }
+
+    &On {
+      border: 8px solid colors.$brand;
+    }
+
+    > div {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      > div {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__hover {
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    span,
+    button,
+    a {
+      color: unset;
+    }
+
+    &Icon {
+      width: 2rem;
+      height: 2rem;
+      flex-shrink: 0;
+    }
+
+    &On {
+      background: rgba(100, 238, 133, 0.85);
+      color: colors.$cta-tertiary;
+    }
+
+    &Off {
+      background: rgba(237, 37, 78, 0.85);
+      color: colors.$white;
+    }
+  }
+
+  &__cta {
+    appearance: none;
+    border: 0;
+    background: colors.$bg-danger;
+    color: colors.$white;
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &On {
+      background: colors.$brand;
+      color: colors.$cta-tertiary;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 12.5rem;
+    height: 12.5rem;
+
+    &Top {
+      width: 5.56rem;
+      height: 5.56rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1rem;
+      z-index: 20;
+
+      .avatar {
+        &__image {
+          border: 3px solid colors.$bg-danger;
+
+          &On {
+            border: 3px solid colors.$brand;
+          }
+
+          &:hover {
+            > div {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+        }
+
+        &__cta {
+          width: 2rem;
+          height: 2rem;
+          bottom: -0.5rem;
+          left: -0.5rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: sizes.$desktop) {
+    &__wrapper {
+      &Top {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        position: relative;
+        width: 12.5rem;
+        height: 12.5rem;
+
+        .avatar {
+          &__cta {
+            bottom: 1rem;
+            left: 0;
+          }
+          &__image {
+            &:hover {
+              > div {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

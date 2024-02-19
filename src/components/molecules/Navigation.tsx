@@ -60,8 +60,23 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
         ))}
       </ul>
       <Button mode="icon" className={styles.navigation__dropdown}>
-        <Icon icon="emojiMonsterItem" size={styles.navigation__dropdownIcon} />
-        <Typography>Bárbara</Typography>
+        <div className={styles.navigation__dropdownContainer}>
+          <Icon
+            icon="emojiMonsterItem"
+            size={styles.navigation__dropdownIcon}
+          />
+          <Typography>Bárbara</Typography>
+          <Icon icon="arrowUp" size={styles.navigation__dropdownArrowIcon} />
+        </div>
+        <div
+          className={`${styles.navigation__dropdownContainer + " " + styles.navigation__dropdownContainerBottom}`}
+        >
+          <Icon
+            icon="iconLogout"
+            size={styles.navigation__dropdownLogoutIcon}
+          />
+          <Typography>Cambiar alumno</Typography>
+        </div>
       </Button>
     </nav>
   );

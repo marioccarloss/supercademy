@@ -1,8 +1,12 @@
 "use client";
 
-import { Button } from "@/components/atoms/Button";
-import { Icon } from "@/shared/Icon";
 import { useState } from "react";
+
+import image from "@/assets/images/teacher.jpg";
+import { Button } from "@/components/atoms/Button";
+import { Typography } from "@/components/atoms/Typography";
+import { Avatar } from "@/components/molecules/Avatar";
+import { Icon } from "@/shared/Icon";
 
 import { useNavigationStore } from "@/store/useNavigationStore";
 import Link from "next/link";
@@ -25,26 +29,26 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
   };
 
   const handleCalendar = () => {
-    setOpenCalendar(true);
+    setOpenCalendar(!openCalendar);
     setOpenProfile(false);
     setOpenPoints(false);
   };
 
   const handlePoints = () => {
-    setOpenPoints(true);
+    setOpenPoints(!openPoints);
     setOpenProfile(false);
     setOpenCalendar(false);
   };
 
   const handleProfile = () => {
-    setOpenProfile(true);
+    setOpenProfile(!openProfile);
     setOpenPoints(false);
     setOpenCalendar(false);
   };
 
   return (
     <div
-      className={`${!isOpen ? styles.headerPrivate : styles.headerPrivate + " " + styles.headerPrivateOpen}`}
+      className={`${!isOpen ? styles.headerPrivate : styles.headerPrivate + " " + styles.headerPrivateOpen} ${isAvatar ? styles.headerPrivateAvatar : ""}`}
     >
       {!isOpen && (
         <Button
@@ -56,6 +60,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
           <Icon icon="logoNav" size={styles.headerPrivate__logoIcon} />
         </Button>
       )}
+      {isAvatar && <Avatar image={image} isTop={true} />}
       <div className={styles.headerPrivate__ctasResponsive}>
         <div className={styles.btnCta}>
           <Button mode="icon" onClick={handleCalendar}>
@@ -120,20 +125,48 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                     </ul>
                   </div>
                   <div className={styles.popup__cardButtons}>
-                    <Button mode="icon">Examen inglés</Button>
                     <Link href="#">
                       <Icon
                         icon="iconCalendar"
                         size={styles.popup__cardButtonsIcon}
                       />
-                      <span>Añadir evento a mi calendario</span>
+                      <Typography>Próximos eventos</Typography>
                     </Link>
+                    <Button mode="calendar-primary">
+                      <div className={styles.popup__cardButtonsCustom}>
+                        <Typography>25 Dic</Typography>
+                        <div>
+                          <Typography>Examen Inglés</Typography>
+                          <Typography>10:00 AM</Typography>
+                        </div>
+                        <Icon
+                          icon="iconArrowRight"
+                          size={styles.popup__cardButtonsCustomIcon}
+                        />
+                      </div>
+                    </Button>
+                    <Button mode="calendar-secondary">
+                      <div className={styles.popup__cardButtonsCustom}>
+                        <Typography>28 Dic</Typography>
+                        <div>
+                          <Typography>Examen Lengua</Typography>
+                          <Typography>06:40 PM</Typography>
+                        </div>
+                        <Icon
+                          icon="iconArrowRight"
+                          size={styles.popup__cardButtonsCustomIcon}
+                        />
+                      </div>
+                    </Button>
                   </div>
                 </section>
                 <footer>
                   <Link href="#">
-                    <Icon icon="iconCalendar" size={styles.popup__footerIcon} />
-                    <span>Añadir evento a mi calendario</span>
+                    <Icon
+                      icon="iconCalendar2"
+                      size={styles.popup__footerIcon}
+                    />
+                    <Typography>Añadir evento a mi calendario</Typography>
                   </Link>
                 </footer>
               </div>
@@ -228,7 +261,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                     <Icon icon="emojiCat" />
                   </Button>
                   <div className={styles.popup__name}>
-                    <div>Bárbara Tábara</div>
+                    <div>Bárbara</div>
                     <div>1º Bach. - C.Madrid</div>
                   </div>
                 </header>

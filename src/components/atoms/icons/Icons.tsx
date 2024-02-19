@@ -5,6 +5,7 @@ import addUser from "./AddUser";
 import apple from "./Apple";
 import arrow from "./Arrow";
 import arrowBack from "./ArrowBack";
+import arrowUp from "./ArrowUp";
 import calendar from "./Calendar";
 import car from "./Car";
 import check from "./Check";
@@ -43,8 +44,13 @@ import iconArrowRight from "./IconArrowRight";
 import bullet from "./IconBullet";
 import bulletChecked from "./IconBulletChecked";
 import iconCalendar from "./IconCalendar";
+import iconCalendar2 from "./IconCalendar2";
+import iconConfig from "./IconConfig";
 import iconEye from "./IconEye";
 import iconEyeSlash from "./IconEyeSlash";
+import iconLogout from "./IconLogout";
+import iconPencil from "./IconPencil";
+import iconSoundOff from "./IconSoundOff";
 import iconSoundOn from "./IconSoundOn";
 import isotype from "./Isotype";
 import logo from "./Logo";
@@ -55,12 +61,15 @@ import iconStudentOne from "./StudentOne";
 import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import trending from "./Trending";
+import microfone from "./Microfone";
+import clip from "./Clip";
 
 export {
   addUser,
   apple,
   arrow,
   arrowBack,
+  arrowUp,
   bullet,
   bulletChecked,
   calendar,
@@ -97,12 +106,17 @@ export {
   iconArrowLeft,
   iconArrowRight,
   iconCalendar,
+  iconCalendar2,
+  iconConfig,
   iconEye,
   iconEyeSlash,
   iconFaceRecovery,
   iconGreeting,
+  iconLogout,
   iconMagicWand,
   iconParty,
+  iconPencil,
+  iconSoundOff,
   iconSoundOn,
   iconStudentOne,
   iconStudentThree,
@@ -113,5 +127,7 @@ export {
   medal,
   pencil,
   settings,
-  trending
+  trending,
+  microfone,
+  clip,
 };

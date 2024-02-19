@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: auto;
   z-index: 20;
 
   &__logo {
@@ -32,6 +33,7 @@
     display: flex;
     gap: 10px;
     margin-left: auto;
+    z-index: 10;
 
     > button {
       display: none;
@@ -101,7 +103,7 @@
 
     &__avatar {
       appearance: none;
-      background: #4FCAFF;
+      background: #4fcaff;
       border: 2px solid colors.$white;
       border-radius: 10px;
       width: 56px;
@@ -118,7 +120,7 @@
 
     &__card {
       border-radius: 8px;
-      background: #2C556F;
+      background: #2c556f;
       padding: 8px;
       display: flex;
       flex-direction: column;
@@ -138,7 +140,7 @@
         font-size: 20px;
       }
 
-      span{
+      span {
         font-size: 12px;
       }
     }
@@ -148,7 +150,7 @@
       justify-content: center;
       gap: 8px;
       padding-bottom: 20px;
-      border-bottom: 1px solid colors.$border;
+      border-bottom: 1px solid rgba(219, 219, 219, 0.5);
     }
 
     &__cardCol {
@@ -178,18 +180,22 @@
     }
 
     &__cardCalendarHeader {
-      color: #FFF;
+      color: colors.$white;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      svg {
+        color: colors.$white;
+      }
     }
 
     &__cardCalendarList {
       display: flex;
       gap: 8px;
       padding: 0;
-      margin:0 auto;
+      margin: 0 auto;
       list-style: none;
     }
 
@@ -202,6 +208,7 @@
       align-items: center;
       justify-content: center;
       color: rgba(10, 48, 66, 1);
+      font-weight: 500;
     }
 
     &__cardCalendarItem {
@@ -220,7 +227,7 @@
 
         .popup {
           &__cardBullet {
-            background-color: #FFF;
+            background-color: #fff;
           }
         }
       }
@@ -242,7 +249,7 @@
           display: flex;
           gap: 16px;
           padding: 0;
-          margin:0 auto;
+          margin: 0 auto;
           list-style: none;
         }
 
@@ -270,8 +277,13 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        color: #FFF;
+        color: #fff;
         text-decoration: none;
+
+        span {
+          align-self: center;
+          justify-content: center;
+        }
       }
 
       &Icon {
@@ -280,6 +292,47 @@
         height: 32px;
         flex-shrink: 0;
       }
+
+      &Custom {
+        display: flex;
+        width: 100%;
+        color: colors.$text-primary;
+
+        span,
+        svg {
+          color: unset;
+        }
+
+        > span {
+          font: typography.$s300-bold;
+          border-right: 1px solid colors.$text-primary;
+          padding-right: spacing.$tiny;
+          margin-right: spacing.$tiny;
+
+          &:last-of-type {
+            border-right: 0;
+            margin-right: 0;
+            padding-right: 0;
+          }
+        }
+
+        div {
+          span {
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.2;
+          }
+        }
+
+        &Icon {
+          margin-left: auto;
+          width: 1.5rem;
+        }
+      }
+    }
+
+    &CalendarBullet {
+      color: colors.$brand;
     }
 
     footer {
@@ -293,6 +346,19 @@
         text-decoration: none;
         gap: 8px;
         color: colors.$white;
+
+        span {
+          display: block;
+          align-self: center;
+          justify-content: center;
+
+          &:first-of-type {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            width: 1.5rem;
+          }
+        }
       }
     }
 
@@ -307,6 +373,7 @@
     &__container {
       background: colors.$cta-tertiary;
       border-radius: border.$radius-large;
+      box-shadow: 2px 9px 47.600006103515625px 0px rgba(0, 9, 13, 0.59);
       padding: 24px;
       position: absolute;
       top: 5rem;
@@ -338,7 +405,6 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
       z-index: 10;
     }
   }
@@ -351,6 +417,18 @@
     &__ctasResponsive {
       margin-left: auto;
       gap: 40px;
+    }
+
+    &Avatar {
+      padding: spacing.$lg spacing.$sm;
+      box-shadow: 2px 9px 47.600006103515625px 0px rgba(0, 9, 13, 0.59);
+
+      .headerPrivate {
+        &__ctasResponsive {
+          margin-bottom: auto;
+          margin-top: 2rem;
+        }
+      }
     }
   }
 }

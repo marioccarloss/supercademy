@@ -24,6 +24,9 @@ export interface ButtonProps {
     | "tertiary"
     | "inverted"
     | "icon"
+    | "calendar-primary"
+    | "calendar-secondary"
+    | "calendar-tertiary"
     | "disabled";
   size?: "large" | "medium" | "small";
   children: ReactNode;

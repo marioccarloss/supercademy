@@ -108,15 +108,37 @@
     background: colors.$cta-tertiary;
     border: 0;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 184px;
-    margin: 0 auto 1rem auto;
     position: relative;
-    height: 56px;
+    // height: 56px;
     padding: 0;
+    max-width: 184px;
     width: 100%;
+    margin: 0 auto 1rem auto;
+
+    &Container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &ContainerBottom {
+      color: colors.$white;
+      padding: 1rem 0.5rem;
+      margin-top: 0.25rem;
+      position: relative;
+
+      &:before {
+        content: "";
+        height: 1px;
+        background: rgba(219, 219, 219, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
 
     span {
       align-self: center;
@@ -129,6 +151,13 @@
       height: 56px;
       margin-right: auto;
       margin-left: 0;
+      padding: 0.5rem;
+    }
+
+    &ArrowIcon,
+    &LogoutIcon {
+      width: 24px;
+      height: 24px;
     }
 
     @media (min-width: sizes.$tablet) {

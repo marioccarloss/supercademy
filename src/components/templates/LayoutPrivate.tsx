@@ -2,8 +2,8 @@
 
 import { ReactNode } from "react";
 
-import { Navigation } from "@/components/molecules/Navigation";
 import { HeaderPrivate } from "@/components/molecules/HeaderPrivate";
+import { Navigation } from "@/components/molecules/Navigation";
 
 import { useNavigationStore } from "@/store/useNavigationStore";
 
