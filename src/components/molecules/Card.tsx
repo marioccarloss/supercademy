@@ -11,7 +11,7 @@ type CardProps = {
 
 export const Card = ({
   mode = "primary",
-  size = "large",
+  size = "medium",
   children = "",
   ...props
 }: CardProps) => {

@@ -13,13 +13,14 @@ type Props = {
     };
   };
   isModalOpen: boolean;
+  modalName: string;
 };
 
-export const ModalNotRegistered = ({ data, isModalOpen }: Props) => {
+export const ModalNotRegistered = ({ data, isModalOpen, modalName }: Props) => {
   const { title, message, cta } = data;
 
   return (
-    <Modal active={isModalOpen} alignVertical="center">
+    <Modal active={isModalOpen} modalName={modalName} alignVertical="center">
       <div className={styles.modal__content}>
         <Typography mode="title" className={styles.modal__title}>
           {title}

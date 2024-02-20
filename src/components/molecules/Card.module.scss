@@ -1,16 +1,29 @@
 @use "../settings/colors";
 @use "../settings/spacing";
 @use "../settings/border";
+@use "../settings/sizes";
 
 .card {
-  padding:  spacing.$sm spacing.$xs;
+  padding: spacing.$sm spacing.$xs;
   border-radius: border.$radius-large;
 
   &--primary {
     background-color: colors.$white;
   }
+
   &--primary-selected {
     background-color: colors.$white;
     border: 3px solid colors.$cta-primary;
+  }
+
+  &--secondary {
+    border-radius: 1.87rem;
+    box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+    padding: 1rem;
+
+    @media screen and (min-width: sizes.$desktop) {
+      border-radius: 1.25rem;
+      padding: 1.5rem 2rem;
+    }
   }
 }

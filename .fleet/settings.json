@@ -1,3 +1,3 @@
 {
-  "backend.maxHeapSizeMb": 900000,
+  "backend.maxHeapSizeMb": 9000000,
 }

@@ -69,6 +69,7 @@ import iconStudentTwo from "./StudentTwo";
 import trending from "./Trending";
 import iconAttach from "./IconAttach";
 import iconPhotos from "./IconPhotos";
+import emojiStore from "./EmojiStore";
 
 export {
   addUser,
@@ -142,4 +143,5 @@ export {
   trending,
   iconAttach,
   iconPhotos,
+  emojiStore,
 };

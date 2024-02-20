@@ -11,7 +11,7 @@ export const ProfileCalendar = () => {
   return (
     <LayoutPrivate isHeaderVisible={false}>
       <header className={styles.calendar}>
-        <HeaderPrivateInner />
+        <HeaderPrivateInner title="Mi Calendario" emoji="calendar" />
         <HeaderCalendar />
       </header>
       <section>

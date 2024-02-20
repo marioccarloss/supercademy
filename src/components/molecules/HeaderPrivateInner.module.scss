@@ -39,7 +39,11 @@
     }
   }
 
-  @media screen and (min-width: sizes.$desktop) {
+  @media screen and (min-width: sizes.$tablet) {
     padding: 2rem 2rem 1rem 2rem;
+  }
+
+  @media screen and (min-width: sizes.$desktop) {
+    padding: 2rem 5rem 1rem 5rem;
   }
 }
