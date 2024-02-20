@@ -33,7 +33,7 @@
     gap: 1rem;
     overflow: auto;
     padding: 1rem 0;
-    width: 100%;
+    width: 100vw;
 
     &Item {
       flex-shrink: 0;
@@ -66,6 +66,7 @@
     display: flex;
     gap: 1rem;
     position: relative;
+    padding: 0 0 2rem;
   }
 
   &__attach,
@@ -183,7 +184,7 @@
   @media screen and (min-width: sizes.$desktop) {
     &__container {
       padding: 3rem 0;
-      height: calc(100svh - 420px);
+      height: calc(100svh - 440px);
     }
   }
 }

@@ -1,0 +1,45 @@
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+@use "../settings/border";
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+
+  &Title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    h2 {
+      align-items: center;
+      align-self: center;
+    }
+  }
+
+  &Icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  &Close {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: colors.$white;
+
+    &Icon {
+      width: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: sizes.$desktop) {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+}

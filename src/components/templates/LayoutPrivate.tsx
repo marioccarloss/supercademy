@@ -12,9 +12,14 @@ import styles from "./Layout.module.scss";
 type Props = {
   children: ReactNode;
   isAvatar?: boolean;
+  isHeaderVisible?: boolean;
 };
 
-export const LayoutPrivate = ({ children, isAvatar = false }: Props) => {
+export const LayoutPrivate = ({
+  children,
+  isAvatar = false,
+  isHeaderVisible = true,
+}: Props) => {
   const isOpenNavigation = useNavigationStore(
     (state) => state.navigation.isOpen,
   );
@@ -25,7 +30,9 @@ export const LayoutPrivate = ({ children, isAvatar = false }: Props) => {
     >
       <Navigation isOpen={isOpenNavigation} />
       <div className={styles.layout__container}>
-        <HeaderPrivate isOpen={isOpenNavigation} isAvatar={isAvatar} />
+        {isHeaderVisible && (
+          <HeaderPrivate isOpen={isOpenNavigation} isAvatar={isAvatar} />
+        )}
         {children}
       </div>
     </main>

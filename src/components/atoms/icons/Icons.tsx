@@ -32,6 +32,7 @@ import emojiMonkeyOne from "./EmojiMonkeyOne";
 import emojiMonkeyTwo from "./EmojiMonkeyTwo";
 import emojiMonster from "./EmojiMonster";
 import emojiMonsterItem from "./EmojiMonsterItem";
+import emojiMessage from "./EmojiMessage";
 import iconParty from "./EmojiParty";
 import pencil from "./EmojiPencil";
 import emojiPenguin from "./EmojiPenguin";
@@ -103,6 +104,7 @@ export {
   emojiPenguin,
   emojiShopping,
   emojiTeacher,
+  emojiMessage,
   flags,
   gemstone,
   google,
