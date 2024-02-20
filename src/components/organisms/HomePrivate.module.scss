@@ -184,8 +184,8 @@
     }
 
     &__avatarWrapper {
-      width: 22rem;
-      height: 22rem;
+      width: clamp(12.5rem, calc(10vw + 10vh), 22rem);
+      height: clamp(12.5rem, calc(10vw + 10vh), 22rem);
     }
   }
 }

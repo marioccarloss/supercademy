@@ -9,6 +9,7 @@ import arrowUp from "./ArrowUp";
 import calendar from "./Calendar";
 import car from "./Car";
 import check from "./Check";
+import clip from "./Clip";
 import close from "./Close";
 import edit from "./Edit";
 import emojiBookmark from "./EmojiBookmark";
@@ -45,24 +46,28 @@ import bullet from "./IconBullet";
 import bulletChecked from "./IconBulletChecked";
 import iconCalendar from "./IconCalendar";
 import iconCalendar2 from "./IconCalendar2";
+import iconClose from "./IconClose";
 import iconConfig from "./IconConfig";
 import iconEye from "./IconEye";
 import iconEyeSlash from "./IconEyeSlash";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
+import iconSend from "./IconSend";
 import iconSoundOff from "./IconSoundOff";
 import iconSoundOn from "./IconSoundOn";
 import isotype from "./Isotype";
 import logo from "./Logo";
 import logoNav from "./LogoNav";
 import medal from "./Medal";
+import record from "./Record";
+import recordActive from "./RecordActive";
 import settings from "./Settings";
 import iconStudentOne from "./StudentOne";
 import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import trending from "./Trending";
-import microfone from "./Microfone";
-import clip from "./Clip";
+import iconAttach from "./IconAttach";
+import iconPhotos from "./IconPhotos";
 
 export {
   addUser,
@@ -75,6 +80,7 @@ export {
   calendar,
   car,
   check,
+  clip,
   close,
   edit,
   emojiBookmark,
@@ -107,6 +113,7 @@ export {
   iconArrowRight,
   iconCalendar,
   iconCalendar2,
+  iconClose,
   iconConfig,
   iconEye,
   iconEyeSlash,
@@ -116,6 +123,7 @@ export {
   iconMagicWand,
   iconParty,
   iconPencil,
+  iconSend,
   iconSoundOff,
   iconSoundOn,
   iconStudentOne,
@@ -126,8 +134,10 @@ export {
   logoNav,
   medal,
   pencil,
+  record,
+  recordActive,
   settings,
   trending,
-  microfone,
-  clip,
+  iconAttach,
+  iconPhotos,
 };

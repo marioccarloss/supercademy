@@ -1,19 +1,28 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import useChatMessages, { Message } from "@/hooks/useChatMessages";
+
 import { Button } from "@/components/atoms/Button";
+import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
 import useTags, { Tag } from "@/hooks/useTags";
 
-import styles from "./Chat.module.scss";
-
 import student from "@/assets/images/student.jpg";
 import teacher from "@/assets/images/teacher.jpg";
+import styles from "./Chat.module.scss";
+
+import useChatMessages, { Message } from "@/hooks/useChatMessages";
 
 export const Chat = () => {
   const { data } = useChatMessages();
   const { chatTags } = useTags();
+
+  const [attachPopup, setAttachPopup] = useState<boolean>(false);
+
+  const handleAttach = () => {
+    setAttachPopup(!attachPopup);
+  };
 
   return (
     <div className={styles.chat}>
@@ -40,7 +49,8 @@ export const Chat = () => {
             <div key={tag.id} className={styles.chat__tagsItem}>
               {tag.selected === true ? (
                 <button className={styles.chat__tagSelected}>
-                  {tag.name} x
+                  {tag.name}
+                  <Icon icon="iconClose" size={styles.chat__tagIcon} />
                 </button>
               ) : (
                 <button className={styles.chat__tag}>{tag.name}</button>
@@ -51,19 +61,39 @@ export const Chat = () => {
 
         <div className={styles.chat__send}>
           <div className={styles.chat__input}>
-            <div className={styles.chat__inputFile}>
-              <input type="file" />
+            <Button
+              mode="icon"
+              className={styles.chat__attach}
+              onClick={handleAttach}
+            >
               <Icon icon="clip" />
-            </div>
+            </Button>
             <input
               type="text"
               id="text"
               placeholder="Escribe tu mensaje aquí"
             />
+            <Button mode="icon" className={styles.chat__sendIcon}>
+              <Icon icon="iconSend" />
+            </Button>
           </div>
-          <Button mode="icon" className={styles.chat__microfone}>
-            <Icon icon="microfone" size={styles.chat__microfoneIcon} />
+          <Button mode="icon" className={styles.chat__record}>
+            <Icon icon="record" size={styles.chat__recordIcon} />
           </Button>
+          {attachPopup && (
+            <div className={styles.chat__attachPopup}>
+              <div className={styles.chat__attachPopupItem}>
+                <Icon icon="iconAttach" />
+                <Typography>Attach file</Typography>
+                <input type="file" />
+              </div>
+              <div className={styles.chat__attachPopupItem}>
+                <Icon icon="iconPhotos" />
+                <Typography>Upload photo</Typography>
+                <input type="file" />
+              </div>
+            </div>
+          )}
         </div>
       </footer>
     </div>
