@@ -47,8 +47,8 @@ export const Chat = () => {
         <div className={styles.chat__tags}>
           {chatTags.map((tag: Tag) => (
             <div key={tag.id} className={styles.chat__tagsItem}>
-              {tag.selected === true ? (
-                <button className={styles.chat__tagSelected}>
+              {tag.principal === true ? (
+                <button className={styles.chat__tagPrincipal}>
                   {tag.name}
                   <Icon icon="iconClose" size={styles.chat__tagIcon} />
                 </button>

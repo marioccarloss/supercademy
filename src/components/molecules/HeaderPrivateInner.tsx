@@ -4,6 +4,7 @@ import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
 import * as icons from "@/components/atoms/icons/Icons";
+import { useNavigationStore } from "@/store/useNavigationStore";
 
 export type IconsType = keyof typeof icons;
 
@@ -14,9 +15,15 @@ type Props = {
   emoji: IconsType;
 };
 export const HeaderPrivateInner = ({ title, emoji }: Props) => {
+  const setOpenNavigation = useNavigationStore((state) => state.setOpened);
+
+  const handleNavigationOpened = () => {
+    setOpenNavigation(true);
+  };
+
   return (
     <div className={styles.headerInner}>
-      <div className={styles.headerInnerTitle}>
+      <div className={styles.headerInnerTitle} onClick={handleNavigationOpened}>
         <Icon icon={emoji} size={styles.headerInnerIcon} />
         <Typography mode="subtitle">{title}</Typography>
       </div>

@@ -28,21 +28,24 @@ import emojiGraduation from "./EmojiGraduation";
 import iconGreeting from "./EmojiGreeting";
 import emojiLanguage from "./EmojiLanguage";
 import iconMagicWand from "./EmojiMagicWand";
+import emojiMessage from "./EmojiMessage";
 import emojiMonkeyOne from "./EmojiMonkeyOne";
 import emojiMonkeyTwo from "./EmojiMonkeyTwo";
 import emojiMonster from "./EmojiMonster";
 import emojiMonsterItem from "./EmojiMonsterItem";
-import emojiMessage from "./EmojiMessage";
 import iconParty from "./EmojiParty";
 import pencil from "./EmojiPencil";
 import emojiPenguin from "./EmojiPenguin";
 import emojiShopping from "./EmojiShopping";
+import emojiStore from "./EmojiStore";
 import emojiTeacher from "./EmojiTeacher";
+import emojiWoozy from "./EmojiWoozy";
 import flags from "./Flags";
 import gemstone from "./Gemstone";
 import google from "./Google";
 import iconArrowLeft from "./IconArrowLeft";
 import iconArrowRight from "./IconArrowRight";
+import iconAttach from "./IconAttach";
 import bullet from "./IconBullet";
 import bulletChecked from "./IconBulletChecked";
 import iconCalendar from "./IconCalendar";
@@ -51,8 +54,10 @@ import iconClose from "./IconClose";
 import iconConfig from "./IconConfig";
 import iconEye from "./IconEye";
 import iconEyeSlash from "./IconEyeSlash";
+import iconLock from "./IconLock";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
+import iconPhotos from "./IconPhotos";
 import iconSend from "./IconSend";
 import iconSoundOff from "./IconSoundOff";
 import iconSoundOn from "./IconSoundOn";
@@ -67,9 +72,7 @@ import iconStudentOne from "./StudentOne";
 import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import trending from "./Trending";
-import iconAttach from "./IconAttach";
-import iconPhotos from "./IconPhotos";
-import emojiStore from "./EmojiStore";
+import emojiSuperpoints from "./EmojiSuperpoints";
 
 export {
   addUser,
@@ -98,14 +101,16 @@ export {
   emojiGem,
   emojiGraduation,
   emojiLanguage,
+  emojiMessage,
   emojiMonkeyOne,
   emojiMonkeyTwo,
   emojiMonster,
   emojiMonsterItem,
   emojiPenguin,
   emojiShopping,
+  emojiStore,
   emojiTeacher,
-  emojiMessage,
+  emojiWoozy,
   flags,
   gemstone,
   google,
@@ -114,6 +119,7 @@ export {
   iconAccountStepTwo,
   iconArrowLeft,
   iconArrowRight,
+  iconAttach,
   iconCalendar,
   iconCalendar2,
   iconClose,
@@ -122,10 +128,12 @@ export {
   iconEyeSlash,
   iconFaceRecovery,
   iconGreeting,
+  iconLock,
   iconLogout,
   iconMagicWand,
   iconParty,
   iconPencil,
+  iconPhotos,
   iconSend,
   iconSoundOff,
   iconSoundOn,
@@ -141,7 +149,5 @@ export {
   recordActive,
   settings,
   trending,
-  iconAttach,
-  iconPhotos,
-  emojiStore,
+  emojiSuperpoints,
 };

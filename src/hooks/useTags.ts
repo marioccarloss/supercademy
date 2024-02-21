@@ -1,7 +1,7 @@
 export type Tag = {
   id: string;
   name: string;
-  selected?: boolean;
+  principal?: boolean;
 };
 
 export default function useTags() {
@@ -9,7 +9,7 @@ export default function useTags() {
     {
       id: "1",
       name: "Selectividad",
-      selected: true,
+      principal: true,
     },
     {
       id: "2",

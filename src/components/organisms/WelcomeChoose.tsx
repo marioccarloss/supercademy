@@ -39,7 +39,7 @@ export const WelcomeChoose = () => {
             ))}
           </div>
           <div className={styles.profile__ctaContainer}>
-            <Button mode="icon" href="/choose">
+            <Button mode="icon" href="/configuration">
               <Icon icon="settings" size={styles.icon__arrowRight} />
               <Typography>Configuración de la cuenta</Typography>
             </Button>

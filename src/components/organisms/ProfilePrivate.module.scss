@@ -1,0 +1,226 @@
+@use "../settings/colors";
+@use "../settings/border";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.profile {
+  width: 100%;
+
+  &__body {
+    min-height: calc(100vh - 104px);
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__user {
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    overflow: hidden;
+    border: 4px solid colors.$white;
+    border-radius: spacing.$xs;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      background: #000;
+      opacity: 0.4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__avatar {
+    width: 4rem;
+  }
+
+  &__edit {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+
+    &Icon {
+      width: 3rem;
+    }
+  }
+
+  &__userData {
+    display: flex;
+    flex-direction: column;
+
+    strong {
+      font: typography.$s400-bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__progress {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    &Item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    &Content {
+      background: rgba(30, 84, 110, 1);
+      border-radius: 100%;
+      width: 3.72rem;
+      height: 3.72rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+  }
+}
+
+.insignias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.insignia {
+  border-radius: border.$radius-medium;
+  box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 8.5rem;
+
+  &Icon {
+    width: 3rem;
+  }
+}
+
+.superpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &Item {
+    box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+    border-radius: border.$radius-large;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 26.5rem;
+    width: 100%;
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+
+      h1 {
+        color: colors.$brand;
+        padding: 0;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+      }
+    }
+  }
+
+  &Icon {
+    width: 5.31rem;
+  }
+}
+
+@media screen and (min-width: sizes.$tablet) {
+  .profile {
+    &__body {
+      display: flex;
+      gap: 2rem;
+
+      &Content {
+        border-right: 1px solid colors.$border;
+        flex-shrink: 0;
+        padding-right: 2rem;
+        margin-right: 2rem;
+        width: 60%;
+      }
+    }
+  }
+}

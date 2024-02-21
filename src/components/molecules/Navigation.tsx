@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
@@ -23,10 +24,16 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
 
   const { navigation } = useNavigation();
 
+  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+
   const setOpenNavigation = useNavigationStore((state) => state.setOpened);
 
   const handleNavigationToggle = () => {
     setOpenNavigation(false);
+  };
+
+  const handleDropdown = () => {
+    setOpenDropdown(!openDropdown);
   };
 
   return (
@@ -50,7 +57,7 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
             key={item.id}
             className={`${isActive(item.path) ? styles.navigation__item + " " + styles.navigation__itemActive : styles.navigation__item}`}
           >
-            <Link href={item.path}>
+            <Link href={item.path} prefetch={true}>
               <Icon icon={item.icon} size={styles.navigation__icon} />
               <Typography className={styles.navigation__name}>
                 {item.name}
@@ -59,16 +66,22 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
           </li>
         ))}
       </ul>
-      <Button mode="icon" className={styles.navigation__dropdown}>
-        <div className={styles.navigation__dropdownContainer}>
+      <div
+        className={`${openDropdown ? styles.navigation__dropdown + " " + styles.navigation__dropdownActive : styles.navigation__dropdown}`}
+      >
+        <Button
+          mode="icon"
+          className={styles.navigation__dropdownContainer}
+          onClick={handleDropdown}
+        >
           <Icon
             icon="emojiMonsterItem"
             size={styles.navigation__dropdownIcon}
           />
           <Typography>Bárbara</Typography>
           <Icon icon="arrowUp" size={styles.navigation__dropdownArrowIcon} />
-        </div>
-        <div
+        </Button>
+        <Button
           className={`${styles.navigation__dropdownContainer + " " + styles.navigation__dropdownContainerBottom}`}
         >
           <Icon
@@ -76,8 +89,8 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
             size={styles.navigation__dropdownLogoutIcon}
           />
           <Typography>Cambiar alumno</Typography>
-        </div>
-      </Button>
+        </Button>
+      </div>
     </nav>
   );
 };

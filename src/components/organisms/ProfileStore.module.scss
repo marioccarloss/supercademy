@@ -10,7 +10,8 @@
 
   &__body {
     min-height: calc(100vh - 104px);
-    width: calc(100% - 2rem);
+    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
   }
 
@@ -75,6 +76,23 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 3rem 0;
+
+  scrollbar-width: auto;
+  scrollbar-color: #64ee85 transparent;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #64ee85;
+    border-radius: 10px;
+    border: transparent;
+  }
 
   > * {
     width: calc(50% - 0.5rem);

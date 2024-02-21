@@ -53,7 +53,6 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
       {!isOpen && (
         <Button
           mode="icon"
-          href="/home"
           className={styles.headerPrivate__logo}
           onClick={handleNavigationOpened}
         >
@@ -233,7 +232,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
                   </ul>
                 </section>
                 <footer>
-                  <Link href="#">
+                  <Link href="/store">
                     <Icon icon="car" size={styles.popup__footerIcon} />
                     <span>Ir a la Supertienda</span>
                   </Link>

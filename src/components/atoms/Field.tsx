@@ -21,7 +21,7 @@ interface Overload {
   (props: InputProps & FieldProps): ReactElement;
 }
 
-const PasswordField: Overload = ({ size = "large", icon, type, ...props }) => {
+const PasswordField: Overload = ({ size = "large", ...props }) => {
   const { label, error, ...inputProps } = props;
 
   const [visible, setVisible] = useState<boolean>(false);
@@ -45,7 +45,7 @@ const PasswordField: Overload = ({ size = "large", icon, type, ...props }) => {
   );
 };
 
-export const Field: Overload = ({ size = "large", icon, type, ...props }) => {
+export const Field: Overload = ({ size = "large", type, ...props }) => {
   const { label, error, ...inputProps } = props;
 
   const inputClassNames = classNames(styles.field, styles[`field--${size}`], {

@@ -17,6 +17,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    @media screen and (min-width: sizes.$tablet) {
+      //width: calc(100vw - 240px);
+      width: 100%;
+    }
   }
 
   &Private {
@@ -25,6 +30,16 @@
 
     @media (min-width: sizes.$tablet) {
       flex-direction: row;
+
+      &Open {
+        .layout {
+          &__container {
+            width: calc(100vw - 240px);
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
+      }
     }
   }
 }

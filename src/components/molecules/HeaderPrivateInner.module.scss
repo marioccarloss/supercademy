@@ -7,15 +7,18 @@
 .headerInner {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 0;
   width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 
   &Title {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 
     h2 {
+      font: typography.$s400-bold;
       align-items: center;
       align-self: center;
     }
@@ -40,10 +43,10 @@
   }
 
   @media screen and (min-width: sizes.$tablet) {
-    padding: 2rem 2rem 1rem 2rem;
-  }
-
-  @media screen and (min-width: sizes.$desktop) {
-    padding: 2rem 5rem 1rem 5rem;
+    &Title {
+      h2 {
+        font: typography.$s500-bold;
+      }
+    }
   }
 }

@@ -35,7 +35,7 @@ export const HomePrivate = () => {
               <div
                 className={`${styles.homePrivate__hover + " " + styles.homePrivate__hoverOn}`}
               >
-                <Button href="/edit-teacher" mode="icon">
+                <Button href="/teacher" mode="icon">
                   <Icon
                     icon="iconPencil"
                     size={styles.homePrivate__hoverIcon}
@@ -54,7 +54,7 @@ export const HomePrivate = () => {
               <div
                 className={`${styles.homePrivate__hover + " " + styles.homePrivate__hoverOff}`}
               >
-                <Button href="/edit-teacher" mode="icon">
+                <Button href="/teacher" mode="icon">
                   <Icon
                     icon="iconPencil"
                     size={styles.homePrivate__hoverIcon}
@@ -86,19 +86,19 @@ export const HomePrivate = () => {
           Hola Bárbara, ¿por dónde empezamos hoy?
         </Typography>
         <div className={styles.homePrivate__choose}>
-          <Button className={`${styles.homePrivate__card}`}>
+          <Button className={`${styles.homePrivate__card}`} href="/homeworks">
             <Icon icon="emojiBookmark" size={styles.homePrivate__icon} />
             <Typography mode="label" className={styles.homePrivate__name}>
               Deberes/exámenes
             </Typography>
           </Button>
-          <Button className={styles.homePrivate__card}>
+          <Button className={styles.homePrivate__card} href="/selectivity">
             <Icon icon="emojiGraduation" size={styles.homePrivate__icon} />
             <Typography mode="label" className={styles.homePrivate__name}>
               Selectividad
             </Typography>
           </Button>
-          <Button className={styles.homePrivate__card}>
+          <Button className={styles.homePrivate__card} href="/conversation">
             <Icon icon="emojiLanguage" size={styles.homePrivate__icon} />
             <Typography mode="label" className={styles.homePrivate__name}>
               Clases de conversación

@@ -51,7 +51,7 @@
       width: 0.5rem;
     }
 
-    &Selected {
+    &Principal {
       background: rgba(100, 238, 133, 1);
       appearance: none;
       border: 0;
@@ -95,7 +95,6 @@
 
   &__input {
     position: relative;
-    box-shadow: 0 3px 13px 0 rgba(6, 26, 35, 1);
     border: 1px solid rgba(255, 255, 255, 1);
     flex-grow: 1;
     height: 56px;
@@ -145,7 +144,7 @@
     border-radius: spacing.$tiny;
     color: colors.$text-primary;
     position: absolute;
-    bottom: 4rem;
+    bottom: 6rem;
     overflow: hidden;
     animation: fadeIn 0.3s ease;
     box-shadow: 0 3px 13px 0 rgba(6, 26, 35, 1);

@@ -17,7 +17,7 @@
   }
 
   &--secondary {
-    border-radius: 1.87rem;
+    border-radius: border.$radius-medium;
     box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
     padding: 1rem;
 
@@ -25,5 +25,9 @@
       border-radius: 1.25rem;
       padding: 1.5rem 2rem;
     }
+  }
+
+  @media screen and (min-width: sizes.$desktop) {
+    border-radius: border.$radius-large;
   }
 }

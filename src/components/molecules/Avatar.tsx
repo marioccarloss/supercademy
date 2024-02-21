@@ -10,11 +10,11 @@ import Image, { StaticImageData } from "next/image";
 import styles from "./Avatar.module.scss";
 
 type Props = {
-  isTop: boolean;
+  isTop?: boolean;
   image: StaticImageData;
 };
 
-export const Avatar = ({ image, isTop }: Props) => {
+export const Avatar = ({ image, isTop = false }: Props) => {
   const toggleRef = useRef<HTMLInputElement>(null);
   const [isSwitchedOn, setSwitchedOn] = useState(true);
 
@@ -38,7 +38,7 @@ export const Avatar = ({ image, isTop }: Props) => {
           <div
             className={`${styles.avatar__hover + " " + styles.avatar__hoverOn}`}
           >
-            <Button href="/edit-teacher" mode="icon">
+            <Button href="/teacher" mode="icon">
               <Icon icon="iconPencil" size={styles.avatar__hoverIcon} />
               <Typography>Editar</Typography>
             </Button>
@@ -51,7 +51,7 @@ export const Avatar = ({ image, isTop }: Props) => {
           <div
             className={`${styles.avatar__hover + " " + styles.avatar__hoverOff}`}
           >
-            <Button href="/edit-teacher" mode="icon">
+            <Button href="/teacher" mode="icon">
               <Icon icon="iconPencil" size={styles.avatar__hoverIcon} />
               <Typography>Editar</Typography>
             </Button>

@@ -14,6 +14,32 @@ export type Icons = {
   color: string;
 };
 
+export type ProgressType = {
+  id: string;
+  icon: IconsType;
+  color: string;
+  name: string;
+  hours: string;
+  percentage: number;
+};
+
+export type Insignias = {
+  id: string;
+  icon: IconsType;
+  value: string;
+  name: string;
+  background: string;
+  color: string;
+};
+
+export type Superpoints = {
+  id: string;
+  value: string;
+  icon: IconsType;
+  title: string;
+  description: string;
+};
+
 export default function useProfile() {
   const users: User[] = [
     {
@@ -179,5 +205,68 @@ export default function useProfile() {
     },
   ];
 
-  return { users, usersCustoms, icons };
+  const progressItems: ProgressType[] = [
+    {
+      id: useId(),
+      name: "Deberes",
+      color: "rgba(105, 206, 255, 1)",
+      icon: "emojiBookmark",
+      hours: "125",
+      percentage: 0.5,
+    },
+    {
+      id: useId(),
+      name: "Selectividad",
+      color: "rgba(100, 238, 133, 1)",
+      icon: "emojiGraduation",
+      hours: "55",
+      percentage: 0.7,
+    },
+    {
+      id: useId(),
+      name: "Conversación",
+      color: "rgba(255, 179, 15, 1)",
+      icon: "flags",
+      hours: "125",
+      percentage: 0.1,
+    },
+  ];
+
+  const insignias: Insignias[] = [
+    {
+      id: useId(),
+      value: "50",
+      name: "Días uso",
+      icon: "medal",
+      background: "#9868FF",
+      color: "#FFFFFF",
+    },
+    {
+      id: useId(),
+      value: "500",
+      name: "Superpoints",
+      icon: "emojiGem",
+      background: "#2C556F",
+      color: "#64ee85",
+    },
+  ];
+
+  const superpoints: Superpoints[] = [
+    {
+      id: useId(),
+      value: "+25",
+      icon: "emojiSuperpoints",
+      title: "Superpoints",
+      description:
+        "¡Felicidades! Has conseguido Superpoints por volver a utilizar Supercademy",
+    },
+    {
+      id: useId(),
+      value: "+20.000",
+      icon: "emojiSuperpoints",
+      title: "Superpoints",
+      description: "¡Al compartir este enlance con tus amigos!",
+    },
+  ];
+  return { users, usersCustoms, icons, progressItems, insignias, superpoints };
 }

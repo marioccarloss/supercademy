@@ -13,6 +13,7 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
+  z-index: 100;
 
   &__overlay {
     background: rgba(3, 7, 20, 0.8);

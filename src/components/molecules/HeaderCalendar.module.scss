@@ -9,7 +9,8 @@
   border-radius: 1rem;
   padding: 1rem;
   margin: 0 auto;
-  width: calc(100% - 2rem);
+  width: 100%;
+  max-width: 90%;
 
   &__header {
     display: flex;
