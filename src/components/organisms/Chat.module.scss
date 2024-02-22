@@ -19,7 +19,7 @@
     gap: spacing.$lg;
     position: sticky;
     overflow: auto;
-    height: calc(100svh - 280px);
+    height: calc(100svh - 24rem);
   }
 
   &__footer {
@@ -183,7 +183,7 @@
   @media screen and (min-width: sizes.$desktop) {
     &__container {
       padding: 3rem 0;
-      height: calc(100svh - 440px);
+      // height: calc(100svh - 440px);
     }
   }
 }
@@ -252,4 +252,3 @@
     transform: none;
   }
 }
-

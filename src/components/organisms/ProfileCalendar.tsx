@@ -1,7 +1,7 @@
 "use client";
 
-import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
 import { HeaderCalendar } from "@/components/molecules/HeaderCalendar";
+import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
 import { Chat } from "@/components/organisms/Chat";
 import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 
@@ -14,7 +14,7 @@ export const ProfileCalendar = () => {
         <HeaderPrivateInner title="Mi Calendario" emoji="calendar" />
         <HeaderCalendar />
       </header>
-      <section>
+      <section className={styles.calendar__body}>
         <Chat />
       </section>
     </LayoutPrivate>
