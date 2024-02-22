@@ -1,0 +1,85 @@
+@use "../settings/colors";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.configuration {
+  width: 90%;
+  margin: 0 auto;
+  height: calc(100vh - 82px - 40px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    // overlow . height
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      > span {
+        flex-grow: 1;
+        font: typography.$s400-bold;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+
+    > span {
+      align-self: center;
+    }
+
+    button {
+      height: auto;
+    }
+  }
+
+  &__icon {
+    color: colors.$white;
+    width: 1.5rem;
+  }
+
+  @media screen and (min-width: sizes.$tablet) {
+    flex-direction: row;
+    align-items: center;
+
+    > * {
+      width: 50%;
+    }
+
+    header {
+      > * {
+        max-width: 30.5rem;
+      }
+
+      h2 {
+        font: typography.$s700-bold;
+      }
+    }
+
+    section {
+      > * {
+        max-width: 30.5rem;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

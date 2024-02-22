@@ -38,6 +38,7 @@ import pencil from "./EmojiPencil";
 import emojiPenguin from "./EmojiPenguin";
 import emojiShopping from "./EmojiShopping";
 import emojiStore from "./EmojiStore";
+import emojiSuperpoints from "./EmojiSuperpoints";
 import emojiTeacher from "./EmojiTeacher";
 import emojiWoozy from "./EmojiWoozy";
 import flags from "./Flags";
@@ -72,7 +73,6 @@ import iconStudentOne from "./StudentOne";
 import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import trending from "./Trending";
-import emojiSuperpoints from "./EmojiSuperpoints";
 
 export {
   addUser,
@@ -109,6 +109,7 @@ export {
   emojiPenguin,
   emojiShopping,
   emojiStore,
+  emojiSuperpoints,
   emojiTeacher,
   emojiWoozy,
   flags,
@@ -149,5 +150,4 @@ export {
   recordActive,
   settings,
   trending,
-  emojiSuperpoints,
 };
