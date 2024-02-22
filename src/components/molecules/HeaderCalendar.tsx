@@ -100,6 +100,45 @@ export const HeaderCalendar = () => {
                   />
                 </div>
               </Button>
+              <Button mode="calendar-secondary">
+                <div className={styles.headerCalendar__item}>
+                  <Typography>28 Dic</Typography>
+                  <div>
+                    <Typography>Examen Lengua</Typography>
+                    <Typography>06:40 PM</Typography>
+                  </div>
+                  <Icon
+                    icon="iconArrowRight"
+                    size={styles.headerCalendar__itemIcon}
+                  />
+                </div>
+              </Button>
+              <Button mode="calendar-secondary">
+                <div className={styles.headerCalendar__item}>
+                  <Typography>28 Dic</Typography>
+                  <div>
+                    <Typography>Examen Lengua</Typography>
+                    <Typography>06:40 PM</Typography>
+                  </div>
+                  <Icon
+                    icon="iconArrowRight"
+                    size={styles.headerCalendar__itemIcon}
+                  />
+                </div>
+              </Button>
+              <Button mode="calendar-secondary">
+                <div className={styles.headerCalendar__item}>
+                  <Typography>28 Dic</Typography>
+                  <div>
+                    <Typography>Examen Lengua</Typography>
+                    <Typography>06:40 PM</Typography>
+                  </div>
+                  <Icon
+                    icon="iconArrowRight"
+                    size={styles.headerCalendar__itemIcon}
+                  />
+                </div>
+              </Button>
             </div>
           </div>
           <Button mode="icon">

@@ -4,7 +4,7 @@ import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 export default function Selectivity() {
   return (
     <LayoutPrivate isAvatar={true}>
-      <Chat />
+      <Chat isAvatar={true} />
     </LayoutPrivate>
   );
 }

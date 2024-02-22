@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import Image, { StaticImageData } from "next/image";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
-import Image, { StaticImageData } from "next/image";
+
+import { useAvatarStore } from "@/store/useAvatarStore";
 
 import styles from "./Avatar.module.scss";
 
@@ -15,22 +16,18 @@ type Props = {
 };
 
 export const Avatar = ({ image, isTop = false }: Props) => {
-  const toggleRef = useRef<HTMLInputElement>(null);
-  const [isSwitchedOn, setSwitchedOn] = useState(true);
+  const isSwitchedOn = useAvatarStore((state) => state.avatar.isActive);
+  const setActiveAvatar = useAvatarStore((state) => state.setActive);
 
-  const handleAvatar = useCallback(() => {
-    if (toggleRef.current) {
-      setSwitchedOn((prevState) => !prevState);
-      toggleRef.current.checked = !isSwitchedOn;
-    }
-  }, [isSwitchedOn]);
+  const handleAvatar = () => {
+    setActiveAvatar(!isSwitchedOn);
+  };
 
   return (
     <div
       className={`${isTop ? styles.avatar__wrapper + " " + styles.avatar__wrapperTop : styles.avatar__wrapper}`}
     >
       <div
-        ref={toggleRef}
         className={`${isSwitchedOn ? styles.avatar__image + " " + styles.avatar__imageOn : styles.avatar__image}`}
       >
         <Image src={image} alt="teacher" />

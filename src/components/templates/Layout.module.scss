@@ -19,7 +19,6 @@
     width: 100%;
 
     @media screen and (min-width: sizes.$tablet) {
-      //width: calc(100vw - 248px);
       width: 100%;
     }
   }
@@ -34,7 +33,7 @@
       &Open {
         .layout {
           &__container {
-            width: calc(100vw - 248px);
+            width: calc(100% - 248px);
             margin-left: auto;
             margin-right: 0;
           }

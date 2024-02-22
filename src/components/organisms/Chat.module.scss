@@ -19,7 +19,7 @@
     gap: spacing.$lg;
     position: sticky;
     overflow: auto;
-    height: calc(100svh - 24rem);
+    height: calc(100svh - 17rem);
   }
 
   &__footer {
@@ -183,7 +183,15 @@
   @media screen and (min-width: sizes.$desktop) {
     &__container {
       padding: 3rem 0;
-      // height: calc(100svh - 440px);
+      height: calc(100svh - 24rem);
+    }
+
+    &__withAvatar {
+      .chat {
+        &__container {
+          height: calc(100svh - 26rem);
+        }
+      }
     }
   }
 }

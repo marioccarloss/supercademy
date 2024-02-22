@@ -14,7 +14,11 @@ import styles from "./Chat.module.scss";
 
 import useChatMessages, { Message } from "@/hooks/useChatMessages";
 
-export const Chat = () => {
+type Props = {
+  isAvatar?: boolean;
+};
+
+export const Chat = ({ isAvatar = false }: Props) => {
   const { data } = useChatMessages();
   const { chatTags } = useTags();
 
@@ -25,7 +29,9 @@ export const Chat = () => {
   };
 
   return (
-    <div className={styles.chat}>
+    <div
+      className={`${isAvatar ? styles.chat + " " + styles.chat__withAvatar : styles.chat}`}
+    >
       <section className={styles.chat__container}>
         {data.map((chat: Message) => (
           <div

@@ -1,1 +1,6 @@
-{}
+{
+  "backend.maxHeapSizeMb": 99999,
+  "ignored.project.globs": [
+    "./node_modules"
+  ]
+}

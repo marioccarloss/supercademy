@@ -36,6 +36,16 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
     setOpenDropdown(!openDropdown);
   };
 
+  const handleNavigationLink = () => {
+    const hasWindow = typeof window !== "undefined";
+    if (hasWindow) {
+      const media = window.matchMedia("(max-width: 1023px)");
+      if (media.matches) {
+        setOpenNavigation(false);
+      }
+    }
+  };
+
   return (
     <nav
       className={`${!isOpen ? styles.navigation : styles.navigation + " " + styles.navigationOpen}`}
@@ -57,7 +67,7 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
             key={item.id}
             className={`${isActive(item.path) ? styles.navigation__item + " " + styles.navigation__itemActive : styles.navigation__item}`}
           >
-            <Link href={item.path} prefetch={true}>
+            <Link href={item.path} onClick={handleNavigationLink}>
               <Icon icon={item.icon} size={styles.navigation__icon} />
               <Typography className={styles.navigation__name}>
                 {item.name}

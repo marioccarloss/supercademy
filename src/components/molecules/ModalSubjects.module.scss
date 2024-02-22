@@ -1,0 +1,44 @@
+@use "../settings/colors";
+@use "../settings/border";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.subject {
+  &__header {
+    margin-bottom: 2rem;
+
+    h2 {
+      color: colors.$brand;
+    }
+  }
+
+  &__body {
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1rem;
+  }
+
+  &__item {
+    display: inline-flex;
+    box-shadow: 2px 9px 47.600006103515625px 0px rgba(0, 9, 13, 0.59);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+
+    button,
+    a {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

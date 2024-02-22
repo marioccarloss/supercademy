@@ -141,6 +141,7 @@
     &__avatar {
       width: 20rem;
       height: 20rem;
+      max-width: inherit;
     }
 
     &__body {
@@ -161,6 +162,8 @@
     &__choose {
       position: relative;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
       padding-bottom: 2rem;
 
       &::before {
@@ -178,8 +181,27 @@
       }
 
       &List {
-        height: calc(100vh - 200px);
         overflow: auto;
+        gap: 2rem;
+        height: calc(100svh - 18rem);
+        margin-right: -2rem;
+
+        scrollbar-width: auto;
+        scrollbar-color: #64ee85 transparent;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #64ee85;
+          border-radius: 10px;
+          border: transparent;
+        }
       }
 
       &Item {
@@ -191,6 +213,14 @@
             width: 3.3rem;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    &__choose {
+      &List {
+        height: auto;
       }
     }
   }

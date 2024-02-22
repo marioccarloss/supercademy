@@ -1,0 +1,92 @@
+@use "../settings/colors";
+@use "../settings/border";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.account {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1216px;
+
+  &__header {
+    margin: 2rem 0;
+    span {
+      font: typography.$s200-bold;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      span {
+        font: typography.$s400-semi-bold;
+        align-self: center;
+      }
+    }
+
+    &Icon {
+      display: flex;
+      flex-shrink: 0;
+      width: 4.625rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 2rem;
+  }
+
+  &__card {
+    border-radius: 1.875rem;
+    border: 1px solid colors.$white;
+    padding: 1.5rem;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    width: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: sizes.$tablet) {
+    &__header {
+      width: 90%;
+
+      div {
+        max-width: 30.5rem;
+        max-width: 100%;
+
+        span {
+          font: typography.$s700-bold;
+        }
+      }
+    }
+
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    &__card {
+      display: grid;
+      h2 {
+        margin-top: auto;
+      }
+    }
+
+    > button,
+    > a {
+      margin-bottom: 2rem;
+      color: colors.$white;
+      padding-left: 10%;
+    }
+  }
+}

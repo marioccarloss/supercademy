@@ -26,6 +26,7 @@ import emojiFaceWinking from "./EmojiFaceWinking";
 import emojiGem from "./EmojiGem";
 import emojiGraduation from "./EmojiGraduation";
 import iconGreeting from "./EmojiGreeting";
+import emojiHiFive from "./EmojiHiFive";
 import emojiLanguage from "./EmojiLanguage";
 import iconMagicWand from "./EmojiMagicWand";
 import emojiMessage from "./EmojiMessage";
@@ -55,13 +56,16 @@ import iconClose from "./IconClose";
 import iconConfig from "./IconConfig";
 import iconEye from "./IconEye";
 import iconEyeSlash from "./IconEyeSlash";
+import iconHelp from "./IconHelp";
 import iconLock from "./IconLock";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
 import iconPhotos from "./IconPhotos";
+import iconSecurity from "./IconSecurity";
 import iconSend from "./IconSend";
 import iconSoundOff from "./IconSoundOff";
 import iconSoundOn from "./IconSoundOn";
+import iconTicket from "./IconTicket";
 import isotype from "./Isotype";
 import logo from "./Logo";
 import logoNav from "./LogoNav";
@@ -100,6 +104,7 @@ export {
   emojiFaceWinking,
   emojiGem,
   emojiGraduation,
+  emojiHiFive,
   emojiLanguage,
   emojiMessage,
   emojiMonkeyOne,
@@ -129,18 +134,21 @@ export {
   iconEyeSlash,
   iconFaceRecovery,
   iconGreeting,
+  iconHelp,
   iconLock,
   iconLogout,
   iconMagicWand,
   iconParty,
   iconPencil,
   iconPhotos,
+  iconSecurity,
   iconSend,
   iconSoundOff,
   iconSoundOn,
   iconStudentOne,
   iconStudentThree,
   iconStudentTwo,
+  iconTicket,
   isotype,
   logo,
   logoNav,
