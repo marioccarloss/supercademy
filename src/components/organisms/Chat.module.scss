@@ -180,6 +180,14 @@
     }
   }
 
+  &__withCalendar {
+    .chat {
+      &__container {
+        height: calc(100svh - 23rem);
+      }
+    }
+  }
+
   @media screen and (min-width: sizes.$desktop) {
     &__container {
       padding: 3rem 0;

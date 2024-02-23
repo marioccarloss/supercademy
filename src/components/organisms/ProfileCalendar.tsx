@@ -15,7 +15,7 @@ export const ProfileCalendar = () => {
         <HeaderCalendar />
       </header>
       <section className={styles.calendar__body}>
-        <Chat />
+        <Chat isAvatar={true} isCalendar={true} />
       </section>
     </LayoutPrivate>
   );

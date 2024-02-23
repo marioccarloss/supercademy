@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
-import { Icon } from "@/shared/Icon";
 import useTags, { Tag } from "@/hooks/useTags";
+import { Icon } from "@/shared/Icon";
 
 import student from "@/assets/images/student.jpg";
 import teacher from "@/assets/images/teacher.jpg";
@@ -16,9 +16,10 @@ import useChatMessages, { Message } from "@/hooks/useChatMessages";
 
 type Props = {
   isAvatar?: boolean;
+  isCalendar?: boolean;
 };
 
-export const Chat = ({ isAvatar = false }: Props) => {
+export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
   const { data } = useChatMessages();
   const { chatTags } = useTags();
 
@@ -30,7 +31,19 @@ export const Chat = ({ isAvatar = false }: Props) => {
 
   return (
     <div
-      className={`${isAvatar ? styles.chat + " " + styles.chat__withAvatar : styles.chat}`}
+      className={`${
+        isAvatar && !isCalendar
+          ? styles.chat + " " + styles.chat__withAvatar
+          : !isAvatar && isCalendar
+            ? styles.chat + " " + styles.chat__withCalendar
+            : isAvatar && isCalendar
+              ? styles.chat +
+                " " +
+                styles.chat__withAvatar +
+                " " +
+                styles.chat__withCalendar
+              : styles.chat
+      }`}
     >
       <section className={styles.chat__container}>
         {data.map((chat: Message) => (
