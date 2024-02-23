@@ -25,7 +25,6 @@ import emojiFaceSmiling from "./EmojiFaceSmiling";
 import emojiFaceWinking from "./EmojiFaceWinking";
 import emojiGem from "./EmojiGem";
 import emojiGraduation from "./EmojiGraduation";
-import iconGreeting from "./EmojiGreeting";
 import emojiHiFive from "./EmojiHiFive";
 import emojiLanguage from "./EmojiLanguage";
 import iconMagicWand from "./EmojiMagicWand";
@@ -133,7 +132,6 @@ export {
   iconEye,
   iconEyeSlash,
   iconFaceRecovery,
-  iconGreeting,
   iconHelp,
   iconLock,
   iconLogout,

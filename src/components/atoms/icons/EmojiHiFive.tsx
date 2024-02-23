@@ -1,7 +1,9 @@
+import styles from "./Icons.module.scss";
+
 export default function EmojiHiFive() {
   return (
     <svg
-      className="size-full"
+      className={`size-full ${styles.greeting}`}
       viewBox="0 0 75 72"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

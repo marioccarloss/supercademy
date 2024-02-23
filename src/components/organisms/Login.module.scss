@@ -227,7 +227,7 @@
   }
 
   &__chooseTop,
-  &__chooseBottom{
+  &__chooseBottom {
     display: flex;
     flex-direction: column;
     gap: spacing.$sm;
@@ -277,7 +277,7 @@
 
 .icon {
   &__recovery,
-  &__greeting{
+  &__greeting {
     width: 74px;
     flex-shrink: 0;
   }
@@ -294,7 +294,6 @@
     margin-left: auto;
   }
 }
-
 
 .cards {
   display: flex;
@@ -364,10 +363,20 @@
 
   &__price {
     margin-right: auto;
+
     > * {
       &:first-child {
         margin-right: 6px;
       }
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+
+    > * {
+      width: 100%;
     }
   }
 

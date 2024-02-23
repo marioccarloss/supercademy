@@ -40,6 +40,14 @@ export type Superpoints = {
   description: string;
 };
 
+export type Plan = {
+  id: string;
+  title: string;
+  description: string;
+  price: string;
+  icon: IconsType;
+};
+
 export default function useProfile() {
   const users: User[] = [
     {
@@ -258,7 +266,7 @@ export default function useProfile() {
       icon: "emojiSuperpoints",
       title: "Superpoints",
       description:
-        "¡Felicidades! Has conseguido Superpoints por volver a utilizar Supercademy",
+        "Sólo por entrar en Supercademy obtendrás 25 puntos cada día.",
     },
     {
       id: useId(),
@@ -268,5 +276,38 @@ export default function useProfile() {
       description: "¡Al compartir este enlance con tus amigos!",
     },
   ];
-  return { users, usersCustoms, icons, progressItems, insignias, superpoints };
+
+  const plans: Plan[] = [
+    {
+      id: useId(),
+      title: "Único",
+      description: "Para 1 alumno",
+      price: "15,99€",
+      icon: "iconStudentOne",
+    },
+    {
+      id: useId(),
+      title: "Dúo",
+      description: "Para 2 alumnos",
+      price: "25,99€",
+      icon: "iconStudentTwo",
+    },
+    {
+      id: useId(),
+      title: "Familia",
+      description: "Para 3 alumnos\n" + "+5€ por alumno extra",
+      price: "35,99€",
+      icon: "iconStudentThree",
+    },
+  ];
+
+  return {
+    users,
+    usersCustoms,
+    icons,
+    progressItems,
+    insignias,
+    superpoints,
+    plans,
+  };
 }

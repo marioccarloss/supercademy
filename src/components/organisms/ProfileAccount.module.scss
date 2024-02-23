@@ -55,6 +55,18 @@
     margin-bottom: 1.5rem;
   }
 
+  &__footer {
+    &Icon {
+      color: colors.$white;
+      width: 24px;
+    }
+  }
+
+  > button,
+  > a {
+    margin: 1rem 0 2rem 0;
+  }
+
   @media screen and (min-width: sizes.$tablet) {
     &__header {
       width: 90%;
@@ -77,14 +89,18 @@
 
     &__card {
       display: grid;
+
       h2 {
         margin-top: auto;
       }
     }
 
+    &__link {
+      color: colors.$white;
+    }
+
     > button,
     > a {
-      margin-bottom: 2rem;
       color: colors.$white;
       padding-left: 10%;
     }

@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: spacing.$md;
     padding: spacing.$md 0;
-    animation: animateProfile .45s forwards;
+    animation: animateProfile 0.45s forwards;
   }
 
   &__heading {
@@ -27,7 +27,7 @@
     flex-direction: column;
     gap: spacing.$xs;
 
-    @media (min-width: sizes.$tablet){
+    @media (min-width: sizes.$tablet) {
       gap: spacing.$sm;
       h2 {
         font-size: 48px;
@@ -231,8 +231,8 @@
       flex-wrap: wrap;
       gap: spacing.$xs;
       justify-content: center;
-      margin-left: - spacing.$xs;
-      margin-right: - spacing.$xs;
+      margin-left: -0.6875rem;
+      margin-right: -0.6875rem;
       margin-top: spacing.$xs;
     }
 
@@ -267,7 +267,6 @@
       align-items: center;
       justify-content: center;
       gap: spacing.$sm;
-
     }
 
     &__pinList {

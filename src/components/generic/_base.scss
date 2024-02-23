@@ -35,7 +35,9 @@ body {
 }
 
 a {
-  color: colors.$text-primary;
+  color: unset;
+  text-decoration: none;
+  // color: colors.$text-primary;
 }
 
 .size-full {

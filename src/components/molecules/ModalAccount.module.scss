@@ -1,0 +1,16 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+@use "../settings/spacing";
+@use "../settings/sizes";
+
+.account {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem -1rem;
+
+  @media screen and (min-width: sizes.$tablet) {
+    margin: 0 auto;
+  }
+}

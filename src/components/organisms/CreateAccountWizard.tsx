@@ -1,28 +1,25 @@
 "use client";
 
-import { useState, useId, MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
-import { LayoutPublic } from "@/components/templates/LayoutPublic";
-import { Container } from "@/components/atoms/Container";
-import { Typography } from "@/components/atoms/Typography";
 import { Button } from "@/components/atoms/Button";
-import { Icon } from "@/shared/Icon";
+import { Container } from "@/components/atoms/Container";
 import { Field } from "@/components/atoms/Field";
 import { Link } from "@/components/atoms/Link";
+import { Typography } from "@/components/atoms/Typography";
+import { LayoutPublic } from "@/components/templates/LayoutPublic";
+import { Icon } from "@/shared/Icon";
+
+import useProfile from "@/hooks/useProfile";
 
 import styles from "./Login.module.scss";
 
-type CardType = {
-  id: string;
-  title: string;
-  description: string;
-  price: string;
-  icon: "iconStudentOne" | "iconStudentTwo" | "iconStudentThree";
-};
 export default function CreateAccountWizard() {
   const [step, setStep] = useState<number>(1);
   const [stepInner, setStepInner] = useState<number>(1);
   const [cardIndex, setCardIndex] = useState<number>(0);
+
+  const { plans } = useProfile();
   const NextStep = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setStepInner(stepInner + 1);
@@ -48,30 +45,6 @@ export default function CreateAccountWizard() {
     setStep(step + 1);
   };
 
-  const cards: CardType[] = [
-    {
-      id: useId(),
-      title: "Único",
-      description: "Para 1 alumno",
-      price: "15,99€",
-      icon: "iconStudentOne",
-    },
-    {
-      id: useId(),
-      title: "Dúo",
-      description: "Para 2 alumnos",
-      price: "25,99€",
-      icon: "iconStudentTwo",
-    },
-    {
-      id: useId(),
-      title: "Familia",
-      description: "Para 3 alumnos\n" + "+5€ por alumno extra",
-      price: "35,99€",
-      icon: "iconStudentThree",
-    },
-  ];
-
   return (
     <LayoutPublic>
       <Container>
@@ -82,7 +55,7 @@ export default function CreateAccountWizard() {
                 <div className={styles.account__source}>
                   <Typography mode="title" size="large" icon={true}>
                     ¡Hola, super estudiante!
-                    <Icon icon="iconGreeting" size={styles.icon__greeting} />
+                    <Icon icon="emojiHiFive" size={styles.icon__greeting} />
                   </Typography>
                   <div className={styles.account__steps}>
                     <div className={styles.account__step}>
@@ -150,7 +123,7 @@ export default function CreateAccountWizard() {
                       >
                         <Icon icon="google" />
                         <Typography mode="secondary">
-                          Iniciar sesión con Google
+                          Registrarse con Google
                         </Typography>
                       </Button>
                       <Button
@@ -160,20 +133,29 @@ export default function CreateAccountWizard() {
                       >
                         <Icon icon="apple" />
                         <Typography mode="secondary">
-                          Iniciar sesión con Apple
+                          Registrarse con Apple
                         </Typography>
                       </Button>
                     </>
                   )}
                   <form className={styles.login__form}>
                     {stepInner === 2 && (
-                      <Field
-                        type="email"
-                        id="email"
-                        label="Correo electrónico"
-                        placeholder="Escribe el correo electrónico"
-                        //error="Correo electrónico errónea*"
-                      />
+                      <>
+                        <Field
+                          type="text"
+                          id="name"
+                          label="Nombre"
+                          placeholder="Escribe tu nombre"
+                          //error="Correo electrónico errónea*"
+                        />
+                        <Field
+                          type="email"
+                          id="email"
+                          label="Correo electrónico"
+                          placeholder="Escribe el correo electrónico"
+                          //error="Correo electrónico errónea*"
+                        />
+                      </>
                     )}
                     {stepInner === 3 && (
                       <>
@@ -194,7 +176,7 @@ export default function CreateAccountWizard() {
                       </>
                     )}
                     <Button mode="primary" type="button" onClick={NextStep}>
-                      Crear cuenta
+                      Crear cuenta con email
                     </Button>
                     {step === 1 && (
                       <Typography mode="body" size="small" align="center">
@@ -234,17 +216,17 @@ export default function CreateAccountWizard() {
                   la plataforma.
                 </Typography>
                 <div className={styles.cards}>
-                  {cards.map((card: CardType, index: number) => (
-                    <div className={styles.card} key={card.id}>
+                  {plans.map((plan, index: number) => (
+                    <div className={styles.card} key={plan.id}>
                       <div className={styles.card__container}>
                         <div className={styles.card__plan}>
-                          <Icon icon={card.icon} size={styles.student__one} />
+                          <Icon icon={plan.icon} size={styles.student__one} />
                           <Typography
                             size="medium-regular"
                             mode="secondary"
                             align="center"
                           >
-                            {card.title}
+                            {plan.title}
                           </Typography>
                         </div>
                         <div className={styles.card__content}>
@@ -254,7 +236,7 @@ export default function CreateAccountWizard() {
                               mode="secondary"
                               align="left"
                             >
-                              {card.price}
+                              {plan.price}
                             </Typography>
                             <Typography size="medium" mode="secondary">
                               mes
@@ -265,15 +247,17 @@ export default function CreateAccountWizard() {
                             mode="secondary"
                             align="left"
                           >
-                            {card.description}
+                            {plan.description}
                           </Typography>
-                          <Button
-                            mode="primary"
-                            size="medium"
-                            onClick={() => handleCardSelected(index)}
-                          >
-                            Prueba gratuita
-                          </Button>
+                          <div className={styles.card__button}>
+                            <Button
+                              mode="primary"
+                              size="medium"
+                              onClick={() => handleCardSelected(index)}
+                            >
+                              Prueba gratuita
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -295,7 +279,7 @@ export default function CreateAccountWizard() {
                     <div className={styles.card__container}>
                       <div className={styles.card__plan}>
                         <Icon
-                          icon={cards[cardIndex].icon}
+                          icon={plans[cardIndex].icon}
                           size={styles.student__icon}
                         />
                         <Typography
@@ -303,24 +287,30 @@ export default function CreateAccountWizard() {
                           mode="secondary"
                           align="center"
                         >
-                          {cards[cardIndex].title}
+                          {plans[cardIndex].title}
                         </Typography>
                       </div>
                       <div className={styles.card__content}>
                         <div className={styles.card__price}>
                           <Typography size="extra-large" mode="secondary">
-                            {cards[cardIndex].price}
+                            {plans[cardIndex].price}
                           </Typography>
                           <Typography size="medium" mode="secondary">
                             mes
                           </Typography>
                         </div>
                         <Typography size="extra-small" mode="secondary">
-                          {cards[cardIndex].description}
+                          {plans[cardIndex].description}
                         </Typography>
-                        <Button mode="primary" size="medium" onClick={() => {}}>
-                          Prueba gratuita
-                        </Button>
+                        <div className={styles.card__button}>
+                          <Button
+                            mode="primary"
+                            size="medium"
+                            onClick={() => {}}
+                          >
+                            Prueba gratuita
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
