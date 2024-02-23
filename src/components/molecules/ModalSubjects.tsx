@@ -5,8 +5,8 @@ import { memo } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
-import useSubjects from "@/hooks/useSubjects";
 
+import { useSubjectStore } from "@/store/useSubjectStore";
 import styles from "./ModalSubjects.module.scss";
 
 type Props = {
@@ -15,7 +15,17 @@ type Props = {
 };
 
 const ModalSubjects = memo(({ isModalOpen, modalName }: Props) => {
-  const { data } = useSubjects();
+  const subjects = useSubjectStore((state) => state.subject);
+  const isCountSubjectsValid = useSubjectStore((state) => state.isValid);
+  const isErrorSubjectsValid = useSubjectStore((state) => state.isError);
+  const toggleSelected = useSubjectStore((state) => state.toggleSelection);
+
+  const handleSelection = (id: string) => {
+    toggleSelected(id);
+  };
+
+  if (!subjects) return null;
+
   return (
     <Modal active={isModalOpen} modalName={modalName}>
       <header className={styles.subject__header}>
@@ -23,18 +33,29 @@ const ModalSubjects = memo(({ isModalOpen, modalName }: Props) => {
         <Typography>
           Puedes elegir un mínimo de 1 y un máximo de 10 asignaturas
         </Typography>
+        {isErrorSubjectsValid && (
+          <Typography mode="error">
+            *Ya has llegado a 10, elimina alguna de tus selecciones.
+          </Typography>
+        )}
       </header>
       <section className={styles.subject__body}>
         <div className={styles.subject__list}>
-          {data.map((subject) => (
-            <div key={subject.id} className={styles.subject__item}>
+          {subjects.map((subject) => (
+            <div
+              key={subject.id}
+              className={`${subject.selected ? styles.subject__item + " " + styles.subject__itemSelected : styles.subject__item}`}
+              onClick={() => handleSelection(subject.id)}
+            >
               <Typography>{subject.label}</Typography>
             </div>
           ))}
         </div>
       </section>
       <footer className={styles.subject__footer}>
-        <Button mode="primary">Siguiente</Button>
+        <Button mode={`${isCountSubjectsValid ? "primary" : "disabled"}`}>
+          Siguiente
+        </Button>
       </footer>
     </Modal>
   );

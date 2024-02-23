@@ -64,6 +64,11 @@
     font: typography.$s50-semi-bold;
   }
 
+  &--error {
+    font: typography.$s100-semi-bold;
+    color: colors.$bg-danger;
+  }
+
   &--icon {
     display: flex;
     gap: spacing.$tiny;

@@ -1,8 +1,8 @@
 import {
   HTMLAttributes,
   LabelHTMLAttributes,
-  ReactNode,
   ReactElement,
+  ReactNode,
 } from "react";
 import classNames from "../../shared/classNames";
 import styles from "./Typography.module.scss";
@@ -22,6 +22,7 @@ export interface TypographyProps {
     | "caption"
     | "label"
     | "secondary"
+    | "error"
     | "disabled";
   size?:
     | "extra-large"

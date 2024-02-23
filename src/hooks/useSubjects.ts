@@ -1,5 +1,3 @@
-import { useId } from "react";
-
 export type Subjects = {
   id: string;
   label: string;
@@ -7,67 +5,67 @@ export type Subjects = {
 export default function useSubjects() {
   const data: Subjects[] = [
     {
-      id: useId(),
+      id: "1",
       label: "Economía, Empren. y A. Empresarial",
     },
     {
-      id: useId(),
+      id: "2",
       label: "Economía",
     },
     {
-      id: useId(),
+      id: "3",
       label: "Filosofía",
     },
     {
-      id: useId(),
+      id: "4",
       label: "Latín I",
     },
     {
-      id: useId(),
+      id: "5",
       label: "Biología, Geología y C. Ambientales",
     },
     {
-      id: useId(),
+      id: "6",
       label: "Inglés",
     },
     {
-      id: useId(),
+      id: "7",
       label: "Física y Química",
     },
     {
-      id: useId(),
+      id: "8",
       label: "Alemán",
     },
     {
-      id: useId(),
+      id: "9",
       label: "Historia M. Contemporáneo",
     },
     {
-      id: useId(),
+      id: "10",
       label: "Lengua y Literatura I",
     },
     {
-      id: useId(),
+      id: "11",
       label: "Literatura Universal",
     },
     {
-      id: useId(),
+      id: "12",
       label: "Francés",
     },
     {
-      id: useId(),
+      id: "13",
       label: "Matemáticas Generales",
     },
     {
-      id: useId(),
+      id: "14",
       label: "Matemáticas I",
     },
     {
-      id: useId(),
+      id: "15",
       label: "Matemáticas C. Sociales I",
     },
     {
-      id: useId(),
+      id: "16",
       label: "Tecnología e Ingeniería I",
     },
   ];
