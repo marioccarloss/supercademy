@@ -53,9 +53,15 @@ import iconCalendar from "./IconCalendar";
 import iconCalendar2 from "./IconCalendar2";
 import iconClose from "./IconClose";
 import iconConfig from "./IconConfig";
+import iconCopy from "./IconCopy";
+import iconEmail from "./IconEmail";
 import iconEye from "./IconEye";
 import iconEyeSlash from "./IconEyeSlash";
 import iconHelp from "./IconHelp";
+import {
+  default as iconInstagram,
+  default as iconInstragram,
+} from "./IconInstragram";
 import iconLock from "./IconLock";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
@@ -65,6 +71,8 @@ import iconSend from "./IconSend";
 import iconSoundOff from "./IconSoundOff";
 import iconSoundOn from "./IconSoundOn";
 import iconTicket from "./IconTicket";
+import iconTiktok from "./IconTiktok";
+import iconWhatsapp from "./IconWhatsapp";
 import isotype from "./Isotype";
 import logo from "./Logo";
 import logoNav from "./LogoNav";
@@ -129,10 +137,14 @@ export {
   iconCalendar2,
   iconClose,
   iconConfig,
+  iconCopy,
+  iconEmail,
   iconEye,
   iconEyeSlash,
   iconFaceRecovery,
   iconHelp,
+  iconInstagram,
+  iconInstragram,
   iconLock,
   iconLogout,
   iconMagicWand,
@@ -147,6 +159,8 @@ export {
   iconStudentThree,
   iconStudentTwo,
   iconTicket,
+  iconTiktok,
+  iconWhatsapp,
   isotype,
   logo,
   logoNav,

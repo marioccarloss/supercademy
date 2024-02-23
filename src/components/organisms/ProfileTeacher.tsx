@@ -7,8 +7,10 @@ import image from "@/assets/images/teacher.jpg";
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
+import { ModalCongratulations } from "@/components/molecules/ModalCongratulations";
 import { ModalInsufficientBalance } from "@/components/molecules/ModalInsufficientBalance";
 import { ModalRedeem } from "@/components/molecules/ModalRedeem";
+import { ModalShareCode } from "@/components/molecules/ModalShareCode";
 import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 import { Icon } from "@/shared/Icon";
 
@@ -31,6 +33,15 @@ export const ProfileTeacher = () => {
   const isOpenInsufficientBalanceModal = useModalStore(
     (state) => state.modals.modalInsufficientBalance?.isOpen,
   );
+
+  const isOpenContratulationsModal = useModalStore(
+    (state) => state.modals.modalContratulations?.isOpen,
+  );
+
+  const isOpenShareCodeModal = useModalStore(
+    (state) => state.modals.modalShareCode?.isOpen,
+  );
+
   const setModalOpen = useModalStore((state) => state.setModalOpen);
 
   const handleModal = useCallback(
@@ -100,6 +111,14 @@ export const ProfileTeacher = () => {
       <ModalInsufficientBalance
         isModalOpen={isOpenInsufficientBalanceModal}
         modalName="modalInsufficientBalance"
+      />
+      <ModalCongratulations
+        isModalOpen={isOpenContratulationsModal}
+        modalName="modalContratulations"
+      />
+      <ModalShareCode
+        isModalOpen={isOpenShareCodeModal}
+        modalName="modalShareCode"
       />
     </>
   );

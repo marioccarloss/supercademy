@@ -1,11 +1,14 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useCallback } from "react";
 
 import { Button } from "@/components/atoms/Button";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
+
+import { useModalStore } from "@/store/useModalStore";
+
 import styles from "./ModalInsufficientBalance.module.scss";
 
 type Props = {
@@ -14,8 +17,14 @@ type Props = {
 };
 
 const ModalInsufficientBalance = memo(({ isModalOpen, modalName }: Props) => {
+  const setModalOpen = useModalStore((state) => state.setModalOpen);
+
+  const handleModal = useCallback(() => {
+    setModalOpen("modalShareCode", true);
+  }, [setModalOpen]);
+
   return (
-    <Modal active={isModalOpen} modalName={modalName}>
+    <Modal active={isModalOpen} modalName={modalName} alignVertical="center">
       <div className={styles.modalInsufficientBalance}>
         <Icon icon="emojiWoozy" size={styles.modalInsufficientBalanceIcon} />
         <Typography className={styles.title}>
@@ -26,7 +35,9 @@ const ModalInsufficientBalance = memo(({ isModalOpen, modalName }: Props) => {
           puntos
         </Typography>
         <footer>
-          <Button mode="primary">Compartir código</Button>
+          <Button mode="primary" onClick={handleModal}>
+            Compartir código
+          </Button>
         </footer>
       </div>
     </Modal>
