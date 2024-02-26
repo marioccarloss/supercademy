@@ -93,6 +93,7 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
         </Button>
         <Button
           className={`${styles.navigation__dropdownContainer + " " + styles.navigation__dropdownContainerBottom}`}
+          href="/choose"
         >
           <Icon
             icon="iconLogout"

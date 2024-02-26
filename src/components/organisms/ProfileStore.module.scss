@@ -127,6 +127,7 @@
     flex-direction: column;
     gap: 0.875rem;
     height: 100%;
+    position: relative;
 
     header {
       display: flex;
@@ -174,6 +175,15 @@
           color: colors.$brand;
         }
       }
+    }
+
+    button {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      width: calc(100% + 2rem);
+      height: calc(100% + 2rem);
+      opacity: 0;
     }
   }
 }

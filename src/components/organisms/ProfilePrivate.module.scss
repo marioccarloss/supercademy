@@ -133,6 +133,40 @@
       gap: 0.12rem;
     }
   }
+
+  &__form {
+    &Item {
+      position: relative;
+      padding-right: 1.875rem;
+    }
+
+    &Icon,
+    button {
+      height: 1.5rem;
+      width: 1.5rem;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: sizes.$tablet) {
+    &__header {
+      margin-bottom: 1rem;
+    }
+    &__buttons {
+      flex-direction: row;
+      padding-left: 6.25rem;
+    }
+  }
 }
 
 .insignias {
@@ -182,6 +216,16 @@
     gap: 0.5rem;
     max-width: 26.5rem;
     width: 100%;
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
 
     header {
       display: flex;

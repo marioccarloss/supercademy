@@ -24,7 +24,7 @@ export type Teacher = {
   image: StaticImageData;
   balance: string;
   lock: boolean;
-  sufficientBalance: boolean;
+  sufficientBalance?: boolean;
 };
 
 export default function useTeacher() {
@@ -42,7 +42,6 @@ export default function useTeacher() {
       name: "teacher 2",
       image: teacher2,
       lock: false,
-      sufficientBalance: false,
       balance: "20.000",
     },
     {
@@ -50,7 +49,6 @@ export default function useTeacher() {
       name: "teacher 3",
       image: teacher3,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -58,7 +56,6 @@ export default function useTeacher() {
       name: "teacher 4",
       image: teacher4,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -66,7 +63,6 @@ export default function useTeacher() {
       name: "teacher 5",
       image: teacher5,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -74,7 +70,6 @@ export default function useTeacher() {
       name: "teacher 6",
       image: teacher6,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -82,7 +77,6 @@ export default function useTeacher() {
       name: "teacher 7",
       image: teacher7,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -90,7 +84,6 @@ export default function useTeacher() {
       name: "teacher 8",
       image: teacher8,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -98,7 +91,6 @@ export default function useTeacher() {
       name: "teacher 9",
       image: teacher9,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {
@@ -106,7 +98,6 @@ export default function useTeacher() {
       name: "teacher 10",
       image: teacher10,
       lock: false,
-      sufficientBalance: false,
       balance: "10.000",
     },
     {

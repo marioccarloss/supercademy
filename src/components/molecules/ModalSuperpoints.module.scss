@@ -1,0 +1,96 @@
+@use "../settings/colors";
+@use "../settings/border";
+@use "../settings/spacing";
+@use "../settings/sizes";
+@use "../settings/typography";
+
+.modal {
+  &Superpoints {
+    &__header {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+
+      > span {
+        width: 6rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid colors.$border;
+      width: 100%;
+
+      h2,
+      b {
+        color: colors.$brand;
+      }
+
+      b {
+        margin-right: 0.25rem;
+      }
+
+      div {
+        text-align: center;
+
+        &:first-of-type {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+
+      &:last-child,
+      &:nth-child(2) {
+        border-bottom: 0;
+      }
+    }
+
+    &__footer {
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (min-width: sizes.$tablet) {
+    &Superpoints {
+      &__item {
+        flex-direction: row;
+
+        > * {
+          &:nth-child(1) {
+            width: 35%;
+          }
+          &:nth-child(2) {
+            width: 65%;
+            text-align: left;
+          }
+        }
+
+        div {
+          text-align: left;
+
+          &:first-of-type {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+        }
+      }
+      &__footer {
+        margin-left: 12rem;
+        max-width: 220px;
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useId } from "react";
 
-import image from "@/assets/images/teacher.jpg";
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
@@ -16,13 +15,20 @@ import { Icon } from "@/shared/Icon";
 
 import styles from "./ProfileTeacher.module.scss";
 
+import teacher1 from "@/assets/images/teacher.jpg";
+
 import useTeacher, { Teacher } from "@/hooks/useTeacher";
 import { useModalStore } from "@/store/useModalStore";
 
 export const ProfileTeacher = () => {
-  const [dataTeacherModal, setDataTeacherModal] = useState<Teacher>(
-    {} as Teacher,
-  );
+  const [dataTeacherModal, setDataTeacherModal] = useState<Teacher>({
+    id: useId(),
+    name: "teacher 1",
+    image: teacher1,
+    lock: false,
+    sufficientBalance: true,
+    balance: "100.000",
+  });
 
   const { data } = useTeacher();
 
@@ -46,11 +52,15 @@ export const ProfileTeacher = () => {
 
   const handleModal = useCallback(
     (teacher: Teacher) => {
-      if (teacher.sufficientBalance) {
-        setDataTeacherModal(teacher);
-        setModalOpen("modalRedeem", true);
+      if (teacher.sufficientBalance !== undefined) {
+        if (teacher.sufficientBalance) {
+          setDataTeacherModal(teacher);
+          setModalOpen("modalRedeem", true);
+        } else {
+          setModalOpen("modalInsufficientBalance", true);
+        }
       } else {
-        setModalOpen("modalInsufficientBalance", true);
+        setDataTeacherModal(teacher);
       }
     },
     [setModalOpen],
@@ -65,9 +75,9 @@ export const ProfileTeacher = () => {
         <section className={styles.teacher__body}>
           <div className={styles.teacher__top}>
             <div className={styles.teacher__avatar}>
-              <Image src={image} alt="teacher" />
+              <Image src={dataTeacherModal.image} alt="teacher" />
             </div>
-            <Typography>Einstein</Typography>
+            <Typography>{dataTeacherModal.name}</Typography>
             <Button mode="primary" size="medium">
               Guardar cambios
             </Button>
@@ -79,7 +89,7 @@ export const ProfileTeacher = () => {
                 <Button
                   mode="icon"
                   key={teacher.id}
-                  className={styles.teacher__chooseItem}
+                  className={`${dataTeacherModal.id === teacher.id ? styles.teacher__chooseItem + " " + styles.teacher__chooseItemActive : styles.teacher__chooseItem}`}
                   onClick={() => handleModal(teacher)}
                 >
                   <Image
@@ -104,7 +114,7 @@ export const ProfileTeacher = () => {
       </LayoutPrivate>
 
       <ModalRedeem
-        teacher={dataTeacherModal}
+        data={dataTeacherModal}
         isModalOpen={isOpenRedeemModal}
         modalName="modalRedeem"
       />

@@ -64,6 +64,7 @@
 
   &__send {
     display: flex;
+    align-items: center;
     gap: 1rem;
     position: relative;
     padding: 0 0 2rem;
@@ -136,6 +137,10 @@
       width: 100%;
       flex-shrink: 0;
       display: flex;
+
+      &Active {
+        animation: debounce 0.1s ease-out forwards;
+      }
     }
   }
 
@@ -185,6 +190,71 @@
       &__container {
         height: calc(100svh - 23.5rem);
       }
+    }
+  }
+
+  &__timeline {
+    &Icon {
+      width: 50%;
+      margin-left: auto;
+      diplay: flex;
+    }
+    &Wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: auto;
+      position: relative;
+      width: 50%;
+      overflow: hidden;
+      height: 4rem;
+    }
+  }
+
+  @keyframes size {
+    to {
+      background-position-x: 100vw;
+    }
+  }
+
+  &__progress {
+    background-color: colors.$brand;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-size: contain;
+    background-position-x: 0;
+    mask-image: var(--progress-mask);
+    mask-size: cover;
+    animation: progressAnimation 4s linear infinite;
+    width: 90%;
+    z-index: 10;
+
+    &Bg {
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0;
+      background-size: contain;
+      background-repeat: repeat;
+      background-position-x: 0;
+      mask-image: var(--progress-mask);
+      animation: progressAnimation 4s linear infinite;
+      mask-size: cover;
+      width: 90%;
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes progressAnimation {
+    to {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
     }
   }
 
@@ -266,5 +336,17 @@
   100% {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes debounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

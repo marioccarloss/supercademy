@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useState } from "react";
 
 import { Button } from "@/components/atoms/Button";
 import { Field } from "@/components/atoms/Field";
@@ -15,6 +15,20 @@ type Props = {
 };
 
 const ModalUserHire = memo(({ isModalOpen, modalName }: Props) => {
+  const [count, setCount] = useState(1);
+
+  const handleIncrement = () => {
+    if (count < 10) {
+      setCount(count + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
   return (
     <Modal active={isModalOpen} modalName={modalName}>
       <header className={styles.profileHire__header}>
@@ -25,13 +39,22 @@ const ModalUserHire = memo(({ isModalOpen, modalName }: Props) => {
         <div className={styles.profileHire__content}>
           <Typography align="center">Número de alumnos</Typography>
           <div className={styles.profileHire__counter}>
-            <Button mode="icon">-</Button>
+            <Button mode="icon" onClick={handleDecrement}>
+              -
+            </Button>
             <Field
               type="number"
               id="alumnsCounter"
-              error="Solo puedes contratar un máximo de 10 alumnos por cuenta*"
+              value={count.toString()}
+              error={
+                count >= 10
+                  ? "Solo puedes contratar un máximo de 10 alumnos por cuenta*"
+                  : undefined
+              }
             />
-            <Button mode="icon">+</Button>
+            <Button mode="icon" onClick={handleIncrement}>
+              +
+            </Button>
           </div>
         </div>
       </section>

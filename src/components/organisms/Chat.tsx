@@ -10,6 +10,8 @@ import { Icon } from "@/shared/Icon";
 
 import student from "@/assets/images/student.jpg";
 import teacher from "@/assets/images/teacher.jpg";
+import timeline from "@/assets/images/timeline.svg";
+
 import styles from "./Chat.module.scss";
 
 import useChatMessages, { Message } from "@/hooks/useChatMessages";
@@ -20,13 +22,20 @@ type Props = {
 };
 
 export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
+  const [recordToggle, setRecordToggle] = useState<boolean>(false);
   const { data } = useChatMessages();
   const { chatTags } = useTags();
 
   const [attachPopup, setAttachPopup] = useState<boolean>(false);
 
+  console.log(timeline.src);
+
   const handleAttach = () => {
     setAttachPopup(!attachPopup);
+  };
+
+  const handleRecord = () => {
+    setRecordToggle(!recordToggle);
   };
 
   return (
@@ -79,25 +88,46 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
         </div>
 
         <div className={styles.chat__send}>
-          <div className={styles.chat__input}>
-            <Button
-              mode="icon"
-              className={styles.chat__attach}
-              onClick={handleAttach}
-            >
-              <Icon icon="clip" />
-            </Button>
-            <input
-              type="text"
-              id="text"
-              placeholder="Escribe tu mensaje aquí"
+          {recordToggle ? (
+            <Icon icon="timeline" size={styles.chat__timelineIcon} />
+            // <div className={styles.chat__timelineWrapper}>
+            //   <div
+            //     className={styles.chat__progress}
+            //     style={{ "--progress-mask": `url(${timeline.src})` }}
+            //   ></div>
+            //   <div
+            //     className={styles.chat__progressBg}
+            //     style={{ "--progress-mask": `url(${timeline.src})` }}
+            //   ></div>
+            // </div>
+          ) : (
+            <div className={styles.chat__input}>
+              <Button
+                mode="icon"
+                className={styles.chat__attach}
+                onClick={handleAttach}
+              >
+                <Icon icon="clip" />
+              </Button>
+              <input
+                type="text"
+                id="text"
+                placeholder="Escribe tu mensaje aquí"
+              />
+              <Button mode="icon" className={styles.chat__sendIcon}>
+                <Icon icon="iconSend" />
+              </Button>
+            </div>
+          )}
+          <Button
+            mode="icon"
+            className={styles.chat__record}
+            onClick={handleRecord}
+          >
+            <Icon
+              icon={`${recordToggle ? "recordActive" : "record"}`}
+              size={`${recordToggle ? styles.chat__recordIcon + " " + styles.chat__recordIconActive : styles.chat__recordIcon}`}
             />
-            <Button mode="icon" className={styles.chat__sendIcon}>
-              <Icon icon="iconSend" />
-            </Button>
-          </div>
-          <Button mode="icon" className={styles.chat__record}>
-            <Icon icon="record" size={styles.chat__recordIcon} />
           </Button>
           {attachPopup && (
             <div className={styles.chat__attachPopup}>

@@ -76,11 +76,6 @@ const ModalUserConfig = memo(({ user, isModalOpen, modalName }: Props) => {
     <Modal active={isModalOpen} modalName={modalName}>
       <div className={styles.profileModal}>
         <div className={styles.profileModal__header}>
-          {step == 1 && (
-            <div className={styles.profileModal__steps}>
-              {step} de 3 Perfiles
-            </div>
-          )}
           {steps[step - 1].isBack && (
             <Button
               mode="icon"

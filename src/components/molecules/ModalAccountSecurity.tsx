@@ -5,9 +5,8 @@ import { memo, useCallback, useState } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
+import { Field } from "@/components/atoms/Field";
 import { Icon } from "@/shared/Icon";
-
-import useProfile from "@/hooks/useProfile";
 
 import stylesProfile from "@/components/organisms/ProfileChoose.module.scss";
 import styles from "./ModalAccount.module.scss";
@@ -18,8 +17,12 @@ type Props = {
 };
 
 const ModalAccountSecurity = memo(({ isModalOpen, modalName }: Props) => {
-  const { users } = useProfile();
-  const user = users[0];
+  const [updatePassword, setUpdatePassword] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmationPassword: "",
+  });
+
   const [step, setStep] = useState(1);
 
   const handleBack = useCallback(() => {
@@ -39,11 +42,8 @@ const ModalAccountSecurity = memo(({ isModalOpen, modalName }: Props) => {
             <Typography>
               Gestiona desde aquí todo lo relacionado con tu email y claves.
             </Typography>
-            <Button mode="primary" href="/reset">
-              Cambiar contraseña
-            </Button>
             <Button mode="primary" onClick={handleNextStep}>
-              Cambiar pin
+              Cambiar contraseña
             </Button>
           </div>
         )}
@@ -64,41 +64,50 @@ const ModalAccountSecurity = memo(({ isModalOpen, modalName }: Props) => {
             </header>
             <div className={stylesProfile.profileModal__form}>
               <div className={stylesProfile.profileModal__field}>
-                <div key={user.id} className={stylesProfile.profile__user}>
-                  <div
-                    className={stylesProfile.profile__icon}
-                    style={{ background: `${user.color}` }}
-                  >
-                    <Icon icon={user.icon} size={stylesProfile.icon__choose} />
-                  </div>
-                </div>
                 <div className={stylesProfile.profileModal__createPinTitle}>
-                  <Typography mode="subtitle">Creación de Pin</Typography>
-                  <Typography mode="label">
-                    El código pin debe tener 4 digitos
-                  </Typography>
-                </div>
-              </div>
-              <div className={stylesProfile.profileModal__pinContainer}>
-                <Typography mode="label" align="center">
-                  Pin
-                </Typography>
-                <div className={stylesProfile.profileModal__pinList}>
-                  <input
-                    type="text"
-                    className={stylesProfile.profileModal__pin}
+                  <Typography mode="subtitle">Cambiar contraseña</Typography>
+
+                  <Field
+                    type="password"
+                    id="currentPassword"
+                    label="Contraseña actual"
+                    placeholder="Escribe la contraseña actual"
+                    value={updatePassword.currentPassword}
+                    onChange={(e) =>
+                      setUpdatePassword({
+                        ...updatePassword,
+                        currentPassword: e.target.value,
+                      })
+                    }
+                    //error="Contraseña incorrecta*"
                   />
-                  <input
-                    type="text"
-                    className={stylesProfile.profileModal__pin}
+                  <Field
+                    type="password"
+                    id="newPassword"
+                    label="Nueva contraseña"
+                    placeholder="Escribe la nueva contraseña"
+                    value={updatePassword.newPassword}
+                    onChange={(e) =>
+                      setUpdatePassword({
+                        ...updatePassword,
+                        newPassword: e.target.value,
+                      })
+                    }
+                    //error="Contraseña incorrecta*"
                   />
-                  <input
-                    type="text"
-                    className={stylesProfile.profileModal__pin}
-                  />
-                  <input
-                    type="text"
-                    className={stylesProfile.profileModal__pin}
+                  <Field
+                    type="password"
+                    id="confirmPassword"
+                    label="Confirmar ontraseña"
+                    placeholder="Escribe la confirmación de tu contraseña"
+                    value={updatePassword.confirmationPassword}
+                    onChange={(e) =>
+                      setUpdatePassword({
+                        ...updatePassword,
+                        confirmationPassword: e.target.value,
+                      })
+                    }
+                    //error="Contraseña incorrecta*"
                   />
                 </div>
               </div>

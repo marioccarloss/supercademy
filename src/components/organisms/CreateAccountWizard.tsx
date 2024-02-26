@@ -45,6 +45,11 @@ export default function CreateAccountWizard() {
     setStep(step + 1);
   };
 
+  const handleEdit = () => {
+    setStep(1);
+    setStepInner(2);
+  };
+
   return (
     <LayoutPublic>
       <Container>
@@ -327,29 +332,38 @@ export default function CreateAccountWizard() {
                 <div className={styles.account__chooseBottom}>
                   <Typography size="medium">{step} de 3</Typography>
                   <Typography mode="subtitle">
-                    Seleccionar el método de pago
+                    Resumen de tu suscripción
                   </Typography>
                   <Typography size="medium">
-                    Elige la opción que más se adapte a ti
+                    Recuerda: Te regalamos 30 días gratis y puedes cancelar
+                    cuando quieras
                   </Typography>
-                  <div className={styles.cta__group}>
-                    <Button mode="tertiary" onClick={handlePayment}>
-                      <Icon icon="google" />
-                      <Typography mode="secondary">Google Pay</Typography>
-                    </Button>
-                    <Button mode="tertiary" onClick={handlePayment}>
-                      <Icon icon="apple" />
-                      <Typography mode="secondary">Apple Pay</Typography>
-                    </Button>
-                    <Button mode="tertiary" onClick={handlePayment}>
-                      <Typography mode="secondary">
-                        Tarjeta de crédito
-                      </Typography>
-                    </Button>
-                    <Button mode="tertiary" onClick={handlePayment}>
-                      <Typography mode="secondary">Paypal</Typography>
+                  <hr />
+                  <div className={styles.account__chooseItem}>
+                    <Typography mode="label" size="medium">
+                      Nombre: Mario Carlos Roca Peñafiel
+                    </Typography>
+                    <Button mode="icon" onClick={handleEdit}>
+                      <Icon
+                        icon="iconPencil"
+                        size={styles.configuration__icon}
+                      />
                     </Button>
                   </div>
+                  <div className={styles.account__chooseItem}>
+                    <Typography mode="label" size="medium">
+                      Correo: marioccarloss@gmail.com
+                    </Typography>
+                    <Button mode="icon" onClick={handleEdit}>
+                      <Icon
+                        icon="iconPencil"
+                        size={styles.configuration__icon}
+                      />
+                    </Button>
+                  </div>
+                  <Button mode="primary" onClick={handlePayment}>
+                    Finalizar contratación
+                  </Button>
                 </div>
               </div>
             )}

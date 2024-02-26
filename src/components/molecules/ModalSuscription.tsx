@@ -7,7 +7,6 @@ import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
 import { Icon } from "@/shared/Icon";
 
-import stylesLogin from "@/components/organisms/Login.module.scss";
 import useProfile from "@/hooks/useProfile";
 
 import { useModalStore } from "@/store/useModalStore";
@@ -38,14 +37,11 @@ const ModalSuscription = memo(({ isModalOpen, modalName }: Props) => {
           <Typography mode="subtitle">Tu suscripción</Typography>
           <Typography>Gestiona y consulta los detalles de tu plan.</Typography>
 
-          <div className={stylesLogin.cards}>
-            <div className={stylesLogin.card} key={plans[2].id}>
-              <div className={stylesLogin.card__container}>
-                <div
-                  className={stylesLogin.card__plan}
-                  style={{ height: "auto" }}
-                >
-                  <Icon icon={plans[2].icon} size={stylesLogin.student__one} />
+          <div className={styles.cards}>
+            <div className={styles.card} key={plans[2].id}>
+              <div className={styles.card__container}>
+                <div className={styles.card__plan} style={{ height: "auto" }}>
+                  <Icon icon={plans[2].icon} size={styles.student__one} />
                   <Typography
                     size="medium-regular"
                     mode="secondary"
@@ -54,8 +50,8 @@ const ModalSuscription = memo(({ isModalOpen, modalName }: Props) => {
                     {plans[2].title}
                   </Typography>
                 </div>
-                <div className={stylesLogin.card__content}>
-                  <div className={stylesLogin.card__price}>
+                <div className={styles.card__content}>
+                  <div className={styles.card__price}>
                     <Typography
                       size="extra-large"
                       mode="secondary"

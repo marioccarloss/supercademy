@@ -38,6 +38,7 @@ export type Superpoints = {
   icon: IconsType;
   title: string;
   description: string;
+  supercademy: boolean;
 };
 
 export type Plan = {
@@ -267,6 +268,7 @@ export default function useProfile() {
       title: "Superpoints",
       description:
         "Sólo por entrar en Supercademy obtendrás 25 puntos cada día.",
+      supercademy: true,
     },
     {
       id: useId(),
@@ -274,6 +276,7 @@ export default function useProfile() {
       icon: "emojiSuperpoints",
       title: "Superpoints",
       description: "¡Al compartir este enlance con tus amigos!",
+      supercademy: false,
     },
   ];
 

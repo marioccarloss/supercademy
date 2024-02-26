@@ -27,6 +27,7 @@ export const ProfileAccount = () => {
   const isOpenProfileHire = useModalStore(
     (state) => state.modals.modalProfileHire?.isOpen,
   );
+
   const isOpenLogout = useModalStore(
     (state) => state.modals.modalLogout?.isOpen,
   );

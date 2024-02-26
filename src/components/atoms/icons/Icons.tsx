@@ -83,6 +83,7 @@ import settings from "./Settings";
 import iconStudentOne from "./StudentOne";
 import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
+import timeline from "./TimeLine";
 import trending from "./Trending";
 
 export {
@@ -169,5 +170,6 @@ export {
   record,
   recordActive,
   settings,
+  timeline,
   trending,
 };
