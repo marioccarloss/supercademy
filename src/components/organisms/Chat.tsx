@@ -90,6 +90,7 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
         <div className={styles.chat__send}>
           {recordToggle ? (
             <Icon icon="timeline" size={styles.chat__timelineIcon} />
+          ) : (
             // <div className={styles.chat__timelineWrapper}>
             //   <div
             //     className={styles.chat__progress}
@@ -100,7 +101,6 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
             //     style={{ "--progress-mask": `url(${timeline.src})` }}
             //   ></div>
             // </div>
-          ) : (
             <div className={styles.chat__input}>
               <Button
                 mode="icon"
