@@ -10,6 +10,7 @@
   max-width: 800px;
   width: 90%;
   margin: auto;
+  min-height: calc(100vh - 70px);
   min-height: calc(100svh - 70px);
 
   &__container {

@@ -6,6 +6,7 @@
 .navigation {
   background: colors.$bg-darkTheme;
   box-shadow: 2px 9px 47.6px rgba(0, 9, 13, 0.59);
+  min-height: 100vh;
   min-height: 100svh;
   width: 248px;
   position: fixed;
