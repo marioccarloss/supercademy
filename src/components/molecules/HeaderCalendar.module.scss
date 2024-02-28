@@ -61,7 +61,7 @@
     width: 100%;
 
     > span {
-      border-right: 1px solid colors.$text-primary;
+      border-right: 0.0625rem solid colors.$text-primary;
       font: typography.$s300-bold;
       margin-right: spacing.$tiny;
       padding-right: spacing.$tiny;
@@ -102,7 +102,7 @@
     }
   }
 
-  @media screen and (min-width: sizes.$desktop) {
+  @media screen and (min-width: sizes.$tablet) {
     border-radius: 2.5rem;
     padding: 2rem 3rem 1rem 3rem;
     width: calc(100% - 4rem);

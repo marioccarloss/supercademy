@@ -33,15 +33,15 @@
 
   &__item {
     display: inline-flex;
-    box-shadow: 2px 9px 47.600006103515625px 0px rgba(0, 9, 13, 0.59);
+    box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
 
     &Selected {
-      outline: 2px solid colors.$brand;
+      outline: 0.125rem solid colors.$brand;
     }
   }
 
@@ -51,7 +51,7 @@
 
     button,
     a {
-      max-width: 500px;
+      max-width: 31.25rem;
       width: 100%;
       margin: 0 auto;
     }

@@ -7,11 +7,13 @@
 .profile {
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 50rem;
   width: 90%;
   margin: auto;
-  min-height: calc(100vh - 70px);
-  min-height: calc(100svh - 70px);
+  min-height: calc(100vh - 4.375rem);
+  min-height: calc(100svh - 4.375rem);
+  min-height: calc(100vh - 7rem);
+  min-height: calc(100svh - 7rem);
 
   &__container {
     margin: auto;
@@ -31,7 +33,7 @@
     @media (min-width: sizes.$tablet) {
       gap: spacing.$sm;
       h2 {
-        font-size: 48px;
+        font-size: 3rem;
       }
     }
   }
@@ -70,12 +72,12 @@
   &__icon {
     background: colors.$cta-primary;
     border-radius: border.$radius-large;
-    box-shadow: 2px 9px 47.6px 0 rgba(0, 9, 13, 0.59);
+    box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 96px;
-    width: 96px;
+    height: 6rem;
+    width: 6rem;
   }
 
   &__button {
@@ -88,13 +90,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100px;
+    width: 6.25rem;
     gap: spacing.$xs;
   }
 
   &__ctaContainer {
     display: flex;
-    max-width: 384px;
+    max-width: 24rem;
     width: 100%;
     margin: 0 auto;
     > * {
@@ -114,7 +116,7 @@
     &__user,
     &__icon,
     &__button {
-      width: 136px;
+      width: 8.5rem;
     }
 
     &__user {
@@ -124,30 +126,30 @@
     }
 
     &__icon {
-      height: 136px;
+      height: 8.5rem;
     }
   }
 }
 
 .icon {
   &__pencil {
-    width: 38px;
+    width: 2.375rem;
     flex-shrink: 0;
   }
 
   &__choose {
     display: flex;
-    width: 64px;
+    width: 4rem;
     margin: auto;
   }
 
   &__edit {
-    width: 40px;
+    width: 2.5rem;
     display: flex;
     flex-shrink: 0;
 
     @media (min-width: sizes.$tablet) {
-      width: 54px;
+      width: 3.375rem;
     }
   }
 }
@@ -156,8 +158,8 @@
   &__edit {
     appearance: none;
     background: rgb(0 9 13 / 59%);
-    box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
-    border: 5px solid colors.$white;
+    box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
+    border: 0.3125rem solid colors.$white;
     border-radius: border.$radius-large;
     display: flex;
     align-items: center;
@@ -166,11 +168,11 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 96px;
+    height: 6rem;
     width: 100%;
 
     @media (min-width: sizes.$tablet) {
-      height: 137px;
+      height: 8.5625rem;
     }
   }
 }
@@ -204,7 +206,7 @@
       margin: 0 0 spacing.$xs;
 
       &Icon {
-        width: 14px;
+        width: 0.875rem;
       }
     }
 
@@ -223,7 +225,7 @@
 
     .btn__edit {
       @media (min-width: sizes.$tablet) {
-        height: 100px;
+        height: 6.25rem;
       }
     }
 
@@ -248,8 +250,8 @@
       appearance: none;
       border-radius: border.$radius-large;
       border: none;
-      width: 96px;
-      height: 96px;
+      width: 6rem;
+      height: 6rem;
     }
 
     &__createPinTitle {
@@ -281,8 +283,8 @@
       border: 0;
       border-radius: 100%;
       padding: 0;
-      width: 43px;
-      height: 43px;
+      width: 2.6875rem;
+      height: 2.6875rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -295,7 +297,7 @@
       gap: spacing.$sm;
 
       .profile__user {
-        width: 100px;
+        width: 6.25rem;
         margin-right: auto;
 
         p {
@@ -304,16 +306,16 @@
       }
 
       .profile__icon {
-        height: 96px;
-        width: 96px;
+        height: 6rem;
+        width: 6rem;
       }
 
       .icon__choose {
-        width: 64px;
+        width: 4rem;
       }
 
       .icon__edit {
-        width: 40px;
+        width: 2.5rem;
       }
 
       &:nth-child(2) {

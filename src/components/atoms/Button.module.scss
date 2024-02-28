@@ -12,9 +12,9 @@
   color: colors.$text-primary;
   font: inherit;
   font-weight: 700;
-  height: 48px;
+  height: 3rem;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   border-radius: border.$radius-default;
   transition: all 0.2s;
 
@@ -26,19 +26,19 @@
   &--large {
     padding: spacing.$xxs spacing.$xxs;
     font: typography.$s300-bold;
-    height: 60px;
+    height: 3.75rem;
   }
 
   &--medium {
     padding: spacing.$xxs spacing.$xxs;
     font: typography.$s200-bold;
-    height: 48px;
+    height: 3rem;
   }
 
   &--small {
     padding: spacing.$tiny spacing.$xxs;
     font: typography.$s200-bold;
-    height: 40px;
+    height: 2.5rem;
   }
 
   &--primary {
@@ -49,8 +49,8 @@
       &:active {
         background: transparent;
         color: colors.$cta-primary;
-        outline: 2px solid colors.$cta-primary;
-        box-shadow: 0px 1px 15px 0px rgba(249, 255, 247, 1);
+        outline: 0.125rem solid colors.$cta-primary;
+        box-shadow: 0 0.0625rem 0.9375rem 0 rgba(249, 255, 247, 1);
       }
     }
   }
@@ -64,8 +64,8 @@
       &:active {
         background: transparent;
         color: colors.$cta-secondary;
-        outline: 2px solid colors.$cta-secondary;
-        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+        outline: 0.125rem solid colors.$cta-secondary;
+        box-shadow: 0 0.0625rem 0.9375rem 0 rgba(255, 255, 255, 1);
       }
     }
   }
@@ -108,7 +108,7 @@
 
     @media screen and (min-width: sizes.$desktop) {
       &:hover {
-        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0 0.0625rem 0.9375rem 0 rgba(255, 255, 255, 1);
       }
     }
   }
@@ -125,7 +125,7 @@
 
     @media screen and (min-width: sizes.$desktop) {
       &:hover {
-        box-shadow: 0px 1px 15px 0px rgba(255, 255, 255, 1);
+        box-shadow: 0 0.0625rem 0.9375rem 0 rgba(255, 255, 255, 1);
       }
     }
   }

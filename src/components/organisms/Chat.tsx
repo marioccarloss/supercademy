@@ -78,7 +78,12 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
               {tag.principal === true ? (
                 <button className={styles.chat__tagPrincipal}>
                   {tag.name}
-                  <Icon icon="iconClose" size={styles.chat__tagIcon} />
+                  <Button
+                    href="/home"
+                    className={styles.chat__tagPrincipalClose}
+                  >
+                    <Icon icon="iconClose" size={styles.chat__tagIcon} />
+                  </Button>
                 </button>
               ) : (
                 <button className={styles.chat__tag}>{tag.name}</button>

@@ -12,16 +12,15 @@
     background: colors.$white;
     border-radius: 0 0 border.$radius-default border.$radius-default;
     position: absolute;
-    top: 44px;
+    top: 2.75rem;
     left: 0;
     right: 0;
     overflow: auto;
-    border-bottom: 4px solid colors.$brand;
-    // height: 110px;
+    border-bottom: 0.25rem solid colors.$brand;
   }
 
   &__button {
-    height: 48px;
+    height: 3rem;
   }
 
   &__button,
@@ -44,7 +43,7 @@
   &__selectionActive {
     border-radius: border.$radius-default;
     padding: spacing.$xxs spacing.$xxs;
-    height: 48px;
+    height: 3rem;
     display: flex;
     align-items: center;
   }
@@ -61,8 +60,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
     z-index: 10;
   }
 
@@ -71,7 +70,7 @@
   }
 
   &__icon {
-    width: 10px;
+    width: 0.625rem;
     display: flex;
     align-self: center;
   }
@@ -82,10 +81,6 @@
 
   &__selectionActive {
     color: colors.$text-primary;
-  }
-
-  &__buttonActive {
-
   }
 
   &__list {
@@ -105,6 +100,7 @@
   &__item {
     padding: spacing.$tiny spacing.$xxs;
     width: 100%;
+    color: colors.$text-primary;
   }
 
   &__searchInput {
@@ -119,7 +115,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    height: 48px;
+    height: 3rem;
     text-align: left;
 
     &:focus {

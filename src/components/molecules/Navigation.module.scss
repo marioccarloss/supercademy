@@ -5,10 +5,10 @@
 
 .navigation {
   background: colors.$bg-darkTheme;
-  box-shadow: 2px 9px 47.6px rgba(0, 9, 13, 0.59);
+  box-shadow: 0.125rem 0.5625rem 2.975rem rgba(0, 9, 13, 0.59);
   min-height: 100vh;
   min-height: 100svh;
-  width: 248px;
+  width: 15.5rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
   z-index: 30;
 
   &__home {
-    height: 136px;
+    height: 8.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
         position: absolute;
         top: 50%;
         right: 0;
-        width: 5px;
+        width: 0.3125rem;
         height: 4.5rem;
         transform: translateY(-50%);
       }
@@ -47,7 +47,7 @@
     border: none;
 
     &Icon {
-      width: 65px;
+      width: 4.0625rem;
       display: flex;
     }
   }
@@ -58,11 +58,12 @@
     display: flex;
     flex-direction: column;
     padding: 0;
-    height: 68vh;
+    height: 54vh;
     overflow: auto;
 
     @media (min-width: sizes.$desktop) {
       gap: spacing.$xs;
+      height: 68vh;
     }
   }
 
@@ -97,7 +98,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 5px;
+      width: 0.3125rem;
       height: 100%;
       background: colors.$brand;
     }
@@ -105,12 +106,12 @@
 
   &__dropdown {
     background: colors.$cta-tertiary;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     position: relative;
     margin: 0 auto 1rem auto;
-    height: 56px;
+    height: 3.5rem;
     transition: all 0.3s ease;
-    max-width: 184px;
+    max-width: 11.5rem;
     width: 100%;
 
     &Container {
@@ -139,7 +140,7 @@
 
       &:before {
         content: "";
-        height: 1px;
+        height: 0.0625rem;
         background: rgba(219, 219, 219, 0.5);
         position: absolute;
         top: 0;
@@ -157,8 +158,8 @@
     }
 
     &Icon {
-      width: 56px;
-      height: 56px;
+      width: 3.5rem;
+      height: 3.5rem;
       margin-right: auto;
       margin-left: 0;
       padding: 0.5rem;
@@ -166,12 +167,12 @@
 
     &ArrowIcon,
     &LogoutIcon {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
     &Active {
-      height: 120px;
+      height: 7.5rem;
 
       .navigation__dropdownContainerBottom {
         transform: translateY(0);

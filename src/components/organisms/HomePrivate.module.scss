@@ -15,8 +15,8 @@
 
   &__avatarWrapper {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
     margin-bottom: 2rem;
   }
 
@@ -63,7 +63,7 @@
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 8px solid colors.$bg-danger;
+    border: 0.5rem solid colors.$bg-danger;
     flex-shrink: 0;
 
     img {
@@ -71,7 +71,7 @@
     }
 
     &SwitchedOn {
-      border: 8px solid colors.$brand;
+      border: 0.5rem solid colors.$brand;
     }
 
     &:hover {
@@ -87,8 +87,8 @@
     border: 0;
     background: colors.$bg-danger;
     color: colors.$white;
-    height: 48px;
-    width: 48px;
+    height: 3rem;
+    width: 3rem;
     border-radius: 100%;
     position: absolute;
     bottom: 1rem;
@@ -108,7 +108,7 @@
     margin-bottom: 2rem;
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 1.75rem;
     letter-spacing: 0;
     text-align: center;
   }
@@ -124,11 +124,11 @@
     display: flex;
     align-self: center;
     justify-self: center;
-    width: 32px;
+    width: 2rem;
     flex-shrink: 0;
 
     @media (min-width: sizes.$tablet) {
-      width: 104px;
+      width: 6.5rem;
     }
   }
 
@@ -145,7 +145,7 @@
 
   &__card {
     appearance: none;
-    box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+    box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
     background: colors.$bg-darkTheme;
     border-radius: border.$radius-large;
     color: colors.$white;
@@ -154,7 +154,7 @@
     align-items: center;
     gap: spacing.$xs;
     padding: spacing.$xs spacing.$sm;
-    border: 3px solid transparent;
+    border: 0.1875rem solid transparent;
 
     &Active,
     &:active,
@@ -167,7 +167,7 @@
     @media (min-width: sizes.$tablet) {
       flex-direction: column;
       padding: spacing.$md spacing.$sm;
-      width: 224px;
+      width: 14rem;
     }
   }
 }

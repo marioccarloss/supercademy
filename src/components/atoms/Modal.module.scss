@@ -55,7 +55,7 @@
     position: absolute;
     top: spacing.$md;
     right: spacing.$lg;
-    width: 24px;
+    width: 1.5rem;
   }
 
   &__body {
@@ -86,14 +86,14 @@
 
     &__main {
       border-radius: border.$radius-xl;
-      max-width: 656px;
-      min-height: 400px;
+      max-width: 41rem;
+      min-height: 25rem;
       padding: spacing.$xl;
     }
 
     &__close {
-      top: 64px;
-      right: 64px;
+      top: 4rem;
+      right: 4rem;
     }
   }
 }

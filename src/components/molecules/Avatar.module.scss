@@ -9,15 +9,16 @@
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    border: 8px solid colors.$bg-danger;
+    border: 0.5rem solid colors.$bg-danger;
     flex-shrink: 0;
 
     img {
       border-radius: 100%;
+      width: 100%;
     }
 
     &On {
-      border: 8px solid colors.$brand;
+      border: 0.5rem solid colors.$brand;
     }
 
     > div {
@@ -77,8 +78,8 @@
     border: 0;
     background: colors.$bg-danger;
     color: colors.$white;
-    height: 48px;
-    width: 48px;
+    height: 3rem;
+    width: 3rem;
     border-radius: 100%;
     position: absolute;
     bottom: 1rem;
@@ -96,8 +97,10 @@
 
   &__wrapper {
     position: relative;
-    width: 12.5rem;
-    height: 12.5rem;
+    // width: 12.5rem;
+    // height: 12.5rem;
+    height: clamp(calc(7vw + 7vh), calc(8vw + 8vh), 12.5rem);
+    width: clamp(calc(7vw + 7vh), calc(8vw + 8vh), 12.5rem);
 
     &Top {
       width: 5.56rem;
@@ -110,10 +113,10 @@
 
       .avatar {
         &__image {
-          border: 3px solid colors.$bg-danger;
+          border: 0.1875rem solid colors.$bg-danger;
 
           &On {
-            border: 3px solid colors.$brand;
+            border: 0.1875rem solid colors.$brand;
           }
 
           &:hover {
@@ -129,12 +132,19 @@
           height: 2rem;
           bottom: -0.5rem;
           left: -0.5rem;
+
+          span {
+            width: 1.875rem;
+          }
+          svg {
+            width: 1.25rem;
+          }
         }
       }
     }
   }
 
-  @media screen and (min-width: sizes.$desktop) {
+  @media screen and (min-width: sizes.$tablet) {
     &__wrapper {
       &Top {
         top: 50%;
@@ -142,8 +152,10 @@
         right: auto;
         transform: translate(-50%, -50%);
         position: relative;
-        width: 12.5rem;
-        height: 12.5rem;
+        // width: 12.5rem;
+        // height: 12.5rem;
+        height: clamp(calc(7vw + 7vh), calc(8vw + 8vh), 12.5rem);
+        width: clamp(calc(7vw + 7vh), calc(8vw + 8vh), 12.5rem);
 
         .avatar {
           &__cta {

@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: spacing.$lg spacing.$sm;
+  padding: spacing.$lg spacing.$md;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,14 +24,14 @@
     padding: 0;
 
     &Icon {
-      width: 65px;
+      width: 4.0625rem;
       display: flex;
     }
   }
 
   &__ctasResponsive {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     margin-left: auto;
     z-index: 10;
 
@@ -45,7 +45,7 @@
   }
 
   &__ctaIconResponsive {
-    width: 56px;
+    width: 3.5rem;
   }
 
   .btnCta {
@@ -75,14 +75,14 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 16px;
+      gap: 1rem;
       color: colors.$white;
     }
 
     &__header {
       &Gem,
       &Cal {
-        width: 75px;
+        width: 4.6875rem;
         height: inherit;
         flex-shrink: 0;
       }
@@ -90,13 +90,13 @@
       .popup {
         &__points {
           color: colors.$brand;
-          font-size: 48px;
-          line-height: 57.6px;
+          font-size: 3rem;
+          line-height: 3.6rem;
         }
 
         &__nameText {
-          font-size: 32px;
-          line-height: 38.4px;
+          font-size: 2rem;
+          line-height: 2.4rem;
         }
       }
     }
@@ -104,10 +104,10 @@
     &__avatar {
       appearance: none;
       background: #4fcaff;
-      border: 2px solid colors.$white;
-      border-radius: 10px;
-      width: 56px;
-      height: 56px;
+      border: 0.125rem solid colors.$white;
+      border-radius: 0.625rem;
+      width: 3.5rem;
+      height: 3.5rem;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -115,19 +115,19 @@
     }
 
     &__name {
-      font-size: 20.47px;
+      font-size: 1.279375rem;
     }
 
     &__card {
-      border-radius: 8px;
+      border-radius: 0.5rem;
       background: #2c556f;
-      padding: 8px;
+      padding: 0.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      width: 80px;
+      gap: 0.5rem;
+      width: 5rem;
 
       strong,
       span {
@@ -137,20 +137,20 @@
       }
 
       strong {
-        font-size: 20px;
+        font-size: 1.25rem;
       }
 
       span {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     }
 
     section {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(219, 219, 219, 0.5);
+      gap: 0.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 0.0625rem solid rgba(219, 219, 219, 0.5);
     }
 
     &__cardCol {
@@ -159,18 +159,18 @@
 
     &__cardCalendar {
       background-color: rgba(44, 85, 111, 1);
-      border-radius: 10px;
-      padding: 16px;
-      gap: 24px;
+      border-radius: 0.625rem;
+      padding: 1rem;
+      gap: 1.5rem;
       display: flex;
       flex-direction: column;
       width: 100%;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
 
       button {
-        height: 30px;
+        height: 1.875rem;
 
         span {
           display: flex;
@@ -193,15 +193,15 @@
 
     &__cardCalendarList {
       display: flex;
-      gap: 8px;
+      gap: 0.5rem;
       padding: 0;
       margin: 0 auto;
       list-style: none;
     }
 
     &__cardBullet {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       border-radius: 100%;
       background-color: rgba(114, 138, 157, 1);
       display: flex;
@@ -216,12 +216,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      width: 30px;
-      padding: 4px 3px;
+      gap: 0.375rem;
+      width: 1.875rem;
+      padding: 0.25rem 0.1875rem;
 
       &Active {
-        border-radius: 16px;
+        border-radius: 1rem;
         background-color: colors.$brand;
         color: rgba(10, 48, 66, 1);
 
@@ -247,7 +247,7 @@
       .popup {
         &__calendarList {
           display: flex;
-          gap: 16px;
+          gap: 1rem;
           padding: 0;
           margin: 0 auto;
           list-style: none;
@@ -256,14 +256,14 @@
         &__calendarItem {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 0.5rem;
           align-items: center;
           justify-content: center;
         }
 
         &CalendarBullet {
-          width: 24px;
-          height: 24px;
+          width: 1.5rem;
+          height: 1.5rem;
         }
       }
     }
@@ -271,12 +271,12 @@
     &__cardButtons {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 0.5rem;
 
       a {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 0.375rem;
         color: #fff;
         text-decoration: none;
 
@@ -288,8 +288,8 @@
 
       &Icon {
         display: flex;
-        width: 32px;
-        height: 32px;
+        width: 2rem;
+        height: 2rem;
         flex-shrink: 0;
       }
 
@@ -305,7 +305,7 @@
 
         > span {
           font: typography.$s300-bold;
-          border-right: 1px solid colors.$text-primary;
+          border-right: 0.0625rem solid colors.$text-primary;
           padding-right: spacing.$tiny;
           margin-right: spacing.$tiny;
 
@@ -344,7 +344,7 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        gap: 8px;
+        gap: 0.5rem;
         color: colors.$white;
 
         span {
@@ -364,8 +364,8 @@
 
     &__footer {
       &Icon {
-        width: 32px;
-        height: 32px;
+        width: 2rem;
+        height: 2rem;
         flex-shrink: 0;
       }
     }
@@ -373,24 +373,24 @@
     &__container {
       background: colors.$cta-tertiary;
       border-radius: border.$radius-large;
-      box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
-      padding: 24px;
+      box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
+      padding: 1.5rem;
       position: absolute;
       top: 5rem;
       right: 0;
-      width: 328px;
+      width: 20.5rem;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 1.5rem;
       z-index: 20;
 
       &::after {
         content: "";
         height: 0;
         width: 0;
-        border-right: solid 11px transparent;
-        border-left: solid 11px transparent;
-        border-bottom: solid 17px colors.$cta-tertiary;
+        border-right: solid 0.6875rem transparent;
+        border-left: solid 0.6875rem transparent;
+        border-bottom: solid 1.0625rem colors.$cta-tertiary;
         position: absolute;
         top: -1rem;
         right: 1rem;
@@ -409,24 +409,27 @@
     }
   }
 
-  @media screen and (min-width: sizes.$desktop) {
+  @media screen and (min-width: sizes.$tablet) {
+    padding: spacing.$lg spacing.$xl;
+
     .btnCta {
       display: flex;
     }
 
     &__ctasResponsive {
       margin-left: auto;
-      gap: 40px;
+      gap: 2.5rem;
     }
 
     &Avatar {
-      padding: spacing.$md spacing.$sm;
-      box-shadow: 2px 9px 47.600006103515625px 0 rgba(0, 9, 13, 0.59);
+      box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
+      padding: spacing.$md spacing.$xl;
 
       .headerPrivate {
         &__ctasResponsive {
           margin-bottom: auto;
           margin-top: 2rem;
+          z-index: 20;
         }
       }
     }

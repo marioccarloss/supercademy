@@ -25,7 +25,7 @@
 
   &__primarySelect {
     background-color: colors.$white;
-    border: 3px solid colors.$cta-primary;
+    border: 0.1875rem solid colors.$cta-primary;
     border-radius: border.$radius-large;
     padding: spacing.$sm spacing.$xs;
   }
@@ -55,14 +55,14 @@
   }
 
   &__plan {
-    height: 100px;
+    height: 6.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: spacing.$tiny;
 
     > span {
-      width: 60px;
+      width: 3.75rem;
       display: flex;
       justify-content: center;
     }
@@ -73,7 +73,7 @@
 
     > * {
       &:first-child {
-        margin-right: 6px;
+        margin-right: 0.375rem;
       }
     }
   }
@@ -110,7 +110,7 @@
     &:nth-child(2) {
       .card__plan {
         > span {
-          width: 80px;
+          width: 5rem;
         }
       }
     }
@@ -118,13 +118,13 @@
     &:nth-child(3) {
       .card__plan {
         > span {
-          width: 110px;
+          width: 6.875rem;
         }
       }
     }
   }
 
-  @media screen and (min-width: sizes.$desktop) {
+  @media screen and (min-width: sizes.$tablet) {
     &__container {
       flex-direction: row;
     }

@@ -39,7 +39,7 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
   const handleNavigationLink = () => {
     const hasWindow = typeof window !== "undefined";
     if (hasWindow) {
-      const media = window.matchMedia("(max-width: 1023px)");
+      const media = window.matchMedia("(max-width: 63.9375rem)");
       if (media.matches) {
         setOpenNavigation(false);
       }

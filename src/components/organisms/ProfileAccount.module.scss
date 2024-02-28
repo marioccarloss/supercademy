@@ -7,7 +7,7 @@
 .account {
   width: 90%;
   margin: 0 auto;
-  max-width: 1216px;
+  max-width: 76rem;
 
   &__header {
     margin: 2rem 0;
@@ -40,7 +40,7 @@
 
   &__card {
     border-radius: 1.875rem;
-    border: 1px solid colors.$white;
+    border: 0.0625rem solid colors.$white;
     padding: 1.5rem;
 
     h2 {
@@ -58,7 +58,7 @@
   &__footer {
     &Icon {
       color: colors.$white;
-      width: 24px;
+      width: 1.5rem;
     }
   }
 

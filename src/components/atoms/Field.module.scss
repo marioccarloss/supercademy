@@ -18,16 +18,16 @@
     background: colors.$white;
     border-radius: border.$radius-default;
     padding: spacing.$xxs spacing.$xxs;
-    border-top: 4px solid colors.$white;
-    border-bottom: 4px solid colors.$white;
-    height: 48px;
+    border-top: 0.25rem solid colors.$white;
+    border-bottom: 0.25rem solid colors.$white;
+    height: 3rem;
 
     &:focus-within {
-      border-bottom: 4px solid colors.$brand;
+      border-bottom: 0.25rem solid colors.$brand;
     }
 
     &__icon {
-      width: 24px;
+      width: 1.5rem;
     }
   }
 
@@ -59,7 +59,7 @@
 
   &.error {
     .field__container {
-      border-bottom: 4px solid colors.$state-error;
+      border-bottom: 0.25rem solid colors.$state-error;
     }
 
     .error__message {

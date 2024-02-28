@@ -9,7 +9,7 @@
   width: 100%;
 
   &__body {
-    min-height: calc(100vh - 104px);
+    min-height: calc(100vh - 6.5rem);
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
@@ -61,7 +61,7 @@
       padding: 0;
 
       > button {
-        max-width: 380px;
+        max-width: 23.75rem;
       }
     }
 
@@ -81,7 +81,7 @@
   scrollbar-color: #64ee85 transparent;
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 0.625rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -90,7 +90,7 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: #64ee85;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     border: transparent;
   }
 
@@ -100,7 +100,7 @@
 
   @media screen and (min-width: sizes.$tablet) {
     gap: 3rem 4rem;
-    height: calc(100vh - 240px);
+    height: calc(100vh - 16rem);
     overflow: auto;
     padding: 3rem;
     margin-right: -3rem;

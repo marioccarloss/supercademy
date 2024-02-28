@@ -1,10 +1,10 @@
 import {
-  useState,
-  useEffect,
-  MouseEvent,
-  ReactElement,
   ChangeEvent,
   KeyboardEvent,
+  MouseEvent,
+  ReactElement,
+  useEffect,
+  useState,
 } from "react";
 
 import { Typography } from "@/components/atoms/Typography";
@@ -38,7 +38,7 @@ const Select: SelectOverload = ({ options, optionSelection }) => {
     <div
       className={styles.dropdown__container}
       style={{
-        height: `${options.length < 3 ? options.length * 40 + "px" : "110px"}`,
+        height: `${options.length < 3 ? options.length * 40 + "px" : "6.875rem"}`,
       }}
     >
       <ul
