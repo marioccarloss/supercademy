@@ -9,6 +9,7 @@
 
   &__body {
     min-height: calc(100vh - 12.5rem);
+    min-height: calc(100svh - 12.5rem);
     width: 90%;
   }
 
@@ -127,6 +128,7 @@
         justify-content: center;
 
         &Icon {
+          color: colors.$text-primary;
           width: 2rem;
           display: flex;
           flex-shrink: 0;
@@ -135,13 +137,11 @@
     }
   }
 
-  @media screen and (min-width: sizes.$tabletPortrait) {
+  @media screen and (min-width: sizes.$tablet) {
     &__choose {
       max-width: 86%;
     }
-  }
 
-  @media screen and (min-width: sizes.$desktopSmall) {
     &__avatar {
       width: 20rem;
       height: 20rem;
@@ -210,8 +210,8 @@
       }
 
       &Item {
-        width: 12rem;
-        height: 12rem;
+        width: 10rem;
+        height: 10rem;
 
         &Lock {
           &Icon {
@@ -222,7 +222,7 @@
     }
   }
 
-  @media screen and (min-width: 191.25rem) {
+  @media screen and (min-width: sizes.$desktop) {
     &__choose {
       &List {
         height: auto;

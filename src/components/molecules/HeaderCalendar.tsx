@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useRef } from "react";
+
 import { Typography } from "@/components/atoms/Typography";
 import { Button } from "@/components/atoms/Button";
 import { Icon } from "@/shared/Icon";
@@ -8,6 +10,23 @@ import styles from "./HeaderCalendar.module.scss";
 
 export const HeaderCalendar = () => {
   const hasEventInCalendar = true;
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isScrolling, setIsScrolling] = useState<boolean>(false);
+
+  const handleScroll = (scrollOffset: number) => {
+    if (scrollRef.current) {
+      setIsScrolling(true);
+      const newScrollLeft = scrollRef.current.scrollLeft + scrollOffset;
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScrollEnd = () => {
+    setIsScrolling(false);
+  };
 
   return (
     <div className={styles.headerCalendar}>
@@ -17,11 +36,17 @@ export const HeaderCalendar = () => {
       </div>
       {hasEventInCalendar ? (
         <div className={styles.headerCalendar__body}>
-          <Button mode="icon">
+          <Button mode="icon" onClick={() => handleScroll(-186)}>
             <Icon icon="iconArrowLeft" />
           </Button>
           <div className={styles.headerCalendar__list}>
-            <div className={styles.headerCalendar__listContent}>
+            <div
+              className={`${styles.headerCalendar__listContent} ${
+                isScrolling ? styles.scrolling : ""
+              }`}
+              ref={scrollRef}
+              onScroll={handleScrollEnd}
+            >
               <Button mode="calendar-primary">
                 <div className={styles.headerCalendar__item}>
                   <Typography>25 Dic</Typography>
@@ -141,7 +166,7 @@ export const HeaderCalendar = () => {
               </Button>
             </div>
           </div>
-          <Button mode="icon">
+          <Button mode="icon" onClick={() => handleScroll(186)}>
             <Icon icon="iconArrowRight" />
           </Button>
         </div>

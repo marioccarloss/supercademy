@@ -62,6 +62,7 @@ import {
   default as iconInstagram,
   default as iconInstragram,
 } from "./IconInstragram";
+import emojiHome from "./EmojiHome";
 import iconLock from "./IconLock";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
@@ -91,6 +92,7 @@ export {
   apple,
   arrow,
   arrowBack,
+  emojiHome,
   arrowUp,
   bullet,
   bulletChecked,

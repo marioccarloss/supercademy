@@ -106,10 +106,10 @@
   &__input {
     position: relative;
     border: 0.0625rem solid rgba(255, 255, 255, 1);
-    flex-grow: 1;
     height: 3.5rem;
     border-radius: 1rem;
     gap: 0.25rem;
+    width: calc(100% - 4.5rem);
 
     input {
       appearance: none;
@@ -143,9 +143,9 @@
     justify-content: center;
 
     &Icon {
-      width: 100%;
       flex-shrink: 0;
       display: flex;
+      width: 3.5rem;
 
       &Active {
         animation: debounce 0.1s ease-out forwards;
@@ -197,8 +197,8 @@
   &__withCalendar {
     .chat {
       &__container {
-        height: calc(100vh - 28rem);
-        height: calc(100svh - 28rem);
+        height: calc(100vh - 21rem);
+        height: calc(100svh - 21rem);
       }
     }
   }
@@ -283,15 +283,43 @@
   @media screen and (min-width: sizes.$tablet) {
     &__container {
       padding: 3rem 0;
-      height: calc(100vh - 24rem);
+      height: calc(100vh - 24.5rem);
       height: calc(100svh - 24rem);
     }
 
     &__withAvatar {
       .chat {
         &__container {
-          height: calc(100vh - 24rem);
+          height: calc(100vh - 24.5rem);
           height: calc(100svh - 24rem);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: sizes.$desktop) {
+    &__withAvatar {
+      .chat {
+        &__send {
+          padding-top: 1rem;
+        }
+
+        &__container {
+          height: calc(100vh - 30rem);
+          height: calc(100svh - 30rem);
+        }
+      }
+    }
+
+    &__withCalendar {
+      .chat {
+        &__send {
+          padding-top: 1rem;
+        }
+
+        &__container {
+          height: calc(100vh - 30rem);
+          height: calc(100svh - 30rem);
         }
       }
     }

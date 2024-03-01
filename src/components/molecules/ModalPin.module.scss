@@ -1,0 +1,48 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+@use "../settings/spacing";
+@use "../settings/sizes";
+
+.modalPin {
+  &__header {
+    &Container {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$sm;
+    }
+  }
+
+  &__avatar {
+    background: colors.$cta-primary;
+    border-radius: border.$radius-large;
+    box-shadow: 0.125rem 0.5625rem 2.975rem 0 rgba(0, 9, 13, 0.59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 6rem;
+
+    &Icon {
+      width: 4rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$xs;
+  }
+
+  @media screen and (min-width: sizes.$tablet) {
+    &__header {
+      &Container {
+        flex-direction: row;
+
+        h2 {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

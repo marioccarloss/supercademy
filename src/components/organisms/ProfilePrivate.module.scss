@@ -166,6 +166,12 @@
       padding-left: 6.25rem;
     }
   }
+
+  @media screen and (min-width: sizes.$desktop) {
+    &__body {
+      height: calc(100vh - 13rem);
+    }
+  }
 }
 
 .insignias {

@@ -10,6 +10,8 @@ import styles from "./ProfileChoose.module.scss";
 
 import { ModalUserConfig } from "@/components/molecules/ModalUserConfig";
 import { ModalUserHire } from "@/components/molecules/ModalUserHire";
+import { ModalUserHireOne } from "@/components/molecules/ModalUserHireOne";
+import { ModalUserHireTwo } from "@/components/molecules/ModalUserHireTwo";
 import useProfile, { User } from "@/hooks/useProfile";
 import { useModalStore } from "@/store/useModalStore";
 
@@ -22,6 +24,14 @@ export default function ProfileChoose() {
 
   const isOpenProfileHire = useModalStore(
     (state) => state.modals.modalProfileHire?.isOpen,
+  );
+
+  const isOpenProfileHireOne = useModalStore(
+    (state) => state.modals.modalProfileHireOne?.isOpen,
+  );
+
+  const isOpenProfileHireTwo = useModalStore(
+    (state) => state.modals.modalProfileHireTwo?.isOpen,
   );
 
   const setModalOpen = useModalStore((state) => state.setModalOpen);
@@ -70,7 +80,15 @@ export default function ProfileChoose() {
             {users.length < 10 && (
               <Button
                 className={styles.profile__button}
-                onClick={() => handleModal("modalProfileHire")}
+                onClick={() => {
+                  if (users.length === 1) {
+                    handleModal("modalProfileHireOne");
+                  } else if (users.length >= 1 && users.length < 3) {
+                    handleModal("modalProfileHireTwo");
+                  } else {
+                    handleModal("modalProfileHire");
+                  }
+                }}
               >
                 <div className={styles.profile__icon}>
                   <Icon icon="addUser" size={styles.icon__choose} />
@@ -96,6 +114,14 @@ export default function ProfileChoose() {
       <ModalUserHire
         isModalOpen={isOpenProfileHire}
         modalName="modalProfileHire"
+      />
+      <ModalUserHireOne
+        isModalOpen={isOpenProfileHireOne}
+        modalName="modalProfileHireOne"
+      />
+      <ModalUserHireTwo
+        isModalOpen={isOpenProfileHireTwo}
+        modalName="modalProfileHireTwo"
       />
     </LayoutPublic>
   );

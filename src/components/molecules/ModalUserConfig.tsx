@@ -10,11 +10,12 @@ import { Dropdown } from "@/components/atoms/Dropdown";
 import { Field } from "@/components/atoms/Field";
 import { Modal } from "@/components/atoms/Modal";
 import { Typography } from "@/components/atoms/Typography";
+import { PinCreate } from "@/components/molecules/PinCreate";
 import { Icon } from "@/shared/Icon";
 
 import styles from "@/components/organisms/ProfileChoose.module.scss";
 
-import useProfile, { Icons, User } from "@/hooks/useProfile";
+import useProfile, { Icons, User, Steps } from "@/hooks/useProfile";
 
 type Props = {
   user: User;
@@ -52,7 +53,7 @@ const ModalUserConfig = memo(({ user, isModalOpen, modalName }: Props) => {
     setStep(step < 3 && step > 1 ? step - 1 : step - 2);
   };
 
-  const steps = [
+  const steps: Steps[] = [
     {
       step: 1,
       title: "Configurar perfil",
@@ -162,54 +163,24 @@ const ModalUserConfig = memo(({ user, isModalOpen, modalName }: Props) => {
           </form>
         )}
         {step === 2 && (
-          <div className={styles.profileModal__listIcon}>
-            {icons.map(({ id, icon, color }: Icons) => (
-              <div key={id} className={styles.profileModal__itemIcon}>
-                <Button
-                  className={styles.profileModal__itemIconAvatar}
-                  style={{ background: `${color}` }}
-                  onClick={chooseIconAndReturn}
-                >
-                  <Icon icon={icon} size={styles.icon__choose} />
-                </Button>
-              </div>
-            ))}
-          </div>
-        )}
-        {step === 3 && (
-          <div className={styles.profileModal__form}>
-            <div className={styles.profileModal__field}>
-              <div key={user.id} className={styles.profile__user}>
-                <div
-                  className={styles.profile__icon}
-                  style={{ background: `${user.color}` }}
-                >
-                  <Icon icon={user.icon} size={styles.icon__choose} />
+          <>
+            <Typography mode="subtitle">{steps[1].title}</Typography>
+            <div className={styles.profileModal__listIcon}>
+              {icons.map(({ id, icon, color }: Icons) => (
+                <div key={id} className={styles.profileModal__itemIcon}>
+                  <Button
+                    className={styles.profileModal__itemIconAvatar}
+                    style={{ background: `${color}` }}
+                    onClick={chooseIconAndReturn}
+                  >
+                    <Icon icon={icon} size={styles.icon__choose} />
+                  </Button>
                 </div>
-              </div>
-              <div className={styles.profileModal__createPinTitle}>
-                <Typography mode="subtitle">{steps[step - 1].title}</Typography>
-                <Typography mode="label">{steps[step - 1].tagline}</Typography>
-              </div>
+              ))}
             </div>
-            <div className={styles.profileModal__pinContainer}>
-              <Typography mode="label" align="center">
-                Pin
-              </Typography>
-              <div className={styles.profileModal__pinList}>
-                <input type="text" className={styles.profileModal__pin} />
-                <input type="text" className={styles.profileModal__pin} />
-                <input type="text" className={styles.profileModal__pin} />
-                <input type="text" className={styles.profileModal__pin} />
-              </div>
-            </div>
-            <div className={styles.profileModal__field}>
-              <Button mode="primary" size="small" href="/home">
-                Confirmación
-              </Button>
-            </div>
-          </div>
+          </>
         )}
+        {step === 3 && <PinCreate steps={steps} stepNumber={3} user={user} />}
       </div>
     </Modal>
   );

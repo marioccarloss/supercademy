@@ -137,6 +137,7 @@ export const ProfileStore = () => {
       <ModalCongratulations
         isModalOpen={isOpenContratulationsModal}
         modalName="modalContratulations"
+        isTeacherPage={true}
       />
       <ModalInsufficientBalance
         isModalOpen={isOpenInsufficientBalanceModal}
@@ -145,6 +146,7 @@ export const ProfileStore = () => {
       <ModalShareCode
         isModalOpen={isShareCodeModal}
         modalName="modalShareCode"
+        code="3435X"
       />
     </>
   );

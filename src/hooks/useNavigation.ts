@@ -13,6 +13,12 @@ export default function useNavigation() {
   const navigation: Nav[] = [
     {
       id: useId(),
+      name: "Home",
+      path: "/home",
+      icon: "emojiHome",
+    },
+    {
+      id: useId(),
       name: "Deberes",
       path: "/homeworks",
       icon: "emojiBookmark",

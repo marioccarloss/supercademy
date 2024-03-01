@@ -10,7 +10,6 @@ import { Icon } from "@/shared/Icon";
 
 import student from "@/assets/images/student.jpg";
 import teacher from "@/assets/images/teacher.jpg";
-import timeline from "@/assets/images/timeline.svg";
 
 import styles from "./Chat.module.scss";
 
@@ -27,8 +26,6 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
   const { chatTags } = useTags();
 
   const [attachPopup, setAttachPopup] = useState<boolean>(false);
-
-  console.log(timeline.src);
 
   const handleAttach = () => {
     setAttachPopup(!attachPopup);
@@ -72,40 +69,32 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
         ))}
       </section>
       <footer className={styles.chat__footer}>
-        <div className={styles.chat__tags}>
-          {chatTags.map((tag: Tag) => (
-            <div key={tag.id} className={styles.chat__tagsItem}>
-              {tag.principal === true ? (
-                <button className={styles.chat__tagPrincipal}>
-                  {tag.name}
-                  <Button
-                    href="/home"
-                    className={styles.chat__tagPrincipalClose}
-                  >
-                    <Icon icon="iconClose" size={styles.chat__tagIcon} />
-                  </Button>
-                </button>
-              ) : (
-                <button className={styles.chat__tag}>{tag.name}</button>
-              )}
-            </div>
-          ))}
-        </div>
+        {!isCalendar && (
+          <div className={styles.chat__tags}>
+            {chatTags.map((tag: Tag) => (
+              <div key={tag.id} className={styles.chat__tagsItem}>
+                {tag.principal === true ? (
+                  <button className={styles.chat__tagPrincipal}>
+                    {tag.name}
+                    <Button
+                      href="/home"
+                      className={styles.chat__tagPrincipalClose}
+                    >
+                      <Icon icon="iconClose" size={styles.chat__tagIcon} />
+                    </Button>
+                  </button>
+                ) : (
+                  <button className={styles.chat__tag}>{tag.name}</button>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className={styles.chat__send}>
           {recordToggle ? (
             <Icon icon="timeline" size={styles.chat__timelineIcon} />
           ) : (
-            // <div className={styles.chat__timelineWrapper}>
-            //   <div
-            //     className={styles.chat__progress}
-            //     style={{ "--progress-mask": `url(${timeline.src})` }}
-            //   ></div>
-            //   <div
-            //     className={styles.chat__progressBg}
-            //     style={{ "--progress-mask": `url(${timeline.src})` }}
-            //   ></div>
-            // </div>
             <div className={styles.chat__input}>
               <Button
                 mode="icon"

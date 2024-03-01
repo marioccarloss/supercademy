@@ -9,12 +9,13 @@ import { Typography } from "@/components/atoms/Typography";
 import { Card } from "@/components/molecules/Card";
 import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
 import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
+import { ModalSupercademy } from "@/components/molecules/ModalSupercademy";
+import { ModalShareCode } from "@/components/molecules/ModalShareCode";
 import { Icon } from "@/shared/Icon";
 
 import { useModalStore } from "@/store/useModalStore";
 
 import useProfile from "@/hooks/useProfile";
-import { ModalSupercademy } from "../molecules/ModalSupercademy";
 import styles from "./ProfilePrivate.module.scss";
 
 export const ProfilePrivate = () => {
@@ -26,6 +27,10 @@ export const ProfilePrivate = () => {
 
   const isOpenSupercademyModal = useModalStore(
     (state) => state.modals.modalSupercademy?.isOpen,
+  );
+
+  const isOpenShareCodeModal = useModalStore(
+    (state) => state.modals.modalShareCode?.isOpen,
   );
 
   const setModalOpen = useModalStore((state) => state.setModalOpen);
@@ -177,11 +182,9 @@ export const ProfilePrivate = () => {
                     </div>
                   </header>
                   <section>{point.description}</section>
-                  {point.supercademy && (
-                    <Button onClick={() => handleModal("modalSupercademy")}>
-                      {point.title}
-                    </Button>
-                  )}
+                  <Button onClick={() => handleModal(point.modal)}>
+                    {point.title}
+                  </Button>
                 </div>
               ))}
             </div>
@@ -192,6 +195,11 @@ export const ProfilePrivate = () => {
       <ModalSupercademy
         isModalOpen={isOpenSupercademyModal}
         modalName="modalSupercademy"
+      />
+      <ModalShareCode
+        isModalOpen={isOpenShareCodeModal}
+        modalName="modalShareCode"
+        code="3435X"
       />
     </>
   );

@@ -6,12 +6,13 @@ import styles from "./Layout.module.scss";
 
 type Props = {
   children: ReactNode;
+  hasBack?: boolean;
 };
 
-export const LayoutPublic = ({ children }: Props) => {
+export const LayoutPublic = ({ children, hasBack = false }: Props) => {
   return (
     <main className={styles.layout}>
-      <Header />
+      <Header hasBack={hasBack} />
       {children}
       <Footer />
     </main>

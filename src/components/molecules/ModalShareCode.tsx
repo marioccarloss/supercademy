@@ -12,18 +12,30 @@ import styles from "./ModalShareCode.module.scss";
 type Props = {
   isModalOpen: boolean;
   modalName: string;
+  code: string;
 };
 
-const ModalShareCode = memo(({ isModalOpen, modalName }: Props) => {
+const ModalShareCode = memo(({ isModalOpen, modalName, code }: Props) => {
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        console.log("¡El texto se ha copiado correctamente!");
+      })
+      .catch((error) => {
+        console.error("Error al copiar el texto: ", error);
+      });
+  };
+
   return (
     <Modal active={isModalOpen} modalName={modalName} alignVertical="center">
       <div className={styles.modalShareCode}>
         <Typography mode="subtitle" align="center">
           Comparte tu código único
         </Typography>
-        <Button mode="icon">
+        <Button mode="icon" onClick={copyToClipboard}>
           <Typography align="center" className={styles.modalShareCode__copy}>
-            3435X
+            {code}
           </Typography>
           <Icon icon="iconCopy" size={styles.modalShareCode__icon} />
         </Button>

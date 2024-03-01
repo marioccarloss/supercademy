@@ -35,6 +35,12 @@
     width: 11rem;
   }
 
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   @media (min-width: sizes.$tablet) {
     padding: spacing.$sm 0;
     margin-bottom: -(spacing.$sm);

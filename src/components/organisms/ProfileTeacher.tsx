@@ -129,6 +129,7 @@ export const ProfileTeacher = () => {
       <ModalShareCode
         isModalOpen={isOpenShareCodeModal}
         modalName="modalShareCode"
+        code="3435X"
       />
     </>
   );

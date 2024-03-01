@@ -43,7 +43,7 @@ export const ProfileAccount = () => {
 
   return (
     <>
-      <LayoutPublic>
+      <LayoutPublic hasBack={true}>
         <div className={styles.account}>
           <header className={styles.account__header}>
             <div>

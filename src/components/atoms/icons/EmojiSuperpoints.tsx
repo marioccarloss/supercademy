@@ -6,7 +6,7 @@ export default function EmojiSuperpoints() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1176_133849)">
+      <g clipPath="url(#clip0_1176_133849)">
         <g filter="url(#filter0_d_1176_133849)">
           <path
             d="M57.4181 35.5625L68.5875 48.3375L43.9037 84.3919L19.395 48.3331L30.5994 35.5625H57.4181ZM58.0175 34.25H30.0044L17.75 48.2194V48.2325L17.7631 48.2631L43.8994 86.7194L70.2281 48.2631L70.25 48.2544V48.2413L58.0175 34.25Z"
@@ -71,9 +71,9 @@ export default function EmojiSuperpoints() {
           width="147.7"
           height="147.67"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

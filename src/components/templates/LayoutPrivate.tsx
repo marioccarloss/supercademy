@@ -13,6 +13,7 @@ type Props = {
   children: ReactNode;
   isAvatar?: boolean;
   isHeaderVisible?: boolean;
+  hasBack?: boolean;
 };
 
 export const LayoutPrivate = ({

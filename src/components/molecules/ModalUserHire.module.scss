@@ -101,3 +101,29 @@
     }
   }
 }
+
+.modalHire {
+  &__body {
+    > * {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0 auto;
+      max-width: 21.875rem;
+      margin-bottom: 2rem;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &__footer {
+    margin: 0 auto;
+    max-width: 24rem;
+
+    > * {
+      width: 100%;
+    }
+  }
+}

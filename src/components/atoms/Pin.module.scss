@@ -1,0 +1,36 @@
+@use "../settings/border";
+@use "../settings/colors";
+@use "../settings/typography";
+@use "../settings/spacing";
+@use "../settings/sizes";
+
+.pin {
+  &__container {
+    text-align: center;
+    margin: 0 auto spacing.$sm auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: spacing.$sm;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: spacing.$sm;
+  }
+
+  &__item {
+    appearance: none;
+    border: 0;
+    border-radius: 100%;
+    padding: 0;
+    width: 2.6875rem;
+    height: 2.6875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -48,6 +48,7 @@
       display: flex;
       gap: 1.5rem;
       padding: 0 1rem;
+      transition: scroll-left 0.5s ease;
 
       > * {
         flex-shrink: 0;
@@ -106,5 +107,13 @@
     border-radius: 2.5rem;
     padding: 2rem 3rem 1rem 3rem;
     width: calc(100% - 4rem);
+    max-width: 74rem;
+    margin: 0 auto;
+  }
+}
+
+.scrolling {
+  .headerCalendar__listContent {
+    transition-duration: 0s;
   }
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { memo } from "react";
-
 import { Modal } from "@/components/atoms/Modal";
 import { Hiring } from "@/components/molecules/Hiring";
 
@@ -10,14 +9,14 @@ type Props = {
   modalName: string;
 };
 
-const ModalUserHire = memo(({ isModalOpen, modalName }: Props) => {
+const ModalUserHireTwo = memo(({ isModalOpen, modalName }: Props) => {
   return (
     <Modal active={isModalOpen} modalName={modalName}>
-      <Hiring planHiring={4} />
+      <Hiring planHiring={2} />
     </Modal>
   );
 });
 
-ModalUserHire.displayName = "ModalUserHire";
+ModalUserHireTwo.displayName = "ModalUserHireTwo";
 
-export { ModalUserHire };
+export { ModalUserHireTwo };

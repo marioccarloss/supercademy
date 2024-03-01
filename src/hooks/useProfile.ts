@@ -6,6 +6,7 @@ export type User = {
   name: string;
   icon: IconsType;
   color: string;
+  hasPin?: boolean;
 };
 
 export type Icons = {
@@ -38,15 +39,24 @@ export type Superpoints = {
   icon: IconsType;
   title: string;
   description: string;
-  supercademy: boolean;
+  modal: string;
 };
 
 export type Plan = {
   id: string;
   title: string;
   description: string;
+  descriptionAlternative?: string;
+  descriptionAlternative2?: string;
   price: string;
   icon: IconsType;
+};
+
+export type Steps = {
+  step: number;
+  title: string;
+  tagline?: string;
+  isBack: boolean;
 };
 
 export default function useProfile() {
@@ -57,6 +67,7 @@ export default function useProfile() {
       icon: "emojiCat",
       color: "#4FCAFF",
     },
+    /*
     {
       id: useId(),
       name: "Alumno 2",
@@ -105,7 +116,6 @@ export default function useProfile() {
       icon: "emojiFaceHugging",
       color: "#A0F6F6",
     },
-    /*
     {
       id: useId(),
       name: "Alumno 10",
@@ -127,6 +137,7 @@ export default function useProfile() {
       name: "Marcela",
       icon: "emojiMonkeyOne",
       color: "#FFB30F",
+      hasPin: true,
     },
     {
       id: useId(),
@@ -268,7 +279,7 @@ export default function useProfile() {
       title: "Superpoints",
       description:
         "Sólo por entrar en Supercademy obtendrás 25 puntos cada día.",
-      supercademy: true,
+      modal: "modalSupercademy",
     },
     {
       id: useId(),
@@ -276,7 +287,7 @@ export default function useProfile() {
       icon: "emojiSuperpoints",
       title: "Superpoints",
       description: "¡Al compartir este enlance con tus amigos!",
-      supercademy: false,
+      modal: "modalShareCode",
     },
   ];
 
@@ -294,6 +305,7 @@ export default function useProfile() {
       description: "Para 2 alumnos",
       price: "25,99€",
       icon: "iconStudentTwo",
+      descriptionAlternative: "Máximo 2 alumnos",
     },
     {
       id: useId(),
@@ -301,6 +313,8 @@ export default function useProfile() {
       description: "Para 3 alumnos\n" + "+5€ por alumno extra",
       price: "35,99€",
       icon: "iconStudentThree",
+      descriptionAlternative: "3 alumnos",
+      descriptionAlternative2: "(+5€ por alumno extra)",
     },
   ];
 

@@ -74,6 +74,23 @@
     flex-direction: column;
     gap: spacing.$sm;
   }
+
+  &__pin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: spacing.$sm;
+
+    section {
+      margin-left: 0;
+
+      > span {
+        text-align: left;
+        align-self: flex-start;
+      }
+    }
+  }
 }
 
 .recovery {
