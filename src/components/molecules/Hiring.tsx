@@ -18,6 +18,7 @@ type Props = {
 
 export const Hiring = ({ planHiring }: Props) => {
   const { plans } = useProfile();
+  const [planSelected, setPlanSelected] = useState<number>(0);
   const [count, setCount] = useState<number>(1);
 
   let plansUpdated = plans;
@@ -38,6 +39,10 @@ export const Hiring = ({ planHiring }: Props) => {
     if (count > 1) {
       setCount(count - 1);
     }
+  };
+
+  const handleSelectedPlan = (index: number) => {
+    setPlanSelected(index);
   };
 
   if (planHiring > 3) {
@@ -87,8 +92,12 @@ export const Hiring = ({ planHiring }: Props) => {
       </header>
       <section className={styles.modalHire__body}>
         <div className={stylesCard.cards}>
-          {plansUpdated.map((plan) => (
-            <div className={stylesCard.card} key={plan.id}>
+          {plansUpdated.map((plan, index: number) => (
+            <div
+              key={plan.id}
+              className={`${planSelected === index ? stylesCard.card + " " + stylesCard.cardActive : stylesCard.card}`}
+              onClick={() => handleSelectedPlan(index)}
+            >
               <div className={stylesCard.card__container}>
                 <div
                   className={stylesCard.card__plan}

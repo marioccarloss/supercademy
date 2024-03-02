@@ -19,7 +19,7 @@
   background-color: colors.$white;
   padding: spacing.$sm spacing.$xs;
   border-radius: border.$radius-large;
-  border: 0.25rem solid colors.$brand;
+  border: 0.25rem solid transparent;
   max-width: 24rem;
   margin: 0 auto;
 
@@ -85,6 +85,10 @@
     > * {
       width: 100%;
     }
+  }
+
+  &Active {
+    border: 0.25rem solid colors.$brand;
   }
 
   @media (min-width: sizes.$tablet) {
