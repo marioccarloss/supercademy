@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
 type State = {
   navigation: {
@@ -12,11 +12,16 @@ type Actions = {
 };
 
 export const useNavigationStore = create(
-  devtools<State & Actions>((set) => ({
-    navigation: {
-      isOpen: true,
+  persist<State & Actions>(
+    (set) => ({
+      navigation: {
+        isOpen: true,
+      },
+      setOpened: (isOpen) =>
+        set((state) => ({ navigation: { ...state.navigation, isOpen } })),
+    }),
+    {
+      name: "navbar-storage",
     },
-    setOpened: (isOpen) =>
-      set((state) => ({ navigation: { ...state.navigation, isOpen } })),
-  })),
+  ),
 );
