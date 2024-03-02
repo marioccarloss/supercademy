@@ -9,7 +9,7 @@
   width: 100%;
 
   &__body {
-    min-height: calc(100vh - 6.5rem);
+    min-height: calc(100vh - 8rem);
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
@@ -100,7 +100,8 @@
 
   @media screen and (min-width: sizes.$tablet) {
     gap: 3rem 4rem;
-    height: calc(100vh - 16rem);
+    height: calc(100svh - 14.5rem);
+    height: calc(100vh - 14.5rem);
     overflow: auto;
     padding: 3rem;
     margin-right: -3rem;
