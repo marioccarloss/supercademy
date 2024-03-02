@@ -51,7 +51,7 @@ export const Navigation = ({ isOpen }: NavigationProps) => {
       className={`${!isOpen ? styles.navigation : styles.navigation + " " + styles.navigationOpen}`}
     >
       <div
-        className={`${isActive("/home") ? styles.navigation__home + " " + styles.navigation__homeActive : styles.navigation__home}`}
+        className={`${isActive("/home*") ? styles.navigation__home + " " + styles.navigation__homeActive : styles.navigation__home}`}
       >
         <Button
           mode="icon"

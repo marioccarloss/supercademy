@@ -13,6 +13,7 @@
   "dependencies": {
     "@codelytv/react-carousel": "^1.0.3",
     "next": "14.1.0",
+    "nextjs-toploader": "^1.6.6",
     "react": "^18",
     "react-dom": "^18",
     "zustand": "^4.5.0"
