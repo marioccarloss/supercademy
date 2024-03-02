@@ -18,9 +18,16 @@ import useChatMessages, { Message } from "@/hooks/useChatMessages";
 type Props = {
   isAvatar?: boolean;
   isCalendar?: boolean;
+  isConversation?: boolean;
+  tagPrincipal?: string;
 };
 
-export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
+export const Chat = ({
+  isAvatar = false,
+  isCalendar = false,
+  isConversation = false,
+  tagPrincipal = "Deberes",
+}: Props) => {
   const [recordToggle, setRecordToggle] = useState<boolean>(false);
   const { data } = useChatMessages();
   const { chatTags } = useTags();
@@ -69,23 +76,19 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
         ))}
       </section>
       <footer className={styles.chat__footer}>
-        {!isCalendar && (
+        {(isConversation || !isCalendar) && (
           <div className={styles.chat__tags}>
+            <div className={styles.chat__tagsItem}>
+              <button className={styles.chat__tagPrincipal}>
+                {tagPrincipal}
+                <Button href="/home" className={styles.chat__tagPrincipalClose}>
+                  <Icon icon="iconClose" size={styles.chat__tagIcon} />
+                </Button>
+              </button>
+            </div>
             {chatTags.map((tag: Tag) => (
               <div key={tag.id} className={styles.chat__tagsItem}>
-                {tag.principal === true ? (
-                  <button className={styles.chat__tagPrincipal}>
-                    {tag.name}
-                    <Button
-                      href="/home"
-                      className={styles.chat__tagPrincipalClose}
-                    >
-                      <Icon icon="iconClose" size={styles.chat__tagIcon} />
-                    </Button>
-                  </button>
-                ) : (
-                  <button className={styles.chat__tag}>{tag.name}</button>
-                )}
+                <button className={styles.chat__tag}>{tag.name}</button>
               </div>
             ))}
           </div>
@@ -95,23 +98,27 @@ export const Chat = ({ isAvatar = false, isCalendar = false }: Props) => {
           {recordToggle ? (
             <Icon icon="timeline" size={styles.chat__timelineIcon} />
           ) : (
-            <div className={styles.chat__input}>
-              <Button
-                mode="icon"
-                className={styles.chat__attach}
-                onClick={handleAttach}
-              >
-                <Icon icon="clip" />
-              </Button>
-              <input
-                type="text"
-                id="text"
-                placeholder="Escribe tu mensaje aquí"
-              />
-              <Button mode="icon" className={styles.chat__sendIcon}>
-                <Icon icon="iconSend" />
-              </Button>
-            </div>
+            <>
+              {!isConversation && (
+                <div className={styles.chat__input}>
+                  <Button
+                    mode="icon"
+                    className={styles.chat__attach}
+                    onClick={handleAttach}
+                  >
+                    <Icon icon="clip" />
+                  </Button>
+                  <input
+                    type="text"
+                    id="text"
+                    placeholder="Escribe tu mensaje aquí"
+                  />
+                  <Button mode="icon" className={styles.chat__sendIcon}>
+                    <Icon icon="iconSend" />
+                  </Button>
+                </div>
+              )}
+            </>
           )}
           <Button
             mode="icon"

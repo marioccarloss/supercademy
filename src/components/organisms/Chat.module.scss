@@ -34,7 +34,8 @@
     gap: 1rem;
     overflow: auto;
     padding: 1rem 0;
-    width: 100vw;
+    width: 100%;
+    overflow: auto;
 
     &Item {
       flex-shrink: 0;
@@ -74,6 +75,7 @@
   &__send {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     position: relative;
     padding: 0 0 2rem;
@@ -290,8 +292,8 @@
     &__withAvatar {
       .chat {
         &__container {
-          height: calc(100vh - 23rem);
-          height: calc(100svh - 23rem);
+          height: calc(100vh - 24rem);
+          height: calc(100svh - 24rem);
         }
       }
     }
@@ -375,7 +377,7 @@
   @media screen and (min-width: sizes.$tablet) {
     &__content {
       border-radius: 1.875rem;
-      padding: 2rem;
+      padding: 1.5rem;
     }
   }
 }

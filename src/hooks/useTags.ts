@@ -8,8 +8,7 @@ export default function useTags() {
   const chatTags: Tag[] = [
     {
       id: "1",
-      name: "Selectividad",
-      principal: true,
+      name: "Asignatura",
     },
     {
       id: "2",
@@ -21,6 +20,26 @@ export default function useTags() {
     },
     {
       id: "4",
+      name: "Asignatura",
+    },
+    {
+      id: "5",
+      name: "Asignatura",
+    },
+    {
+      id: "6",
+      name: "Asignatura",
+    },
+    {
+      id: "7",
+      name: "Asignatura",
+    },
+    {
+      id: "8",
+      name: "Asignatura",
+    },
+    {
+      id: "9",
       name: "Asignatura",
     },
   ];
