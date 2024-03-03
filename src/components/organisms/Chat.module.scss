@@ -43,8 +43,15 @@
       > button {
         position: absolute;
         top: 50%;
-        right: -1.5rem;
         transform: translateY(-50%);
+
+        &:first-child {
+          left: -1.5rem;
+        }
+
+        &:last-child {
+          right: -1.5rem;
+        }
       }
     }
 
@@ -272,11 +279,17 @@
     }
 
     &__withAvatar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       .chat {
+
         &__container {
           height: calc(100vh - 24rem);
           height: calc(100svh - 24rem);
           padding: 2rem 0 3rem 0;
+          flex-grow: 1;
         }
       }
     }

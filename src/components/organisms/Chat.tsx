@@ -106,6 +106,9 @@ export const Chat = ({
       <footer className={styles.chat__footer}>
         {(isConversation || !isCalendar) && (
           <div className={styles.chat__tagsContainer}>
+            <Button mode="icon" onClick={() => handleScroll(-120)}>
+              <Icon icon="iconArrowLeft" />
+            </Button>
             <div
               className={`${styles.chat__tags} ${
                 isScrolling ? styles.scrolling : ""
