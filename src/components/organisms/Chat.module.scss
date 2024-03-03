@@ -34,7 +34,8 @@
     gap: 1rem;
     overflow: auto;
     padding: 1rem 0;
-    width: 100%;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
     overflow: auto;
 
     &Container {
@@ -46,11 +47,11 @@
         transform: translateY(-50%);
 
         &:first-child {
-          left: -1.5rem;
+          left: -0.5rem;
         }
 
         &:last-child {
-          right: -1.5rem;
+          right: -0.5rem;
         }
       }
     }
