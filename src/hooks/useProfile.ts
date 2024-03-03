@@ -67,7 +67,6 @@ export default function useProfile() {
       icon: "emojiCat",
       color: "#4FCAFF",
     },
-    /*
     {
       id: useId(),
       name: "Alumno 2",
@@ -86,6 +85,7 @@ export default function useProfile() {
       icon: "emojiMonkeyTwo",
       color: "#ED254E",
     },
+    /*
     {
       id: useId(),
       name: "Alumno 5",

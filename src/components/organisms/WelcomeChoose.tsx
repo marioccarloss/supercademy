@@ -43,10 +43,9 @@ export const WelcomeChoose = () => {
             </div>
             <div className={styles.profile__users}>
               {usersCustoms.map((user: User) => (
-                <>
+                <div key={user.id}>
                   {user.hasPin ? (
                     <Button
-                      key={user.id}
                       className={styles.profile__user}
                       onClick={() => handleModal("modalPin", user)}
                     >
@@ -61,11 +60,7 @@ export const WelcomeChoose = () => {
                       </Typography>
                     </Button>
                   ) : (
-                    <Button
-                      key={user.id}
-                      className={styles.profile__user}
-                      href="/home"
-                    >
+                    <Button className={styles.profile__user} href="/home">
                       <div
                         className={styles.profile__icon}
                         style={{ background: `${user.color}` }}
@@ -77,7 +72,7 @@ export const WelcomeChoose = () => {
                       </Typography>
                     </Button>
                   )}
-                </>
+                </div>
               ))}
             </div>
             <div className={styles.profile__ctaContainer}>

@@ -86,6 +86,8 @@ import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import timeline from "./TimeLine";
 import trending from "./Trending";
+import emojiError404 from "./EmojiError404";
+import emojiError500 from "./EmojiError500";
 
 export {
   addUser,
@@ -118,6 +120,8 @@ export {
   emojiLanguage,
   emojiMessage,
   emojiMonkeyOne,
+  emojiError404,
+  emojiError500,
   emojiMonkeyTwo,
   emojiMonster,
   emojiMonsterItem,
