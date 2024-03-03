@@ -30,6 +30,8 @@
 
     @media (min-width: sizes.$tablet) {
       flex-direction: row;
+      height: 100vh;
+      height: 100svh;
 
       &Open {
         .layout {
