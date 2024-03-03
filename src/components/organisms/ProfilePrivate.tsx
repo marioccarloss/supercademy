@@ -8,6 +8,7 @@ import { Progress } from "@/components/atoms/Progress";
 import { Typography } from "@/components/atoms/Typography";
 import { Card } from "@/components/molecules/Card";
 import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
+import { ModalSubjects } from "@/components/molecules/ModalSubjects";
 import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 import { ModalSupercademy } from "@/components/molecules/ModalSupercademy";
 import { ModalShareCode } from "@/components/molecules/ModalShareCode";
@@ -37,6 +38,10 @@ export const ProfilePrivate = () => {
 
   const isOpenProfileConfigModal = useModalStore(
     (state) => state.modals.modalProfileConfig?.isOpen,
+  );
+
+  const isOpenSubjectsModal = useModalStore(
+    (state) => state.modals.modalSubjects?.isOpen,
   );
 
   const setModalOpen = useModalStore((state) => state.setModalOpen);
@@ -115,7 +120,11 @@ export const ProfilePrivate = () => {
                 <Icon icon="iconPencil" />
                 <Typography mode="secondary">Modificar mis clases</Typography>
               </Button>
-              <Button mode="tertiary" href="/invalid" as="#" size="small">
+              <Button
+                mode="tertiary"
+                size="small"
+                onClick={() => handleModal("modalSubjects")}
+              >
                 <Icon icon="iconPencil" />
                 <Typography mode="secondary">Modificar selectividad</Typography>
               </Button>
@@ -210,6 +219,10 @@ export const ProfilePrivate = () => {
         isModalOpen={isOpenShareCodeModal}
         modalName="modalShareCode"
         code="3435X"
+      />
+      <ModalSubjects
+        isModalOpen={isOpenSubjectsModal}
+        modalName="modalSubjects"
       />
       <ModalUserConfig
         user={users[0]}
