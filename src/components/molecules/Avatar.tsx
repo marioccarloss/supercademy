@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
@@ -13,7 +13,6 @@ import styles from "./Avatar.module.scss";
 
 type Props = {
   isTop?: boolean;
-  image: StaticImageData;
 };
 
 export const Avatar = ({ isTop = false }: Props) => {

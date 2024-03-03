@@ -9,7 +9,6 @@ import useTags, { Tag } from "@/hooks/useTags";
 import { Icon } from "@/shared/Icon";
 
 import student from "@/assets/images/student.jpg";
-import teacher from "@/assets/images/teacher.jpg";
 
 import { useTeacherStore } from "@/store/useTeacherStore";
 

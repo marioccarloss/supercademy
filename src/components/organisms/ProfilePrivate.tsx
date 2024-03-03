@@ -11,15 +11,17 @@ import { HeaderPrivateInner } from "@/components/molecules/HeaderPrivateInner";
 import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 import { ModalSupercademy } from "@/components/molecules/ModalSupercademy";
 import { ModalShareCode } from "@/components/molecules/ModalShareCode";
+import { ModalUserConfig } from "@/components/molecules/ModalUserConfig";
 import { Icon } from "@/shared/Icon";
 
 import { useModalStore } from "@/store/useModalStore";
 
 import useProfile from "@/hooks/useProfile";
+
 import styles from "./ProfilePrivate.module.scss";
 
 export const ProfilePrivate = () => {
-  const { progressItems, insignias, superpoints } = useProfile();
+  const { users, progressItems, insignias, superpoints } = useProfile();
 
   const handleSubmit = (event: FormEvent) => {
     event?.preventDefault();
@@ -31,6 +33,10 @@ export const ProfilePrivate = () => {
 
   const isOpenShareCodeModal = useModalStore(
     (state) => state.modals.modalShareCode?.isOpen,
+  );
+
+  const isOpenProfileConfigModal = useModalStore(
+    (state) => state.modals.modalProfileConfig?.isOpen,
   );
 
   const setModalOpen = useModalStore((state) => state.setModalOpen);
@@ -59,7 +65,11 @@ export const ProfilePrivate = () => {
                 >
                   <Icon icon="emojiMonster" size={styles.profile__avatar} />
                 </div>
-                <Button mode="icon" className={`${styles.profile__edit}`}>
+                <Button
+                  mode="icon"
+                  className={`${styles.profile__edit}`}
+                  onClick={() => handleModal("modalProfileConfig")}
+                >
                   <Icon icon="edit" size={styles.profile__editIcon} />
                 </Button>
               </div>
@@ -200,6 +210,11 @@ export const ProfilePrivate = () => {
         isModalOpen={isOpenShareCodeModal}
         modalName="modalShareCode"
         code="3435X"
+      />
+      <ModalUserConfig
+        user={users[0]}
+        isModalOpen={isOpenProfileConfigModal}
+        modalName="modalProfileConfig"
       />
     </>
   );

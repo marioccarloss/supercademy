@@ -27,6 +27,28 @@
     overflow: hidden;
     border: 0.25rem solid colors.$white;
     border-radius: spacing.$xs;
+
+    .profile__icon {
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    button {
+      opacity: 0;
+    }
+
+    &:hover {
+      .profile__icon {
+        &::after {
+          opacity: 0.4;
+        }
+      }
+
+      button {
+        opacity: 1;
+      }
+    }
   }
 
   &__icon {
