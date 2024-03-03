@@ -11,9 +11,11 @@ import { Icon } from "@/shared/Icon";
 import student from "@/assets/images/student.jpg";
 import teacher from "@/assets/images/teacher.jpg";
 
-import styles from "./Chat.module.scss";
+import { useTeacherStore } from "@/store/useTeacherStore";
 
 import useChatMessages, { Message } from "@/hooks/useChatMessages";
+
+import styles from "./Chat.module.scss";
 
 type Props = {
   isAvatar?: boolean;
@@ -29,10 +31,12 @@ export const Chat = ({
   tagPrincipal = "Deberes",
 }: Props) => {
   const [recordToggle, setRecordToggle] = useState<boolean>(false);
+  const [attachPopup, setAttachPopup] = useState<boolean>(false);
   const { data } = useChatMessages();
   const { chatTags } = useTags();
 
-  const [attachPopup, setAttachPopup] = useState<boolean>(false);
+  const teachers = useTeacherStore((state) => state.teacher);
+  const teacherSelected = teachers.filter((t) => t.selected)[0];
 
   const handleAttach = () => {
     setAttachPopup(!attachPopup);
@@ -66,7 +70,12 @@ export const Chat = ({
           >
             <div className={styles.message__avatar}>
               {chat.type === "received" ? (
-                <Image src={teacher} alt="teacher" width={60} />
+                <Image
+                  src={teacherSelected.image.src}
+                  alt={teacherSelected.name}
+                  height={teacherSelected.image.height}
+                  width={teacherSelected.image.width}
+                />
               ) : (
                 <Image src={student} alt="student" width={60} />
               )}

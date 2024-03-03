@@ -49,7 +49,7 @@
     }
 
     &On {
-      background: rgba(100, 238, 133, 0.85);
+      background: rgba(100,238,133,.85);
       color: colors.$cta-tertiary;
     }
 
@@ -68,6 +68,7 @@
 
     img {
       border-radius: 100%;
+      width: 100%;
     }
 
     &SwitchedOn {

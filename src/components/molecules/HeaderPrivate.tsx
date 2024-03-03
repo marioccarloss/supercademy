@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import image from "@/assets/images/teacher.jpg";
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { Avatar } from "@/components/molecules/Avatar";
@@ -59,7 +58,7 @@ export const HeaderPrivate = ({ isOpen, isAvatar }: HeaderProps) => {
           <Icon icon="logoNav" size={styles.headerPrivate__logoIcon} />
         </Button>
       )}
-      {isAvatar && <Avatar image={image} isTop={true} />}
+      {isAvatar && <Avatar isTop={true} />}
       <div className={styles.headerPrivate__ctasResponsive}>
         <div className={styles.btnCta}>
           <Button mode="icon" onClick={handleCalendar}>

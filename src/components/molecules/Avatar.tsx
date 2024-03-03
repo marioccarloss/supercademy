@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
+import { useTeacherStore } from "@/store/useTeacherStore";
 import { Icon } from "@/shared/Icon";
 
 import { useAvatarStore } from "@/store/useAvatarStore";
@@ -15,9 +16,12 @@ type Props = {
   image: StaticImageData;
 };
 
-export const Avatar = ({ image, isTop = false }: Props) => {
+export const Avatar = ({ isTop = false }: Props) => {
   const isSwitchedOn = useAvatarStore((state) => state.avatar.isActive);
   const setActiveAvatar = useAvatarStore((state) => state.setActive);
+
+  const teachers = useTeacherStore((state) => state.teacher);
+  const teacherSelected = teachers.filter((t) => t.selected)[0];
 
   const handleAvatar = () => {
     setActiveAvatar(!isSwitchedOn);
@@ -30,7 +34,12 @@ export const Avatar = ({ image, isTop = false }: Props) => {
       <div
         className={`${isSwitchedOn ? styles.avatar__image + " " + styles.avatar__imageOn : styles.avatar__image}`}
       >
-        <Image src={image} alt="teacher" />
+        <Image
+          src={teacherSelected.image.src}
+          alt={teacherSelected.name}
+          height={teacherSelected.image.height}
+          width={teacherSelected.image.width}
+        />
         {isSwitchedOn ? (
           <div
             className={`${styles.avatar__hover + " " + styles.avatar__hoverOn}`}

@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
+import { ModalPin } from "@/components/molecules/ModalPin";
 import { LayoutPublic } from "@/components/templates/LayoutPublic";
 import { Icon } from "@/shared/Icon";
-import { ModalPin } from "@/components/molecules/ModalPin";
 
 import styles from "./ProfileChoose.module.scss";
 

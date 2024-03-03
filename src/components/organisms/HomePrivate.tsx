@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useCallback } from "react";
 
-import image from "@/assets/images/teacher.jpg";
 import { Button } from "@/components/atoms/Button";
 import { Typography } from "@/components/atoms/Typography";
 import { ModalSubjects } from "@/components/molecules/ModalSubjects";
@@ -11,11 +10,15 @@ import { LayoutPrivate } from "@/components/templates/LayoutPrivate";
 import { Icon } from "@/shared/Icon";
 import { useAvatarStore } from "@/store/useAvatarStore";
 import { useModalStore } from "@/store/useModalStore";
+import { useTeacherStore } from "@/store/useTeacherStore";
 import styles from "./HomePrivate.module.scss";
 
 export const HomePrivate = () => {
   const isSwitchedOn = useAvatarStore((state) => state.avatar.isActive);
   const setActiveAvatar = useAvatarStore((state) => state.setActive);
+
+  const teachers = useTeacherStore((state) => state.teacher);
+  const teacherSelected = teachers.filter((t) => t.selected)[0];
 
   const isOpenSubjectsModal = useModalStore(
     (state) => state.modals.modalSubjects?.isOpen,
@@ -42,7 +45,12 @@ export const HomePrivate = () => {
             <div
               className={`${isSwitchedOn ? styles.homePrivate__avatar + " " + styles.homePrivate__avatarSwitchedOn : styles.homePrivate__avatar}`}
             >
-              <Image src={image} alt="teacher" />
+              <Image
+                src={teacherSelected.image.src}
+                alt={teacherSelected.name}
+                height={teacherSelected.image.height}
+                width={teacherSelected.image.width}
+              />
               {isSwitchedOn ? (
                 <div
                   className={`${styles.homePrivate__hover + " " + styles.homePrivate__hoverOn}`}
