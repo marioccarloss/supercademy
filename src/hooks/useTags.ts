@@ -42,6 +42,42 @@ export default function useTags() {
       id: "9",
       name: "Asignatura",
     },
+    {
+      id: "10",
+      name: "Asignatura",
+    },
+    {
+      id: "11",
+      name: "Asignatura",
+    },
+    {
+      id: "12",
+      name: "Asignatura",
+    },
+    {
+      id: "13",
+      name: "Asignatura",
+    },
+    {
+      id: "14",
+      name: "Asignatura",
+    },
+    {
+      id: "15",
+      name: "Asignatura",
+    },
+    {
+      id: "16",
+      name: "Asignatura",
+    },
+    {
+      id: "17",
+      name: "Asignatura",
+    },
+    {
+      id: "18",
+      name: "Asignatura",
+    },
   ];
 
   return { chatTags };

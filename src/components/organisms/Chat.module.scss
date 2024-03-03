@@ -37,6 +37,17 @@
     width: 100%;
     overflow: auto;
 
+    &Container {
+      position: relative;
+
+      > button {
+        position: absolute;
+        top: 50%;
+        right: -1.5rem;
+        transform: translateY(-50%);
+      }
+    }
+
     &Item {
       flex-shrink: 0;
       > * {
@@ -205,35 +216,6 @@
     }
   }
 
-  @keyframes marquee {
-    0% {
-      left: 0;
-    }
-    100% {
-      left: -100%;
-    }
-  }
-
-  &__timeline {
-    &Icon {
-      position: relative;
-      overflow: hidden;
-      margin-left: auto;
-      display: flex;
-      animation: marquee 5s linear infinite;
-      width: 50%;
-    }
-    &Wrapper {
-      display: flex;
-      justify-content: flex-end;
-      margin-left: auto;
-      position: relative;
-      width: 50%;
-      overflow: hidden;
-      height: 4rem;
-    }
-  }
-
   @keyframes size {
     to {
       background-position-x: 100vw;
@@ -294,6 +276,7 @@
         &__container {
           height: calc(100vh - 24rem);
           height: calc(100svh - 24rem);
+          padding: 2rem 0 3rem 0;
         }
       }
     }

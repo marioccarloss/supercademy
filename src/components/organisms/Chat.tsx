@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { Button } from "@/components/atoms/Button";
+import { RecordTimeline } from "@/components/atoms/RecordTimeline";
 import { Typography } from "@/components/atoms/Typography";
 import useTags, { Tag } from "@/hooks/useTags";
 import { Icon } from "@/shared/Icon";
@@ -31,11 +32,30 @@ export const Chat = ({
 }: Props) => {
   const [recordToggle, setRecordToggle] = useState<boolean>(false);
   const [attachPopup, setAttachPopup] = useState<boolean>(false);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isScrolling, setIsScrolling] = useState<boolean>(false);
+
   const { data } = useChatMessages();
   const { chatTags } = useTags();
 
   const teachers = useTeacherStore((state) => state.teacher);
   const teacherSelected = teachers.filter((t) => t.selected)[0];
+
+  const handleScroll = (scrollOffset: number) => {
+    if (scrollRef.current) {
+      setIsScrolling(true);
+      const newScrollLeft = scrollRef.current.scrollLeft + scrollOffset;
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScrollEnd = () => {
+    setIsScrolling(false);
+  };
 
   const handleAttach = () => {
     setAttachPopup(!attachPopup);
@@ -85,26 +105,40 @@ export const Chat = ({
       </section>
       <footer className={styles.chat__footer}>
         {(isConversation || !isCalendar) && (
-          <div className={styles.chat__tags}>
-            <div className={styles.chat__tagsItem}>
-              <button className={styles.chat__tagPrincipal}>
-                {tagPrincipal}
-                <Button href="/home" className={styles.chat__tagPrincipalClose}>
-                  <Icon icon="iconClose" size={styles.chat__tagIcon} />
-                </Button>
-              </button>
-            </div>
-            {chatTags.map((tag: Tag) => (
-              <div key={tag.id} className={styles.chat__tagsItem}>
-                <button className={styles.chat__tag}>{tag.name}</button>
+          <div className={styles.chat__tagsContainer}>
+            <div
+              className={`${styles.chat__tags} ${
+                isScrolling ? styles.scrolling : ""
+              }`}
+              ref={scrollRef}
+              onScroll={handleScrollEnd}
+            >
+              <div className={styles.chat__tagsItem}>
+                <button className={styles.chat__tagPrincipal}>
+                  {tagPrincipal}
+                  <Button
+                    href="/home"
+                    className={styles.chat__tagPrincipalClose}
+                  >
+                    <Icon icon="iconClose" size={styles.chat__tagIcon} />
+                  </Button>
+                </button>
               </div>
-            ))}
+              {chatTags.map((tag: Tag) => (
+                <div key={tag.id} className={styles.chat__tagsItem}>
+                  <button className={styles.chat__tag}>{tag.name}</button>
+                </div>
+              ))}
+            </div>
+            <Button mode="icon" onClick={() => handleScroll(120)}>
+              <Icon icon="iconArrowRight" />
+            </Button>
           </div>
         )}
 
         <div className={styles.chat__send}>
           {recordToggle ? (
-            <Icon icon="timeline" size={styles.chat__timelineIcon} />
+            <RecordTimeline progress={0.75} />
           ) : (
             <>
               {!isConversation && (

@@ -15,6 +15,8 @@ import edit from "./Edit";
 import emojiBookmark from "./EmojiBookmark";
 import emojiCalendar from "./EmojiCalendar";
 import emojiCat from "./EmojiCat";
+import emojiError404 from "./EmojiError404";
+import emojiError500 from "./EmojiError500";
 import emojiFaceDelicious from "./EmojiFaceDelicious";
 import emojiFaceGrinning from "./EmojiFaceGrinning";
 import emojiFaceHugging from "./EmojiFaceHugging";
@@ -26,6 +28,7 @@ import emojiFaceWinking from "./EmojiFaceWinking";
 import emojiGem from "./EmojiGem";
 import emojiGraduation from "./EmojiGraduation";
 import emojiHiFive from "./EmojiHiFive";
+import emojiHome from "./EmojiHome";
 import emojiLanguage from "./EmojiLanguage";
 import iconMagicWand from "./EmojiMagicWand";
 import emojiMessage from "./EmojiMessage";
@@ -62,7 +65,6 @@ import {
   default as iconInstagram,
   default as iconInstragram,
 } from "./IconInstragram";
-import emojiHome from "./EmojiHome";
 import iconLock from "./IconLock";
 import iconLogout from "./IconLogout";
 import iconPencil from "./IconPencil";
@@ -86,15 +88,12 @@ import iconStudentThree from "./StudentThree";
 import iconStudentTwo from "./StudentTwo";
 import timeline from "./TimeLine";
 import trending from "./Trending";
-import emojiError404 from "./EmojiError404";
-import emojiError500 from "./EmojiError500";
 
 export {
   addUser,
   apple,
   arrow,
   arrowBack,
-  emojiHome,
   arrowUp,
   bullet,
   bulletChecked,
@@ -107,6 +106,8 @@ export {
   emojiBookmark,
   emojiCalendar,
   emojiCat,
+  emojiError404,
+  emojiError500,
   emojiFaceDelicious,
   emojiFaceGrinning,
   emojiFaceHugging,
@@ -117,11 +118,10 @@ export {
   emojiGem,
   emojiGraduation,
   emojiHiFive,
+  emojiHome,
   emojiLanguage,
   emojiMessage,
   emojiMonkeyOne,
-  emojiError404,
-  emojiError500,
   emojiMonkeyTwo,
   emojiMonster,
   emojiMonsterItem,
